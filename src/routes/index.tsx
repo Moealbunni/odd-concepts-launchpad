@@ -23,6 +23,65 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "What kind of businesses do you work with?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Ambitious local businesses — restaurants, cafés, salons, barbers, gyms, clinics, real estate, car detailing and hospitality — where reputation and first impressions really matter.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Do you only build websites?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Websites are the foundation, but we also handle visibility, content, paid ads and an AI receptionist — everything that helps turn attention into customers.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How long does it take?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "It depends on scope. After a short Discovery call we'll give you a clear, realistic timeline — most premium sites come together in a few weeks.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What does it cost?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "It depends on what your business needs. We'll recommend the right approach after understanding your goals — the best place to start is a free Growth Plan.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What is a Growth Plan?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "A free, tailored set of recommendations for your business. No pressure and no obligation — just a clear picture of what's possible.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Do I need to be technical?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Not at all. We handle everything and keep it simple, so you can focus on running your business.",
+              },
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: HomePage,
 });
