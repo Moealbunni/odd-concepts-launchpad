@@ -7,6 +7,11 @@ import { TheReality } from "@/components/home/TheReality";
 import { GrowthSystem } from "@/components/home/GrowthSystem";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { WeUnderstand } from "@/components/home/WeUnderstand";
+import { HowItWorks } from "@/components/home/HowItWorks";
+import { ConceptWork } from "@/components/home/ConceptWork";
+import { WhyOddConcepts } from "@/components/home/WhyOddConcepts";
+import { FaqSection } from "@/components/home/FaqSection";
+import { FinalCta } from "@/components/home/FinalCta";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -94,6 +99,11 @@ function HomePage() {
       <GrowthSystem />
       <ServicesOverview />
       <WeUnderstand />
+      <HowItWorks />
+      <ConceptWork />
+      <WhyOddConcepts />
+      <FaqSection />
+      <FinalCta />
     </>
   );
 }
