@@ -90,6 +90,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: siteConfig.seo.defaultTitle },
       { name: "twitter:description", content: siteConfig.seo.defaultDescription },
+      { title: "Lovable App" },
+      { property: "og:title", content: "Lovable App" },
+      { name: "twitter:title", content: "Lovable App" },
+      { name: "description", content: "A premium digital growth studio website showcasing services and client work." },
+      { property: "og:description", content: "A premium digital growth studio website showcasing services and client work." },
+      { name: "twitter:description", content: "A premium digital growth studio website showcasing services and client work." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7203a3f5-265a-4152-807d-40893c7b276c/id-preview-93205a5a--75232863-397d-49d7-94ed-78d89a10ca73.lovable.app-1784039277252.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7203a3f5-265a-4152-807d-40893c7b276c/id-preview-93205a5a--75232863-397d-49d7-94ed-78d89a10ca73.lovable.app-1784039277252.png" },
     ],
     links: [
       {
