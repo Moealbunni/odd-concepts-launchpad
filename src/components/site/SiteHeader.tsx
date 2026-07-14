@@ -39,10 +39,10 @@ export function SiteHeader() {
         scrolled ? "border-b border-border" : "border-b border-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-24 w-full max-w-6xl items-center justify-between px-6 py-3">
         <Wordmark
           className="text-base md:text-lg"
-          markClassName="h-10"
+          markClassName="h-16"
         />
 
         <nav
