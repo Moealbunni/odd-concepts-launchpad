@@ -16,9 +16,10 @@ export function BrandMark({
     <img
       src="/brand/logo-horizontal.png"
       alt={title}
-      width={448}
-      height={140}
-      className={cn("block h-10 w-auto shrink-0 object-contain", className)}
+      width={426}
+      height={117}
+      draggable={false}
+      className={cn("block h-16 w-auto shrink-0 object-contain", className)}
     />
   );
 }
