@@ -1,3 +1,4 @@
+import { useRouterState } from "@tanstack/react-router";
 import { siteConfig } from "@/config/site";
 
 /**
@@ -5,6 +6,9 @@ import { siteConfig } from "@/config/site";
  * Uses safe-area insets so it clears mobile home indicators.
  */
 export function WhatsAppFab() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  // Hide on the Growth Plan form so the FAB never overlaps the submit button.
+  if (pathname === "/free-growth-plan") return null;
   return (
     <a
       href={siteConfig.whatsappUrl}
