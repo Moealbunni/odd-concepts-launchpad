@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: siteConfig.seo.defaultTitle },
       { name: "description", content: siteConfig.seo.defaultDescription },
       { name: "author", content: siteConfig.name },
-      { name: "theme-color", content: "#08080A" },
+      { name: "theme-color", content: "#0A0A0B" },
       { property: "og:site_name", content: siteConfig.name },
       { property: "og:title", content: siteConfig.seo.defaultTitle },
       { property: "og:description", content: siteConfig.seo.defaultDescription },
@@ -106,6 +106,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: siteConfig.name,
+          description: siteConfig.seo.defaultDescription,
+          email: siteConfig.email,
+          telephone: "+971564808748",
+          areaServed: "AE",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Dubai",
+            addressCountry: "AE",
+          },
+          url: "/",
+          sameAs: [siteConfig.whatsappUrl],
+        }),
       },
     ],
   }),
