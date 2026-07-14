@@ -26,7 +26,7 @@ export function FinalCta() {
               className="text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl"
             >
               Ready to turn attention into{" "}
-              <span class="gradient-text">customers?</span>
+              <span className="gradient-text">customers?</span>
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
               Get a free Growth Plan — a clear, tailored set of recommendations
