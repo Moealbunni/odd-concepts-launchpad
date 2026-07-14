@@ -2,29 +2,30 @@ import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 import { BrandMark } from "./BrandMark";
 
+/**
+ * The horizontal logo lockup image already contains the wordmark, so this
+ * component renders only the BrandMark inside the home link. `className`
+ * still accepts sizing for consumers, forwarded to the mark.
+ */
 export function Wordmark({
   className,
   markClassName,
-  showMark = true,
 }: {
   className?: string;
   markClassName?: string;
+  /** @deprecated Kept for API stability; the mark is always shown. */
   showMark?: boolean;
 }) {
   return (
     <Link
       to="/"
       className={cn(
-        "inline-flex items-center gap-2.5 tracking-tight text-foreground transition-opacity hover:opacity-90",
+        "inline-flex items-center rounded-md text-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         className,
       )}
       aria-label="Odd Concepts Digital — Home"
     >
-      {showMark && <BrandMark className={markClassName} />}
-      <span className="lowercase leading-none">
-        <span className="font-bold">odd concepts</span>{" "}
-        <span className="font-normal text-foreground/80">digital</span>
-      </span>
+      <BrandMark className={markClassName} />
     </Link>
   );
 }
