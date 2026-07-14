@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState, type HTMLAttributes } from "react";
 
-interface RevealProps extends HTMLAttributes<HTMLDivElement> {
+interface RevealProps extends HTMLAttributes<HTMLElement> {
   delay?: number;
   as?: "div" | "span" | "li";
 }
@@ -18,7 +18,7 @@ export function Reveal({
   style,
   ...props
 }: RevealProps) {
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
   const [reduced, setReduced] = useState(false);
 
@@ -45,8 +45,9 @@ export function Reveal({
 
   const shown = visible || reduced;
 
+  const Component = Tag as unknown as React.ElementType;
   return (
-    <Tag
+    <Component
       ref={ref as never}
       className={cn(
         "will-change-transform motion-safe:transition-all motion-safe:duration-[600ms] motion-safe:ease-out",
@@ -58,6 +59,6 @@ export function Reveal({
       {...props}
     >
       {children}
-    </Tag>
+    </Component>
   );
 }
