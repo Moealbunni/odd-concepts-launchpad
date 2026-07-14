@@ -11,7 +11,7 @@ export function SiteFooter() {
       <Container className="py-16 pb-28 md:pb-16">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-1">
-            <Wordmark className="text-base" markClassName="h-[26px]" />
+            <Wordmark className="text-base" markClassName="h-[28px]" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {siteConfig.positioning}
             </p>
