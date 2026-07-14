@@ -8,9 +8,7 @@ export function FinalCta() {
   return (
     <Section aria-labelledby="final-cta-heading">
       <Reveal>
-        <div
-          className="relative overflow-hidden rounded-2xl border border-border bg-card p-10 text-center md:p-16"
-        >
+        <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-10 text-center md:p-16">
           {/* Soft radial brand glow */}
           <div
             aria-hidden
@@ -25,12 +23,11 @@ export function FinalCta() {
               id="final-cta-heading"
               className="text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl"
             >
-              Ready to turn attention into{" "}
-              <span className="gradient-text">customers?</span>
+              Ready to stop guessing and start{" "}
+              <span className="gradient-text">growing?</span>
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-              Get a free Growth Plan — a clear, tailored set of recommendations
-              for your business. No pressure, no obligation.
+              Get your free Growth Plan. No cost, no obligation, no pressure.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <BrandButton asChild size="lg">

@@ -10,28 +10,28 @@ import { Reveal } from "@/components/primitives/Reveal";
 
 const faqs = [
   {
-    q: "What kind of businesses do you work with?",
-    a: "Ambitious local businesses — restaurants, cafés, salons, barbers, gyms, clinics, real estate, car detailing and hospitality — where reputation and first impressions really matter.",
-  },
-  {
-    q: "Do you only build websites?",
-    a: "Websites are the foundation, but we also handle visibility, content, paid ads and an AI receptionist — everything that helps turn attention into customers.",
-  },
-  {
-    q: "How long does it take?",
-    a: "It depends on scope. After a short Discovery call we'll give you a clear, realistic timeline — most premium sites come together in a few weeks.",
-  },
-  {
     q: "What does it cost?",
-    a: "It depends on what your business needs. We'll recommend the right approach after understanding your goals — the best place to start is a free Growth Plan.",
+    a: "It’s priced to what you actually need. We don’t sell one-size-fits-all packages. The Growth Plan is free, and after that we recommend the right work for your goals and budget.",
   },
   {
-    q: "What is a Growth Plan?",
-    a: "A free, tailored set of recommendations for your business. No pressure and no obligation — just a clear picture of what's possible.",
+    q: "How much of my time will this take?",
+    a: "Very little. We do the heavy lifting — reviews, design, build, content and setup. You just need to answer a few questions, give us access, and approve the work.",
   },
   {
-    q: "Do I need to be technical?",
-    a: "Not at all. We handle everything and keep it simple, so you can focus on running your business.",
+    q: "What kind of results can I expect?",
+    a: "No one can honestly promise specific numbers. What we do is fix the specific reasons customers aren’t finding you, trusting you, or choosing you — then keep improving it.",
+  },
+  {
+    q: "What industries do you work with?",
+    a: "Local businesses where reputation and first impressions matter: hospitality, cafés, restaurants, salons, barbers, gyms, dental and medical clinics, real estate, accounting, law and professional services.",
+  },
+  {
+    q: "What is the free Growth Plan?",
+    a: "A free review of your visibility, reputation and conversion. You get the gaps we found, the fixes we recommend, and what it would take to put them in place — no cost, no obligation.",
+  },
+  {
+    q: "What makes you different?",
+    a: "We build and run one connected system, not a list of separate services. And we use AI as an accelerator behind the scenes — not as a shiny feature to sell you.",
   },
 ];
 
@@ -43,7 +43,7 @@ export function FaqSection() {
     >
       <SectionHeading
         eyebrow="FAQ"
-        title={<span id="faq-heading">Questions, answered.</span>}
+        title={<span id="faq-heading">Straight answers.</span>}
         align="center"
         className="mx-auto"
       />

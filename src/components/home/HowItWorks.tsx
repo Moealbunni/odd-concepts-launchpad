@@ -2,23 +2,21 @@ import { useEffect, useRef, useState } from "react";
 import { Section } from "@/components/primitives/Section";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { Reveal } from "@/components/primitives/Reveal";
+import { BrandButton } from "@/components/primitives/BrandButton";
+import { Link } from "@tanstack/react-router";
 
 const steps = [
   {
-    title: "Discovery",
-    line: "We learn your business, your goals and the customers you want more of.",
+    title: "Get your free Growth Plan",
+    line: "We review how easily customers find you, how much you’re trusted at a glance, and where enquiries slip away.",
   },
   {
-    title: "Strategy & Design",
-    line: "We map the plan and design a premium, conversion-focused experience.",
+    title: "We build your system",
+    line: "Website, profiles, content and lead capture — designed and connected as one, not bolted together.",
   },
   {
-    title: "Build & Launch",
-    line: "We build fast, test everything, and launch with care.",
-  },
-  {
-    title: "Grow & Improve",
-    line: "We review, refine and keep improving based on what actually works.",
+    title: "You grow",
+    line: "We run it and keep improving it, so you can focus on your business.",
   },
 ];
 
@@ -51,19 +49,19 @@ export function HowItWorks() {
   return (
     <Section aria-labelledby="how-heading">
       <SectionHeading
-        eyebrow="How It Works"
+        eyebrow="How it works"
         title={
           <span id="how-heading">
-            A calm, proven process — from first call to real growth.
+            Simple to start. Built to last.
           </span>
         }
-        subtitle="No chaos, no guesswork. Just a clear path from where you are to where you want to be."
+        subtitle="A clear, three-step path from where you are now to a system that brings you customers."
       />
 
-      <div ref={ref} className="relative mt-16">
-        {/* Desktop connector line */}
+      <div ref={ref} className="relative mt-16 md:mt-20">
+        {/* Desktop connector line: between the three numbered nodes */}
         <div className="pointer-events-none absolute left-0 right-0 top-6 hidden md:block">
-          <div className="relative mx-[8%] h-px overflow-hidden">
+          <div className="relative mx-[12%] h-px overflow-hidden">
             <div className="absolute inset-0 bg-border" />
             <div
               className="absolute inset-y-0 left-0 origin-left"
@@ -71,50 +69,38 @@ export function HowItWorks() {
                 width: "100%",
                 background: "linear-gradient(90deg, #3B82F6 0%, #A855F7 100%)",
                 transform: `scaleX(${shown ? 1 : 0})`,
-                transition: reduced
-                  ? "none"
-                  : "transform 900ms ease-out 200ms",
+                transition: reduced ? "none" : "transform 1000ms ease-out 300ms",
               }}
             />
           </div>
         </div>
 
-        {/* Mobile vertical connector */}
-        <div className="pointer-events-none absolute left-6 top-6 bottom-6 w-px overflow-hidden md:hidden">
-          <div className="absolute inset-0 bg-border" />
-          <div
-            className="absolute inset-x-0 top-0 origin-top"
-            style={{
-              height: "100%",
-              background: "linear-gradient(180deg, #3B82F6 0%, #A855F7 100%)",
-              transform: `scaleY(${shown ? 1 : 0})`,
-              transition: reduced ? "none" : "transform 900ms ease-out 200ms",
-            }}
-          />
-        </div>
-
-        <ol className="grid gap-10 md:grid-cols-4 md:gap-6">
+        <ol className="grid gap-10 md:grid-cols-3 md:gap-8">
           {steps.map((step, i) => (
             <Reveal as="li" key={step.title} delay={i * 120}>
-              <div className="relative flex flex-row items-start gap-4 md:flex-col md:items-start md:gap-5">
+              <div className="relative flex flex-row items-start gap-5 md:flex-col md:items-start md:gap-6">
                 <div
-                  className="relative flex size-12 shrink-0 items-center justify-center rounded-full bg-background text-sm font-semibold text-foreground"
+                  className={`relative flex size-12 shrink-0 items-center justify-center rounded-full bg-background text-sm font-semibold ${
+                    i === 0 ? "gradient-text" : "text-muted-foreground"
+                  }`}
                   style={{
                     backgroundImage:
-                      "linear-gradient(hsl(var(--background)), hsl(var(--background))), linear-gradient(135deg, #3B82F6, #A855F7)",
+                      i === 0
+                        ? "linear-gradient(hsl(var(--background)), hsl(var(--background))), linear-gradient(135deg, #3B82F6, #A855F7)"
+                        : "linear-gradient(hsl(var(--background)), hsl(var(--background))), linear-gradient(135deg, hsl(var(--border)), hsl(var(--border)))",
                     backgroundOrigin: "border-box",
                     backgroundClip: "padding-box, border-box",
                     border: "1px solid transparent",
                   }}
                   aria-hidden
                 >
-                  <span className="gradient-text">0{i + 1}</span>
+                  <span className={i === 0 ? "gradient-text" : ""}>0{i + 1}</span>
                 </div>
-                <div className="pt-1 md:pt-0">
-                  <h3 className="text-lg font-semibold text-foreground">
+                <div className="pt-0.5 md:pt-0">
+                  <h3 className="text-lg font-semibold text-foreground md:text-xl">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
                     {step.line}
                   </p>
                 </div>
@@ -122,6 +108,12 @@ export function HowItWorks() {
             </Reveal>
           ))}
         </ol>
+
+        <Reveal delay={360} className="mt-14 flex justify-center md:mt-16">
+          <BrandButton asChild size="lg">
+            <Link to="/free-growth-plan">Get Your Free Growth Plan</Link>
+          </BrandButton>
+        </Reveal>
       </div>
     </Section>
   );
