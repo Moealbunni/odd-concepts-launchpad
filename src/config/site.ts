@@ -10,7 +10,7 @@ export const siteConfig = {
   email: "oddconcepts.ae@gmail.com",
   whatsappDisplay: "+971 56 480 8748",
   whatsappUrl:
-    "https://wa.me/971564808748?text=Hi%20Odd%20Concepts%20Digital%2C%20I%27d%20like%20a%20free%20Growth%20Plan%20for%20my%20business.",
+    "https://wa.me/971564808748?text=Hi%20Odd%20Concepts%20Digital%2C%20I%27d%20like%20to%20get%20my%20free%20Growth%20Plan%20for%20my%20business.",
   primaryCta: {
     label: "Get Your Free Growth Plan",
     href: "/free-growth-plan",
