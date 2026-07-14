@@ -1,9 +1,14 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Odd Concepts Digital brand mark — gauge arc + set-square.
- * Inline SVG so it inherits currentColor / scales cleanly.
- * Renders as a block so height controls size; width auto (aspect 1:1).
+ * Odd Concepts Digital brand mark — gauge arc + set-square. Inline SVG
+ * so it inherits currentColor / scales cleanly. Height controlled by
+ * className; width auto (aspect 1:1).
+ *
+ * Note: an uploaded PNG horizontal lockup at /brand/logo-horizontal.png
+ * was intended to replace this, but the provided base64 payload was
+ * truncated and could not be decoded. This SVG mark is used until a
+ * valid PNG is supplied.
  */
 export function BrandMark({
   className,
@@ -20,7 +25,6 @@ export function BrandMark({
       role="img"
       aria-label={title}
       className={cn("block h-[30px] w-auto shrink-0", className)}
-      style={{ objectFit: "contain" }}
     >
       <defs>
         <linearGradient

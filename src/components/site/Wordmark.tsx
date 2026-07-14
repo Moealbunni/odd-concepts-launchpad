@@ -15,7 +15,7 @@ export function Wordmark({
     <Link
       to="/"
       className={cn(
-        "inline-flex items-center gap-2.5 tracking-tight text-foreground transition-opacity hover:opacity-90",
+        "inline-flex items-center gap-2.5 rounded-md tracking-tight text-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         className,
       )}
       aria-label="Odd Concepts Digital — Home"
