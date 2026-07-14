@@ -107,7 +107,7 @@ function HomePage() {
             </span>
           </Reveal>
 
-          <Reveal delay={120} className="mt-8 max-w-[30ch]">
+          <Reveal delay={120} className="mt-8 max-w-[780px]">
             <h1
               id="hero-heading"
               className="text-[clamp(2.75rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.02em] text-foreground"
