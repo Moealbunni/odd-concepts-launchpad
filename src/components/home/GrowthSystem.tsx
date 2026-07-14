@@ -103,6 +103,7 @@ export function GrowthSystem() {
 
   return (
     <Section
+      id="growth-system"
       aria-labelledby="growth-heading"
       className="bg-[hsl(var(--surface-elevated))]/40"
     >
