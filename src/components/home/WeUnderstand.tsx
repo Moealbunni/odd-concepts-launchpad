@@ -1,18 +1,60 @@
+import {
+  UtensilsCrossed,
+  Scissors,
+  Smile,
+  HeartPulse,
+  Dumbbell,
+  Home,
+  Calculator,
+  Scale,
+  type LucideIcon,
+} from "lucide-react";
 import { Section } from "@/components/primitives/Section";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
+import { Card } from "@/components/primitives/Card";
 import { Reveal } from "@/components/primitives/Reveal";
 
-const industries = [
-  "Restaurants",
-  "Cafés",
-  "Beauty Salons",
-  "Barbers",
-  "Gyms",
-  "Dental Clinics",
-  "Medical Clinics",
-  "Real Estate",
-  "Car Detailing",
-  "Hospitality",
+const industries: { icon: LucideIcon; name: string; line: string }[] = [
+  {
+    icon: UtensilsCrossed,
+    name: "Cafés & Restaurants",
+    line: "Fill quiet tables and turn first-time guests into regulars.",
+  },
+  {
+    icon: Scissors,
+    name: "Salons & Barbers",
+    line: "Keep the chairs full and the calendar booked.",
+  },
+  {
+    icon: Smile,
+    name: "Dental Clinics",
+    line: "Become the practice patients trust before they call.",
+  },
+  {
+    icon: HeartPulse,
+    name: "Medical & Wellness",
+    line: "Turn quiet searches into booked appointments.",
+  },
+  {
+    icon: Dumbbell,
+    name: "Gyms & Studios",
+    line: "Attract members who actually stay.",
+  },
+  {
+    icon: Home,
+    name: "Real Estate",
+    line: "Get in front of buyers and sellers first.",
+  },
+  {
+    icon: Calculator,
+    name: "Accounting & Finance",
+    line: "Win clients who value expertise over price.",
+  },
+  {
+    icon: Scale,
+    name: "Law Firms",
+    line: "Be the firm clients choose with confidence.",
+  },
 ];
 
 export function WeUnderstand() {
@@ -22,24 +64,40 @@ export function WeUnderstand() {
       className="bg-[hsl(var(--surface-elevated))]/40"
     >
       <SectionHeading
-        eyebrow="We Understand Your Business"
+        eyebrow="Who we build for"
         title={
           <span id="industries-heading">
-            Built for the businesses that live and die by first impressions.
+            We speak your industry — not “business in general”.
           </span>
         }
         subtitle="We work with ambitious local businesses that rely on trust, reputation and a steady flow of new customers."
       />
 
-      <ul className="mt-12 flex flex-wrap gap-3">
-        {industries.map((label, i) => (
-          <Reveal as="li" key={label} delay={i * 40}>
-            <span className="inline-flex items-center rounded-full border border-border bg-card px-5 py-2.5 text-sm text-foreground/90 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:border-foreground/40 hover:text-foreground">
-              {label}
-            </span>
+      <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {industries.map(({ icon: Icon, name, line }, i) => (
+          <Reveal key={name} delay={(i % 4) * 60}>
+            <Card className="h-full hover:translate-y-0 hover:shadow-none">
+              <Icon
+                className="size-6 text-muted-foreground transition-colors group-hover:text-foreground"
+                strokeWidth={1.5}
+                aria-hidden
+              />
+              <h3 className="mt-4 text-base font-semibold text-foreground">
+                {name}
+              </h3>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                {line}
+              </p>
+            </Card>
           </Reveal>
         ))}
-      </ul>
+      </div>
+
+      <Reveal delay={120} className="mt-12">
+        <p className="text-center text-sm text-muted-foreground">
+          And any local business that deserves more customers than it’s getting.
+        </p>
+      </Reveal>
     </Section>
   );
 }
