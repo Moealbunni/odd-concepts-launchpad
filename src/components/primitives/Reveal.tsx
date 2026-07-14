@@ -32,27 +32,10 @@ export function Reveal({
 
     const el = ref.current;
     if (!el) return;
-    if (prefersReduced) return; // keep visible, skip animation
-    // Hide, then observe. If IO never fires for any reason, reveal after 800ms.
-    setVisible(false);
-    const fallback = window.setTimeout(() => setVisible(true), 800);
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            window.clearTimeout(fallback);
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
-    );
-    io.observe(el);
-    return () => {
-      window.clearTimeout(fallback);
-      io.disconnect();
-    };
+    // Intentionally do NOT hide content on the client. If the entrance
+    // animation cannot run reliably (SSR/hydration edge cases, HMR, IO
+    // quirks), content must remain visible rather than blank the page.
+    void el;
   }, []);
 
   const shown = visible || reduced;
