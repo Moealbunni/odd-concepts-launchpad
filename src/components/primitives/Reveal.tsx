@@ -28,17 +28,6 @@ export function Reveal({
 
     const el = ref.current;
     if (!el) return;
-
-    // Fallback: if the element is already in the viewport, reveal immediately.
-    // This avoids cases where IntersectionObserver fails to fire for elements
-    // that are already visible on mount (e.g. the hero in some environments).
-    const rect = el.getBoundingClientRect();
-    const vh = window.innerHeight || document.documentElement.clientHeight;
-    if (rect.top < vh && rect.bottom > 0) {
-      setVisible(true);
-      return;
-    }
-
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -48,7 +37,7 @@ export function Reveal({
           }
         });
       },
-      { threshold: 0, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
     );
     io.observe(el);
     return () => io.disconnect();
