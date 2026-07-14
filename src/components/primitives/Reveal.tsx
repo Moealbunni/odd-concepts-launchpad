@@ -19,28 +19,23 @@ export function Reveal({
   ...props
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
-  const [visible, setVisible] = useState(false);
+  // Start visible so content is NEVER hidden if hydration or IO fails.
+  // We then briefly flip to hidden on the client (pre-paint) and let IO
+  // fade it back in for the entrance animation.
+  const [visible, setVisible] = useState(true);
   const [reduced, setReduced] = useState(false);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduced(media.matches);
+    const prefersReduced = media.matches;
+    setReduced(prefersReduced);
 
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
-    );
-    io.observe(el);
-    return () => io.disconnect();
+    // Intentionally do NOT hide content on the client. If the entrance
+    // animation cannot run reliably (SSR/hydration edge cases, HMR, IO
+    // quirks), content must remain visible rather than blank the page.
+    void el;
   }, []);
 
   const shown = visible || reduced;
