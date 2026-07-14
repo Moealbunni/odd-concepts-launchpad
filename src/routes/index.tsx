@@ -90,68 +90,69 @@ function HomePage() {
   return (
     <>
       <section aria-labelledby="hero-heading" className="relative overflow-hidden">
-      {/* Restrained radial brand glow behind headline */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(60% 50% at 50% 20%, hsl(var(--brand-primary) / 0.18) 0%, hsl(var(--brand-accent) / 0.10) 40%, transparent 70%)",
-        }}
-      />
-      <Container className="flex min-h-[calc(100svh-4rem)] flex-col items-start justify-center py-24 md:py-32">
-        <Reveal>
-          <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
-            <span className="size-1.5 rounded-full gradient-bg" aria-hidden />
-            {siteConfig.tagline}
-          </span>
-        </Reveal>
-
-        <Reveal delay={120} className="mt-6 max-w-4xl">
-          <h1
-            id="hero-heading"
-            className="text-[clamp(2.75rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-tight text-foreground"
-          >
-            We turn attention into{" "}
-            <span className="gradient-text">
-              trust, enquiries and customers.
+        {/* Soft ambient brand glow — single, static, no loop */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            background:
+              "radial-gradient(60% 50% at 50% 20%, hsl(var(--brand-primary) / 0.14) 0%, hsl(var(--brand-accent) / 0.08) 40%, transparent 70%)",
+          }}
+        />
+        <Container className="flex min-h-[calc(100svh-4rem)] flex-col items-start justify-center py-28 md:py-36">
+          <Reveal>
+            <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
+              <span className="size-1.5 rounded-full gradient-bg" aria-hidden />
+              Digital growth studio · Dubai
             </span>
-          </h1>
-        </Reveal>
+          </Reveal>
 
-        <Reveal delay={220} className="mt-6 max-w-2xl">
-          <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Premium websites, sharper visibility and modern content that help
-            ambitious local businesses grow — fast, measurable, and without
-            the complexity.
-          </p>
-        </Reveal>
+          <Reveal delay={120} className="mt-8 max-w-[30ch]">
+            <h1
+              id="hero-heading"
+              className="text-[clamp(2.75rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.02em] text-foreground"
+            >
+              We don’t just build websites. We build the system that{" "}
+              <span className="gradient-text">brings you customers.</span>
+            </h1>
+          </Reveal>
 
-        <Reveal delay={320} className="mt-10">
-          <div className="flex flex-wrap items-center gap-3">
-            <BrandButton asChild size="lg">
-              <Link to={siteConfig.primaryCta.href}>
-                {siteConfig.primaryCta.label}
-              </Link>
-            </BrandButton>
-            <BrandButton asChild size="lg" variant="secondary">
+          <Reveal delay={220} className="mt-8 max-w-[55ch]">
+            <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
+              Premium websites, sharper visibility and modern content — designed and run as one system that turns attention into enquiries and customers.
+            </p>
+          </Reveal>
+
+          <Reveal delay={320} className="mt-12">
+            <div className="flex flex-wrap items-center gap-3">
+              <BrandButton asChild size="lg">
+                <Link to={siteConfig.primaryCta.href}>
+                  {siteConfig.primaryCta.label}
+                </Link>
+              </BrandButton>
+              <BrandButton asChild size="lg" variant="ghost">
+                <a href="#growth-system">See the Growth System</a>
+              </BrandButton>
+            </div>
+            <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
+              <span>or</span>
               <a
                 href={siteConfig.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="underline-offset-4 hover:text-foreground hover:underline"
               >
-                WhatsApp Us
+                message us on WhatsApp
               </a>
-            </BrandButton>
-          </div>
-        </Reveal>
+            </div>
+          </Reveal>
 
-        <Reveal delay={420} className="mt-6">
-          <p className="text-sm text-muted-foreground">
-            A long-term growth partner — not another agency.
-          </p>
-        </Reveal>
-      </Container>
+          <Reveal delay={420} className="mt-10">
+            <p className="font-mono text-xs tracking-[0.12em] text-muted-foreground/60">
+              No inflated claims · No borrowed proof · Built with care in Dubai
+            </p>
+          </Reveal>
+        </Container>
       </section>
 
       <TheReality />
