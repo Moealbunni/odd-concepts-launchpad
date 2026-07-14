@@ -3,6 +3,10 @@ import { siteConfig } from "@/config/site";
 import { Container } from "@/components/primitives/Container";
 import { Reveal } from "@/components/primitives/Reveal";
 import { BrandButton } from "@/components/primitives/BrandButton";
+import { TheReality } from "@/components/home/TheReality";
+import { GrowthSystem } from "@/components/home/GrowthSystem";
+import { ServicesOverview } from "@/components/home/ServicesOverview";
+import { WeUnderstand } from "@/components/home/WeUnderstand";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,10 +24,8 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <section
-      aria-labelledby="hero-heading"
-      className="relative overflow-hidden"
-    >
+    <>
+      <section aria-labelledby="hero-heading" className="relative overflow-hidden">
       {/* Restrained radial brand glow behind headline */}
       <div
         aria-hidden
@@ -86,6 +88,12 @@ function HomePage() {
           </p>
         </Reveal>
       </Container>
-    </section>
+      </section>
+
+      <TheReality />
+      <GrowthSystem />
+      <ServicesOverview />
+      <WeUnderstand />
+    </>
   );
 }
