@@ -42,7 +42,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
         <Wordmark
           className="text-base md:text-lg"
-          markClassName="h-9"
+          markClassName="h-[30px]"
         />
 
         <nav
