@@ -16,6 +16,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as FreeGrowthPlanRouteImport } from './routes/free-growth-plan'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiPublicGrowthPlanRouteImport } from './routes/api/public/growth-plan'
 
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
@@ -52,6 +53,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicGrowthPlanRoute = ApiPublicGrowthPlanRouteImport.update({
+  id: '/api/public/growth-plan',
+  path: '/api/public/growth-plan',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
+  '/api/public/growth-plan': typeof ApiPublicGrowthPlanRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
+  '/api/public/growth-plan': typeof ApiPublicGrowthPlanRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
+  '/api/public/growth-plan': typeof ApiPublicGrowthPlanRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms'
     | '/work'
+    | '/api/public/growth-plan'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms'
     | '/work'
+    | '/api/public/growth-plan'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms'
     | '/work'
+    | '/api/public/growth-plan'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   ServicesRoute: typeof ServicesRoute
   TermsRoute: typeof TermsRoute
   WorkRoute: typeof WorkRoute
+  ApiPublicGrowthPlanRoute: typeof ApiPublicGrowthPlanRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/growth-plan': {
+      id: '/api/public/growth-plan'
+      path: '/api/public/growth-plan'
+      fullPath: '/api/public/growth-plan'
+      preLoaderRoute: typeof ApiPublicGrowthPlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesRoute: ServicesRoute,
   TermsRoute: TermsRoute,
   WorkRoute: WorkRoute,
+  ApiPublicGrowthPlanRoute: ApiPublicGrowthPlanRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
