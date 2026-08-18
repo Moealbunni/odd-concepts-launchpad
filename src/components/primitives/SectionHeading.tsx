@@ -7,6 +7,7 @@ interface SectionHeadingProps {
   subtitle?: React.ReactNode;
   align?: "left" | "center";
   className?: string;
+  as?: "h1" | "h2" | "h3";
 }
 
 export function SectionHeading({
@@ -15,6 +16,7 @@ export function SectionHeading({
   subtitle,
   align = "left",
   className,
+  as: Heading = "h2",
 }: SectionHeadingProps) {
   return (
     <div
@@ -32,9 +34,9 @@ export function SectionHeading({
         </Reveal>
       )}
       <Reveal delay={80}>
-        <h2 className="text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
+        <Heading className="text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
           {title}
-        </h2>
+        </Heading>
       </Reveal>
       {subtitle && (
         <Reveal delay={160}>
