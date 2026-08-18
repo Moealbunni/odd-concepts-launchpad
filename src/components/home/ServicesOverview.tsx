@@ -47,6 +47,10 @@ const availableNow: Service[] = [
     name: "AI Receptionist",
     line: "Capture and qualify leads around the clock.",
   },
+  {
+    name: "Apps",
+    line: "Custom mobile and web apps that extend your reach.",
+  },
 ];
 
 const onRoadmap: Service[] = [
