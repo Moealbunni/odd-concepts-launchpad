@@ -83,6 +83,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: siteConfig.seo.defaultDescription },
       { name: "author", content: siteConfig.name },
       { name: "theme-color", content: "#0A0A0B" },
+      {
+        name: "google-site-verification",
+        content: "55Ay2GM11B8SbPNEOuwC-eo7G6RouzkklaYDJKloJjQ",
+      },
       { property: "og:site_name", content: siteConfig.name },
       { property: "og:title", content: siteConfig.seo.defaultTitle },
       { property: "og:description", content: siteConfig.seo.defaultDescription },
