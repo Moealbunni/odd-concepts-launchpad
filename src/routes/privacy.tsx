@@ -25,6 +25,7 @@ function PrivacyPage() {
     <Section className="pt-32 md:pt-40">
       <div className="mx-auto max-w-3xl">
         <SectionHeading
+          as="h1"
           eyebrow="Privacy"
           title="How we handle your information."
           subtitle="Plain-English summary of what we collect, why, and what we don't do."
