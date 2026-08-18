@@ -29,6 +29,7 @@ function FreeGrowthPlanPage() {
     <Section className="pt-32 md:pt-40">
       <div className="mx-auto max-w-3xl">
         <SectionHeading
+          as="h1"
           align="center"
           eyebrow="Free Growth Plan"
           title={

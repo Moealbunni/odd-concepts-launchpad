@@ -32,6 +32,7 @@ function WorkPage() {
       <Section className="pt-32 md:pt-40 pb-0">
         <div className="mx-auto max-w-3xl text-center">
           <SectionHeading
+            as="h1"
             align="center"
             eyebrow="Work"
             title={
