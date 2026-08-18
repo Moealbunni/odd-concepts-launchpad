@@ -8,7 +8,7 @@ import { Section } from "@/components/primitives/Section";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { Reveal } from "@/components/primitives/Reveal";
 
-const faqs = [
+export const faqs = [
   {
     q: "What does it cost?",
     a: "It’s priced to what you actually need. We don’t sell one-size-fits-all packages. The Growth Plan is free, and after that we recommend the right work for your goals and budget.",
