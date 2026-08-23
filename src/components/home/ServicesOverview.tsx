@@ -103,33 +103,14 @@ export function ServicesOverview() {
         subtitle="Most agencies sell you a single service and leave you to join the dots. We design and run one system — every part below plugs into a stage of your growth."
       />
 
-      <div className="mt-14 space-y-10">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {availableNow.map((service, i) => (
-            <Reveal key={service.name} delay={(i % 3) * 80}>
-              <ServiceCard {...service} />
-            </Reveal>
-          ))}
-        </div>
-
-        <Reveal>
-          <div className="flex items-center gap-4">
-            <div className="h-px flex-1 bg-border" />
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              On the roadmap
-            </span>
-            <div className="h-px flex-1 bg-border" />
-          </div>
-        </Reveal>
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {onRoadmap.map((service, i) => (
-            <Reveal key={service.name} delay={(i % 3) * 80}>
-              <ServiceCard {...service} soon />
-            </Reveal>
-          ))}
-        </div>
+      <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {availableNow.map((service, i) => (
+          <Reveal key={service.name} delay={(i % 3) * 80}>
+            <ServiceCard {...service} />
+          </Reveal>
+        ))}
       </div>
+
 
       <Reveal delay={120} className="mt-12 flex justify-center">
         <BrandButton asChild variant="secondary" size="lg">
