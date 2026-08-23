@@ -51,9 +51,6 @@ const availableNow: Service[] = [
     name: "Apps",
     line: "Custom mobile and web apps that extend your reach.",
   },
-];
-
-const onRoadmap: Service[] = [
   {
     name: "Marketing Automation",
     line: "Turn one-off enquiries into steady, automated follow-up.",
@@ -67,6 +64,7 @@ const onRoadmap: Service[] = [
     line: "Clear dashboards that show what’s actually driving growth.",
   },
 ];
+
 
 function ServiceCard({ name, line, soon }: Service & { soon?: boolean }) {
   return (
