@@ -15,6 +15,16 @@ import p4370 from "@/assets/media/img_4370.jpg.asset.json";
 import v4378 from "@/assets/media/img_4378.mp4.asset.json";
 import p4378 from "@/assets/media/img_4378.jpg.asset.json";
 import v4519 from "@/assets/media/img_4519.mp4.asset.json";
+import v4693 from "@/assets/media/img_4693.mp4.asset.json";
+import p4693 from "@/assets/media/img_4693.jpg.asset.json";
+import v4744 from "@/assets/media/img_4744.mp4.asset.json";
+import p4744 from "@/assets/media/img_4744.jpg.asset.json";
+import v4745 from "@/assets/media/img_4745.mp4.asset.json";
+import p4745 from "@/assets/media/img_4745.jpg.asset.json";
+import v5015 from "@/assets/media/img_5015.mp4.asset.json";
+import p5015 from "@/assets/media/img_5015.jpg.asset.json";
+import v5217 from "@/assets/media/img_5217.mp4.asset.json";
+import p5217 from "@/assets/media/img_5217.jpg.asset.json";
 import p4519 from "@/assets/media/img_4519.jpg.asset.json";
 
 export type MediaCategory = "video" | "ugc" | "photo" | "ad";
@@ -54,6 +64,14 @@ export const videos: MediaItem[] = [
     videoUrl: v5153.url,
     posterUrl: p5153.url,
   },
+  {
+    id: "video-5217",
+    title: "Studio production cut",
+    category: "video",
+    ratio: 1620 / 1080,
+    videoUrl: v5217.url,
+    posterUrl: p5217.url,
+  },
 ];
 
 export const ugc: MediaItem[] = [
@@ -80,6 +98,38 @@ export const ugc: MediaItem[] = [
     ratio: 2548 / 1080,
     videoUrl: v4062.url,
     posterUrl: p4062.url,
+  },
+  {
+    id: "ugc-4693",
+    title: "Vertical social cut",
+    category: "ugc",
+    ratio: 1080 / 1936,
+    videoUrl: v4693.url,
+    posterUrl: p4693.url,
+  },
+  {
+    id: "ugc-4744",
+    title: "Vertical social cut",
+    category: "ugc",
+    ratio: 1080 / 1920,
+    videoUrl: v4744.url,
+    posterUrl: p4744.url,
+  },
+  {
+    id: "ugc-4745",
+    title: "Vertical social cut",
+    category: "ugc",
+    ratio: 1080 / 1920,
+    videoUrl: v4745.url,
+    posterUrl: p4745.url,
+  },
+  {
+    id: "ugc-5015",
+    title: "Vertical social cut",
+    category: "ugc",
+    ratio: 1080 / 1936,
+    videoUrl: v5015.url,
+    posterUrl: p5015.url,
   },
 ];
 
