@@ -113,10 +113,9 @@ export const Route = createFileRoute("/api/public/growth-plan")({
         const apiKey = process.env.RESEND_API_KEY;
         if (!apiKey) {
           console.error("RESEND_API_KEY is not configured");
-          return Response.json(
-            { ok: false, error: "email_not_configured" },
-            { status: 500 },
-          );
+          // Return 200 so the client can show the honest WhatsApp / email
+          // fallback instead of the app surfacing a server error.
+          return Response.json({ ok: false, error: "email_not_configured" });
         }
 
         try {
@@ -141,19 +140,13 @@ export const Route = createFileRoute("/api/public/growth-plan")({
             console.error(
               `Resend send failed [${res.status}]: ${errBody}`,
             );
-            return Response.json(
-              { ok: false, error: "email_failed" },
-              { status: 502 },
-            );
+            return Response.json({ ok: false, error: "email_failed" });
           }
 
           return Response.json({ ok: true });
         } catch (err) {
           console.error("Growth plan email error:", err);
-          return Response.json(
-            { ok: false, error: "email_failed" },
-            { status: 502 },
-          );
+          return Response.json({ ok: false, error: "email_failed" });
         }
       },
     },
