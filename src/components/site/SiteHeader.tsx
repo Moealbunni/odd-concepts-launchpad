@@ -64,7 +64,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 md:ms-8 md:flex">
           <LanguageSwitcher />
           <BrandButton asChild variant="secondary" size="sm">
             <a
