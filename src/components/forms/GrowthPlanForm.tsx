@@ -208,8 +208,8 @@ export function GrowthPlanForm() {
           We&apos;ll review your business carefully and get back to you shortly with
           a clear, honest Growth Plan.
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <BrandButton asChild variant="primary" size="lg">
+        <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+          <BrandButton asChild variant="primary" size="lg" className="w-full sm:w-auto">
             <a
               href={siteConfig.whatsappUrl}
               target="_blank"
@@ -218,10 +218,11 @@ export function GrowthPlanForm() {
               Talk on WhatsApp
             </a>
           </BrandButton>
-          <BrandButton asChild variant="secondary" size="lg">
+          <BrandButton asChild variant="secondary" size="lg" className="w-full sm:w-auto">
             <a href={buildMailto(values)}>Or email us directly</a>
           </BrandButton>
         </div>
+
         <p className="mt-6 text-xs uppercase tracking-[0.2em] text-muted-foreground">
           No spam · No pressure · Just a clear next step
         </p>
@@ -386,7 +387,7 @@ export function GrowthPlanForm() {
         </div>
       </div>
 
-      <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="mt-8 flex flex-col-reverse items-stretch justify-between gap-4 sm:flex-row sm:items-center">
         <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
           No spam · No pressure · Just a clear next step
         </p>
@@ -395,9 +396,11 @@ export function GrowthPlanForm() {
           variant="primary"
           size="lg"
           disabled={submitting}
+          className="w-full sm:w-auto"
         >
           {submitting ? "Sending…" : "Get My Free Growth Plan"}
         </BrandButton>
+
       </div>
     </form>
   );

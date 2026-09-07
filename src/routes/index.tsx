@@ -54,7 +54,7 @@ function HomePage() {
               "radial-gradient(60% 50% at 50% 20%, hsl(var(--brand-primary) / 0.14) 0%, hsl(var(--brand-accent) / 0.08) 40%, transparent 70%)",
           }}
         />
-        <Container className="flex min-h-[calc(100svh-4rem)] flex-col items-start justify-center py-28 md:py-36">
+        <Container className="flex min-h-[calc(100svh-6rem)] flex-col items-start justify-center py-20 sm:py-28 md:py-36">
           <Reveal>
             <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
               <span className="size-1.5 rounded-full gradient-bg" aria-hidden />
@@ -78,17 +78,18 @@ function HomePage() {
             </p>
           </Reveal>
 
-          <Reveal delay={320} className="mt-12">
-            <div className="flex flex-wrap items-center gap-3">
-              <BrandButton asChild size="lg">
+          <Reveal delay={320} className="mt-12 w-full">
+            <div className="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
+              <BrandButton asChild size="lg" className="w-full sm:w-auto">
                 <Link to={siteConfig.primaryCta.href}>
                   {siteConfig.primaryCta.label}
                 </Link>
               </BrandButton>
-              <BrandButton asChild size="lg" variant="ghost">
+              <BrandButton asChild size="lg" variant="ghost" className="w-full sm:w-auto">
                 <a href="#growth-system">See the Growth System</a>
               </BrandButton>
             </div>
+
             <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
               <span>or</span>
               <a

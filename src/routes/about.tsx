@@ -65,13 +65,13 @@ function AboutPage() {
             </Reveal>
           </div>
 
-          <Reveal delay={160} className="mt-12 flex flex-wrap gap-3">
-            <BrandButton asChild size="lg">
+          <Reveal delay={160} className="mt-12 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+            <BrandButton asChild size="lg" className="w-full sm:w-auto">
               <Link to={siteConfig.primaryCta.href}>
                 {siteConfig.primaryCta.label}
               </Link>
             </BrandButton>
-            <BrandButton asChild size="lg" variant="secondary">
+            <BrandButton asChild size="lg" variant="secondary" className="w-full sm:w-auto">
               <a
                 href={siteConfig.whatsappUrl}
                 target="_blank"
