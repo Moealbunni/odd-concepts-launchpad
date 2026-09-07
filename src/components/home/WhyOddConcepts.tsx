@@ -26,8 +26,8 @@ const asideItems = [
 export function WhyOddConcepts() {
   return (
     <Section aria-labelledby="why-heading">
-      <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-        <div className="lg:col-span-7">
+      <div className="grid gap-10 md:grid-cols-[3fr_2fr] md:items-center md:gap-14">
+        <div>
           <SectionHeading
             eyebrow="About us"
             title={
@@ -45,14 +45,17 @@ export function WhyOddConcepts() {
           </Reveal>
         </div>
 
-        <Reveal delay={100} className="lg:col-span-5">
-          <div className="media-frame h-full max-w-sm rounded-xl border border-border/60 lg:max-w-none">
+        <Reveal delay={100}>
+          <div
+            className="media-frame w-full max-w-sm rounded-xl border border-border/60 md:max-w-none"
+            style={{ aspectRatio: "4/5" }}
+          >
             <img
               src={museumAsset.url}
               alt="Museum of the Future illuminated at night in Dubai"
               loading="lazy"
               decoding="async"
-              className="h-64 w-full object-cover sm:h-80 lg:h-full"
+              className="h-full w-full object-cover"
             />
           </div>
         </Reveal>
