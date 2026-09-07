@@ -133,6 +133,7 @@ export function GrowthPlanForm() {
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  const [sendFailed, setSendFailed] = useState(false);
 
   function update<K extends keyof GrowthPlanFormValues>(
     key: K,
@@ -168,12 +169,15 @@ export function GrowthPlanForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(parsed.data),
       });
-      // Even on non-2xx, show success but log — enquiry offered via mailto fallback.
+      // Non-2xx means the enquiry was not delivered — say so honestly and
+      // offer the WhatsApp / email fallback instead of a false confirmation.
       if (!res.ok) {
         console.warn("Growth plan submission returned", res.status);
+        setSendFailed(true);
       }
     } catch (err) {
       console.warn("Growth plan submission failed:", err);
+      setSendFailed(true);
     } finally {
       setSubmitting(false);
       setDone(true);
@@ -199,10 +203,10 @@ export function GrowthPlanForm() {
           </svg>
         </div>
         <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
-          {t.form.doneTitle}
+          {sendFailed ? t.form.failedTitle : t.form.doneTitle}
         </h3>
         <p className="mx-auto mt-4 max-w-md text-muted-foreground">
-{t.form.doneBody}
+          {sendFailed ? t.form.failedBody : t.form.doneBody}
         </p>
         <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
           <BrandButton asChild variant="primary" size="lg" className="w-full sm:w-auto">
