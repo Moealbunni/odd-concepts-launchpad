@@ -207,7 +207,7 @@ export function VideoPlayer({
             if (el) el.currentTime = Number(e.target.value);
             setProgress(Number(e.target.value));
           }}
-          className="h-1 w-full cursor-pointer appearance-none rounded-full bg-muted accent-[hsl(var(--brand-primary))]"
+          className="h-2 w-full cursor-pointer appearance-none rounded-full bg-muted accent-[hsl(var(--brand-primary))] md:h-1"
         />
         <div className="flex items-center gap-1">
           <button
