@@ -8,6 +8,8 @@ import v3761 from "@/assets/media/img_3761.mp4.asset.json";
 import p3761 from "@/assets/media/img_3761.jpg.asset.json";
 import v4062 from "@/assets/media/img_4062.mp4.asset.json";
 import p4062 from "@/assets/media/img_4062.jpg.asset.json";
+import v4429 from "@/assets/media/img_4429.mp4.asset.json";
+import p4429 from "@/assets/media/img_4429.jpg.asset.json";
 import v4370 from "@/assets/media/img_4370.mp4.asset.json";
 import p4370 from "@/assets/media/img_4370.jpg.asset.json";
 import v4378 from "@/assets/media/img_4378.mp4.asset.json";
@@ -50,6 +52,7 @@ export const mediaItems: MediaItem[] = [
   { id: "m-4062", title: "Cinematic Story Telling I", ratio: 2548 / 1080, videoUrl: v4062.url, posterUrl: p4062.url },
   { id: "m-4370", title: "Cinematic Story Telling II", ratio: 1914 / 1080, videoUrl: v4370.url, posterUrl: p4370.url },
   { id: "m-4378", title: "Instagram Virality — Cinematic Shoot", ratio: 1930 / 1080, videoUrl: v4378.url, posterUrl: p4378.url },
+  { id: "m-4429", title: "Cinematic Story Telling III", ratio: 1280 / 714, videoUrl: v4429.url, posterUrl: p4429.url },
 ];
 
 export function getGroup(item: MediaItem): MediaGroup {
