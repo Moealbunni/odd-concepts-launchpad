@@ -404,8 +404,12 @@ export const en = {
     doneTitle: "Request received.",
     doneBody:
       "We’ll review your business carefully and get back to you shortly with a clear, honest Growth Plan.",
+    failedTitle: "Almost there.",
+    failedBody:
+      "We couldn’t send your details automatically just now. Please reach us on WhatsApp or email — your answers are ready to send in one tap.",
     talkWhatsapp: "Talk on WhatsApp",
     emailDirect: "Or email us directly",
+
     validation: {
       nameRequired: "Please tell us your name",
       businessNameRequired: "Business name is required",
@@ -807,8 +811,12 @@ export const ar: Translations = {
     formNote: "بلا رسائل مزعجة · بلا ضغط · مجرد خطوة تالية واضحة",
     doneTitle: "تم استلام طلبكم.",
     doneBody: "سنراجع نشاطكم بعناية ونعود إليكم قريبًا بخطة نمو واضحة وصادقة.",
+    failedTitle: "خطوة أخيرة.",
+    failedBody:
+      "ما قدرنا نرسل بياناتكم تلقائيًا الآن. تواصلوا معنا عبر واتساب أو البريد — إجاباتكم جاهزة للإرسال بضغطة واحدة.",
     talkWhatsapp: "تحدث عبر واتساب",
     emailDirect: "أو راسلنا مباشرة عبر البريد",
+
     validation: {
       nameRequired: "يرجى إخبارنا باسمك",
       businessNameRequired: "اسم النشاط التجاري مطلوب",
