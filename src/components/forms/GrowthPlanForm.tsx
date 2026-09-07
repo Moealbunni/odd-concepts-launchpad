@@ -1,8 +1,10 @@
-import { useState, type ReactNode } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import { z } from "zod";
 import { BrandButton } from "@/components/primitives/BrandButton";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { useT } from "@/i18n/LanguageContext";
+import type { Translations } from "@/i18n/translations";
 
 const businessTypes = [
   "Café / Restaurant",
@@ -16,39 +18,32 @@ const businessTypes = [
   "Other",
 ] as const;
 
-const schema = z.object({
-  name: z.string().trim().min(1, "Please tell us your name").max(100),
-  businessName: z.string().trim().min(1, "Business name is required").max(150),
-  email: z.string().trim().email("Enter a valid email").max(255),
-  phone: z
-    .string()
-    .trim()
-    .min(6, "Enter a valid phone or WhatsApp number")
-    .max(40),
-  businessType: z.enum(businessTypes, {
-    errorMap: () => ({ message: "Choose the closest match" }),
-  }),
-  website: z
-    .string()
-    .trim()
-    .max(255)
-    .optional()
-    .or(z.literal(""))
-    .refine(
-      (v) =>
-        !v ||
-        /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/\S*)?$/i.test(v),
-      "Enter a valid URL",
-    ),
-  about: z.string().trim().max(2000).optional().or(z.literal("")),
-  needs: z
-    .string()
-    .trim()
-    .min(5, "A sentence or two is enough")
-    .max(2000),
-});
+function makeSchema(t: Translations) {
+  const v = t.form.validation;
+  return z.object({
+    name: z.string().trim().min(1, v.nameRequired).max(100),
+    businessName: z.string().trim().min(1, v.businessNameRequired).max(150),
+    email: z.string().trim().email(v.emailInvalid).max(255),
+    phone: z.string().trim().min(6, v.phoneInvalid).max(40),
+    businessType: z.enum(businessTypes, {
+      errorMap: () => ({ message: v.businessTypeInvalid }),
+    }),
+    website: z
+      .string()
+      .trim()
+      .max(255)
+      .optional()
+      .or(z.literal(""))
+      .refine(
+        (val) => !val || /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/\S*)?$/i.test(val),
+        v.urlInvalid,
+      ),
+    about: z.string().trim().max(2000).optional().or(z.literal("")),
+    needs: z.string().trim().min(5, v.needsTooShort).max(2000),
+  });
+}
 
-export type GrowthPlanFormValues = z.infer<typeof schema>;
+export type GrowthPlanFormValues = z.infer<ReturnType<typeof makeSchema>>;
 
 type Errors = Partial<Record<keyof GrowthPlanFormValues, string>>;
 
@@ -109,7 +104,7 @@ function Field({
       >
         {label}
         {required && (
-          <span aria-hidden="true" className="ml-1 text-muted-foreground">
+          <span aria-hidden="true" className="ms-1 text-muted-foreground">
             *
           </span>
         )}
@@ -132,6 +127,8 @@ function Field({
 }
 
 export function GrowthPlanForm() {
+  const t = useT();
+  const activeSchema = useMemo(() => makeSchema(t), [t]);
   const [values, setValues] = useState<GrowthPlanFormValues>(initial);
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
@@ -147,7 +144,7 @@ export function GrowthPlanForm() {
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const parsed = schema.safeParse(values);
+    const parsed = activeSchema.safeParse(values);
     if (!parsed.success) {
       const next: Errors = {};
       for (const issue of parsed.error.issues) {
@@ -202,11 +199,10 @@ export function GrowthPlanForm() {
           </svg>
         </div>
         <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
-          Request received.
+          {t.form.doneTitle}
         </h3>
         <p className="mx-auto mt-4 max-w-md text-muted-foreground">
-          We&apos;ll review your business carefully and get back to you shortly with
-          a clear, honest Growth Plan.
+{t.form.doneBody}
         </p>
         <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
           <BrandButton asChild variant="primary" size="lg" className="w-full sm:w-auto">
@@ -215,16 +211,16 @@ export function GrowthPlanForm() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Talk on WhatsApp
+              {t.form.talkWhatsapp}
             </a>
           </BrandButton>
           <BrandButton asChild variant="secondary" size="lg" className="w-full sm:w-auto">
-            <a href={buildMailto(values)}>Or email us directly</a>
+            <a href={buildMailto(values)}>{t.form.emailDirect}</a>
           </BrandButton>
         </div>
 
         <p className="mt-6 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-          No spam · No pressure · Just a clear next step
+          {t.form.formNote}
         </p>
       </div>
     );
@@ -237,7 +233,7 @@ export function GrowthPlanForm() {
       className="rounded-2xl border border-border bg-white/[0.02] p-6 md:p-10"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Field id="name" label="Your name" required error={errors.name}>
+        <Field id="name" label={t.form.yourName} required error={errors.name}>
           <input
             id="name"
             type="text"
@@ -251,7 +247,7 @@ export function GrowthPlanForm() {
         </Field>
         <Field
           id="businessName"
-          label="Business name"
+          label={t.form.businessName}
           required
           error={errors.businessName}
         >
@@ -268,7 +264,7 @@ export function GrowthPlanForm() {
             }
           />
         </Field>
-        <Field id="email" label="Email" required error={errors.email}>
+        <Field id="email" label={t.form.email} required error={errors.email}>
           <input
             id="email"
             type="email"
@@ -283,7 +279,7 @@ export function GrowthPlanForm() {
         </Field>
         <Field
           id="phone"
-          label="Phone / WhatsApp"
+          label={t.form.phone}
           required
           error={errors.phone}
         >
@@ -302,7 +298,7 @@ export function GrowthPlanForm() {
         </Field>
         <Field
           id="businessType"
-          label="Business type"
+          label={t.form.businessType}
           required
           error={errors.businessType}
         >
@@ -322,20 +318,20 @@ export function GrowthPlanForm() {
             }
           >
             <option value="" disabled>
-              Select one…
+              {t.form.selectPlaceholder}
             </option>
-            {businessTypes.map((t) => (
-              <option key={t} value={t} className="bg-background">
-                {t}
+            {businessTypes.map((bt) => (
+              <option key={bt} value={bt} className="bg-background">
+                {t.form.businessTypes[bt] ?? bt}
               </option>
             ))}
           </select>
         </Field>
         <Field
           id="website"
-          label="Current website"
+          label={t.form.website}
           error={errors.website}
-          hint="Optional"
+          hint={t.form.optional}
         >
           <input
             id="website"
@@ -352,8 +348,8 @@ export function GrowthPlanForm() {
         <div className="md:col-span-2">
           <Field
             id="about"
-            label="Tell us about your business"
-            hint="Optional — anything that helps us understand you"
+            label={t.form.about}
+            hint={t.form.aboutHint}
             error={errors.about}
           >
             <textarea
@@ -370,7 +366,7 @@ export function GrowthPlanForm() {
         <div className="md:col-span-2">
           <Field
             id="needs"
-            label="What do you need help with?"
+            label={t.form.needs}
             required
             error={errors.needs}
           >
@@ -389,7 +385,7 @@ export function GrowthPlanForm() {
 
       <div className="mt-8 flex flex-col-reverse items-stretch justify-between gap-4 sm:flex-row sm:items-center">
         <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-          No spam · No pressure · Just a clear next step
+          {t.form.formNote}
         </p>
         <BrandButton
           type="submit"
@@ -398,7 +394,7 @@ export function GrowthPlanForm() {
           disabled={submitting}
           className="w-full sm:w-auto"
         >
-          {submitting ? "Sending…" : "Get My Free Growth Plan"}
+          {submitting ? t.form.submitSending : t.form.submitIdle}
         </BrandButton>
 
       </div>
