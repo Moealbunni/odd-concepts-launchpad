@@ -5,6 +5,7 @@ import { ConceptWork } from "@/components/home/ConceptWork";
 import { ClientSites } from "@/components/home/ClientSites";
 import { MediaShowcase } from "@/components/home/MediaShowcase";
 import { FinalCta } from "@/components/home/FinalCta";
+import { useT } from "@/i18n/LanguageContext";
 
 export const Route = createFileRoute("/work")({
   head: () => ({
@@ -29,19 +30,21 @@ export const Route = createFileRoute("/work")({
 });
 
 function WorkPage() {
+  const t = useT();
   return (
     <>
       <Section className="pt-32 md:pt-40 pb-0">
         <SectionHeading
           as="h1"
-          eyebrow="Work"
+          eyebrow={t.workPage.eyebrow}
           title={
             <>
-              The standard we{" "}
-              <span className="gradient-text">build to</span>.
+              {t.workPage.title}
+              <span className="gradient-text">{t.workPage.titleGradient}</span>
+              {t.workPage.titleAfter}
             </>
           }
-          subtitle="We're a new studio, so we won't dress up someone else's work as ours. What you see here is concept work — clearly labelled — until real client work is ready to sit beside it."
+          subtitle={t.workPage.subtitle}
         />
       </Section>
       <ClientSites />

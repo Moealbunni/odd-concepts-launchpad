@@ -4,23 +4,10 @@ import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { Reveal } from "@/components/primitives/Reveal";
 import { BrandButton } from "@/components/primitives/BrandButton";
 import { Link } from "@tanstack/react-router";
-
-const steps = [
-  {
-    title: "Get your free Growth Plan",
-    line: "We review how easily customers find you, how much you’re trusted at a glance, and where enquiries slip away.",
-  },
-  {
-    title: "We build your system",
-    line: "Website, profiles, content and lead capture — designed and connected as one, not bolted together.",
-  },
-  {
-    title: "You grow",
-    line: "We run it and keep improving it, so you can focus on your business.",
-  },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export function HowItWorks() {
+  const { t, rtl } = useLanguage();
   const ref = useRef<HTMLDivElement | null>(null);
   const [play, setPlay] = useState(false);
   const [reduced, setReduced] = useState(false);
@@ -49,25 +36,24 @@ export function HowItWorks() {
   return (
     <Section aria-labelledby="how-heading">
       <SectionHeading
-        eyebrow="How it works"
-        title={
-          <span id="how-heading">
-            Simple to start. Built to last.
-          </span>
-        }
-        subtitle="A clear, three-step path from where you are now to a system that brings you customers."
+        eyebrow={t.how.eyebrow}
+        title={<span id="how-heading">{t.how.title}</span>}
+        subtitle={t.how.subtitle}
       />
 
       <div ref={ref} className="relative mt-16 md:mt-20">
         {/* Desktop connector line: between the three numbered nodes */}
-        <div className="pointer-events-none absolute left-0 right-0 top-6 hidden md:block">
+        <div className="pointer-events-none absolute inset-x-0 top-6 hidden md:block">
           <div className="relative mx-[12%] h-px overflow-hidden">
             <div className="absolute inset-0 bg-border" />
             <div
-              className="absolute inset-y-0 left-0 origin-left"
+              className="absolute inset-y-0 start-0"
               style={{
                 width: "100%",
-                background: "linear-gradient(90deg, #3B82F6 0%, #A855F7 100%)",
+                transformOrigin: rtl ? "right" : "left",
+                background: rtl
+                  ? "linear-gradient(270deg, #3B82F6 0%, #A855F7 100%)"
+                  : "linear-gradient(90deg, #3B82F6 0%, #A855F7 100%)",
                 transform: `scaleX(${shown ? 1 : 0})`,
                 transition: reduced ? "none" : "transform 1000ms ease-out 300ms",
               }}
@@ -76,7 +62,7 @@ export function HowItWorks() {
         </div>
 
         <ol className="grid gap-10 md:grid-cols-3 md:gap-8">
-          {steps.map((step, i) => (
+          {t.how.steps.map((step, i) => (
             <Reveal as="li" key={step.title} delay={i * 120}>
               <div className="relative flex flex-row items-start gap-5 md:flex-col md:items-start md:gap-6">
                 <div
@@ -111,7 +97,7 @@ export function HowItWorks() {
 
         <Reveal delay={360} className="mt-14 flex justify-center md:mt-16">
           <BrandButton asChild size="lg">
-            <Link to="/free-growth-plan">Get Your Free Growth Plan</Link>
+            <Link to="/free-growth-plan">{t.site.primaryCta}</Link>
           </BrandButton>
         </Reveal>
       </div>
