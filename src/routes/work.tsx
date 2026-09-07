@@ -46,6 +46,7 @@ function WorkPage() {
           />
         </div>
       </Section>
+      <ClientSites />
       <ConceptWork />
       <FinalCta />
     </>
