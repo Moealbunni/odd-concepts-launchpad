@@ -26,8 +26,8 @@ const asideItems = [
 export function WhyOddConcepts() {
   return (
     <Section aria-labelledby="why-heading">
-      <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-        <div>
+      <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="lg:col-span-5">
           <SectionHeading
             eyebrow="About us"
             title={
@@ -45,7 +45,19 @@ export function WhyOddConcepts() {
           </Reveal>
         </div>
 
-        <Reveal delay={120}>
+        <Reveal delay={100} className="lg:col-span-3">
+          <div className="media-frame h-full max-w-sm rounded-xl border border-border/60 lg:max-w-none">
+            <img
+              src={museumAsset.url}
+              alt="Museum of the Future illuminated at night in Dubai"
+              loading="lazy"
+              decoding="async"
+              className="h-64 w-full object-cover sm:h-80 lg:h-full"
+            />
+          </div>
+        </Reveal>
+
+        <Reveal delay={140} className="lg:col-span-4">
           <Card className="h-full p-7 md:p-8">
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
               What matters here
@@ -60,20 +72,9 @@ export function WhyOddConcepts() {
                     <item.icon className="size-4 text-muted-foreground" strokeWidth={1.5} />
                   </span>
                   <div className="flex-1">
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="block text-sm font-medium text-foreground md:text-base">
-                        {item.title}
-                      </span>
-                      {"image" in item && item.image && (
-                        <img
-                          src={item.image.src}
-                          alt={item.image.alt}
-                          loading="lazy"
-                          decoding="async"
-                          className="size-14 shrink-0 rounded-lg border border-border/60 object-cover"
-                        />
-                      )}
-                    </div>
+                    <span className="block text-sm font-medium text-foreground md:text-base">
+                      {item.title}
+                    </span>
                     <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
                       {item.line}
                     </span>
