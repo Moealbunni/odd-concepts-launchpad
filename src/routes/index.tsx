@@ -67,7 +67,7 @@ function HomePage() {
           <Reveal delay={120} className="mt-8 max-w-[780px]">
             <h1
               id="hero-heading"
-              className="text-[clamp(2.75rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.02em] text-foreground"
+              className="depth-heading text-[clamp(2.75rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.02em] text-foreground"
             >
               We don’t just build websites. We build the system that{" "}
               <span className="gradient-text">brings you customers.</span>
