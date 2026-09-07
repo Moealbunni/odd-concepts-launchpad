@@ -10,10 +10,6 @@ const asideItems = [
     icon: MapPin,
     title: "Based in Dubai",
     line: "A boutique digital growth studio working with ambitious local businesses across the UAE.",
-    image: {
-      src: museumAsset.url,
-      alt: "Museum of the Future illuminated at night in Dubai",
-    },
   },
   {
     icon: Target,
