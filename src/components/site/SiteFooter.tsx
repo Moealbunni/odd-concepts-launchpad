@@ -55,7 +55,7 @@ export function SiteFooter() {
                 <li key={item.href}>
                   <Link
                     to={item.href}
-                    className="transition-colors hover:text-foreground"
+                    className="inline-flex min-h-8 items-center transition-colors hover:text-foreground"
                   >
                     {t.nav[item.key]}
                   </Link>
@@ -76,7 +76,7 @@ export function SiteFooter() {
                 <li key={item.href}>
                   <Link
                     to={item.href}
-                    className="transition-colors hover:text-foreground"
+                    className="inline-flex min-h-8 items-center transition-colors hover:text-foreground"
                   >
                     {t.nav[item.key]}
                   </Link>
