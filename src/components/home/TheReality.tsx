@@ -1,11 +1,13 @@
 import { Section } from "@/components/primitives/Section";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { Reveal } from "@/components/primitives/Reveal";
+import lighttrailsAsset from "@/assets/media/dubai-street-lighttrails.jpg.asset.json";
 
 export function TheReality() {
   return (
     <Section aria-labelledby="reality-heading">
-      <div className="max-w-3xl">
+      <div className="grid gap-10 md:grid-cols-[3fr_2fr] md:items-center md:gap-14">
+        <div>
         <SectionHeading
           eyebrow="The reality"
           title={
