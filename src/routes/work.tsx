@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Section } from "@/components/primitives/Section";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { ConceptWork } from "@/components/home/ConceptWork";
+import { ClientSites } from "@/components/home/ClientSites";
 import { FinalCta } from "@/components/home/FinalCta";
 
 export const Route = createFileRoute("/work")({
@@ -45,6 +46,7 @@ function WorkPage() {
           />
         </div>
       </Section>
+      <ClientSites />
       <ConceptWork />
       <FinalCta />
     </>
