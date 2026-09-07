@@ -99,15 +99,19 @@ export function VideoPlayer({
           poster={posterUrl}
           preload="metadata"
           playsInline
+          muted={muted}
           className="h-full w-full object-cover"
           onPlay={() => {
             setPlaying(true);
+            playback?.notifyPlaying(playerId);
             showControls();
           }}
           onPause={() => {
             setPlaying(false);
+            playback?.notifyStopped(playerId);
             setControlsVisible(true);
           }}
+
           onTimeUpdate={(e) => setProgress(e.currentTarget.currentTime)}
           onLoadedMetadata={(e) => setDuration(e.currentTarget.duration || 0)}
           onClick={togglePlay}
