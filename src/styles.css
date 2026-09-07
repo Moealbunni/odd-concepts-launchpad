@@ -151,6 +151,14 @@
       sans-serif;
   }
 
+  /* Arabic script needs more line-height than Latin — tight Latin leading
+     clips/overlaps Arabic dots, ascenders and descenders on wrapped lines. */
+  html.font-arabic h1,
+  html.font-arabic h2,
+  html.font-arabic h3 {
+    line-height: 1.55 !important;
+  }
+
   ::selection {
     background: hsl(var(--accent) / 0.35);
     color: hsl(var(--foreground));
