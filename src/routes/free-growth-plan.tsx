@@ -3,6 +3,7 @@ import { Section } from "@/components/primitives/Section";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { GrowthPlanForm } from "@/components/forms/GrowthPlanForm";
 import { Reveal } from "@/components/primitives/Reveal";
+import { useT } from "@/i18n/LanguageContext";
 
 export const Route = createFileRoute("/free-growth-plan")({
   head: () => ({
@@ -25,19 +26,23 @@ export const Route = createFileRoute("/free-growth-plan")({
 });
 
 function FreeGrowthPlanPage() {
+  const t = useT();
   return (
     <Section className="pt-32 md:pt-40">
       <div className="max-w-3xl">
         <SectionHeading
           as="h1"
-          eyebrow="Free Growth Plan"
+          eyebrow={t.growthPlanPage.eyebrow}
           title={
             <>
-              A clear plan for how to
-              <span className="gradient-text"> grow your business</span>.
+              {t.growthPlanPage.title}
+              <span className="gradient-text">
+                {t.growthPlanPage.titleGradient}
+              </span>
+              {t.growthPlanPage.titleAfter}
             </>
           }
-          subtitle="Tell us a little about your business. We'll review it carefully and come back with a Growth Plan tailored to you — no cost, no obligation, no pressure."
+          subtitle={t.growthPlanPage.subtitle}
         />
         <div className="mt-12">
           <Reveal>

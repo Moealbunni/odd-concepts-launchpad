@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Section } from "@/components/primitives/Section";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { siteConfig } from "@/config/site";
+import { useT } from "@/i18n/LanguageContext";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -21,46 +22,40 @@ export const Route = createFileRoute("/terms")({
 });
 
 function TermsPage() {
+  const t = useT();
   return (
     <Section className="pt-32 md:pt-40">
       <div className="max-w-3xl">
         <SectionHeading
           as="h1"
-          eyebrow="Terms"
-          title="Terms of use."
-          subtitle="The short version — no surprises."
+          eyebrow={t.terms.eyebrow}
+          title={t.terms.title}
+          subtitle={t.terms.subtitle}
         />
         <div className="mt-12 space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
           <p>
-            <strong className="text-foreground">This site.</strong> The
-            Odd Concepts Digital website is provided for information and
-            enquiry only. Content, wording, visuals and structure are
-            ours — please don&rsquo;t copy or reuse them without asking.
+            <strong className="text-foreground">{t.terms.siteH}</strong>{" "}
+            {t.terms.siteB}
           </p>
           <p>
-            <strong className="text-foreground">Work shown.</strong> Any
-            portfolio pieces marked &ldquo;Concept&rdquo; are creative
-            demonstrations of the standard we build to, not paid client work.
+            <strong className="text-foreground">{t.terms.workShownH}</strong>{" "}
+            {t.terms.workShownB}
           </p>
           <p>
-            <strong className="text-foreground">Growth Plan.</strong> The
-            Growth Plan is offered free of charge with no obligation. It
-            reflects our honest opinion at the time of writing and is not a
-            guarantee of results.
+            <strong className="text-foreground">{t.terms.growthPlanH}</strong>{" "}
+            {t.terms.growthPlanB}
           </p>
           <p>
-            <strong className="text-foreground">Liability.</strong> We take
-            reasonable care with the information on this site, but we
-            can&rsquo;t accept liability for decisions made purely on the
-            basis of pages here. Anything binding will always be set out in
-            writing when we engage.
+            <strong className="text-foreground">{t.terms.liabilityH}</strong>{" "}
+            {t.terms.liabilityB}
           </p>
           <p>
-            <strong className="text-foreground">Contact.</strong> Questions?
-            Email{" "}
+            <strong className="text-foreground">{t.terms.contactH}</strong>{" "}
+            {t.terms.contactB}{" "}
             <a
               href={`mailto:${siteConfig.email}`}
               className="text-foreground underline underline-offset-4 hover:opacity-80"
+              dir="ltr"
             >
               {siteConfig.email}
             </a>
