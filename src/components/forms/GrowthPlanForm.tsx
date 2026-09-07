@@ -171,7 +171,10 @@ export function GrowthPlanForm() {
       });
       // Non-2xx means the enquiry was not delivered — say so honestly and
       // offer the WhatsApp / email fallback instead of a false confirmation.
-      if (!res.ok) {
+      const payload = (await res.json().catch(() => null)) as
+        | { ok?: boolean }
+        | null;
+      if (!res.ok || !payload?.ok) {
         console.warn("Growth plan submission returned", res.status);
         setSendFailed(true);
       }
