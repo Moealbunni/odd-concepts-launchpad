@@ -34,10 +34,6 @@ const availableNow: Service[] = [
   {
     name: "AI Avatar Videos",
     line: "Polished brand videos at a pace and cost that scales.",
-    image: {
-      src: speakerAsset.url,
-      alt: "Presenter holding a smart speaker product toward the camera",
-    },
   },
   {
     name: "Meta Ads",
