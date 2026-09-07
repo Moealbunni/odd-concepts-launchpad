@@ -129,17 +129,18 @@ export const Route = createFileRoute("/api/public/growth-plan")({
                 Authorization: `Bearer ${lovableKey}`,
                 "X-Connection-Api-Key": resendKey,
               },
-            body: JSON.stringify({
-              from:
-                process.env.RESEND_FROM ||
-                "Odd Concepts Growth Plan <onboarding@resend.dev>",
-              to: [OWNER_EMAIL],
-              reply_to: data.email,
-              subject: `Growth Plan enquiry — ${data.businessName}`,
-              html: renderHtml(data),
-              text: renderText(data),
-            }),
-          });
+              body: JSON.stringify({
+                from:
+                  process.env.RESEND_FROM ||
+                  "Odd Concepts Digital <growth@oddconceptsdigital.com>",
+                to: [OWNER_EMAIL],
+                reply_to: data.email,
+                subject: `Growth Plan enquiry — ${data.businessName}`,
+                html: renderHtml(data),
+                text: renderText(data),
+              }),
+            },
+          );
 
           if (!res.ok) {
             const errBody = await res.text();
