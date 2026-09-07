@@ -32,20 +32,17 @@ function WorkPage() {
   return (
     <>
       <Section className="pt-32 md:pt-40 pb-0">
-        <div className="mx-auto max-w-3xl text-center">
-          <SectionHeading
-            as="h1"
-            align="center"
-            eyebrow="Work"
-            title={
-              <>
-                The standard we{" "}
-                <span className="gradient-text">build to</span>.
-              </>
-            }
-            subtitle="We're a new studio, so we won't dress up someone else's work as ours. What you see here is concept work — clearly labelled — until real client work is ready to sit beside it."
-          />
-        </div>
+        <SectionHeading
+          as="h1"
+          eyebrow="Work"
+          title={
+            <>
+              The standard we{" "}
+              <span className="gradient-text">build to</span>.
+            </>
+          }
+          subtitle="We're a new studio, so we won't dress up someone else's work as ours. What you see here is concept work — clearly labelled — until real client work is ready to sit beside it."
+        />
       </Section>
       <ClientSites />
       <MediaShowcase />

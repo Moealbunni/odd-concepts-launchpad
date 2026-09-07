@@ -31,20 +31,17 @@ function ServicesPage() {
   return (
     <>
       <Section className="pt-32 md:pt-40 pb-0">
-        <div className="mx-auto max-w-3xl text-center">
-          <SectionHeading
-            as="h1"
-            align="center"
-            eyebrow="Services"
-            title={
-              <>
-                Not a menu.{" "}
-                <span className="gradient-text">One connected system.</span>
-              </>
-            }
-            subtitle="Every service below plugs into a stage of your growth — visibility, trust, preference, capture, response and growth. You can start with the piece that hurts most; we design the rest so it fits."
-          />
-        </div>
+        <SectionHeading
+          as="h1"
+          eyebrow="Services"
+          title={
+            <>
+              Not a menu.{" "}
+              <span className="gradient-text">One connected system.</span>
+            </>
+          }
+          subtitle="Every service below plugs into a stage of your growth — visibility, trust, preference, capture, response and growth. You can start with the piece that hurts most; we design the rest so it fits."
+        />
       </Section>
       <ServicesOverview />
       <WeUnderstand />

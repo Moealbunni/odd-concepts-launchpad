@@ -44,8 +44,6 @@ export function FaqSection() {
       <SectionHeading
         eyebrow="FAQ"
         title={<span id="faq-heading">Straight answers.</span>}
-        align="center"
-        className="mx-auto"
       />
 
       <Reveal delay={120} className="mx-auto mt-12 max-w-3xl">

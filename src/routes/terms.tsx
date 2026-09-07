@@ -23,7 +23,7 @@ export const Route = createFileRoute("/terms")({
 function TermsPage() {
   return (
     <Section className="pt-32 md:pt-40">
-      <div className="mx-auto max-w-3xl">
+      <div className="max-w-3xl">
         <SectionHeading
           as="h1"
           eyebrow="Terms"
