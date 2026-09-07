@@ -29,13 +29,13 @@ export function FinalCta() {
             <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
               Get your free Growth Plan. No cost, no obligation, no pressure.
             </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <BrandButton asChild size="lg">
+            <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <BrandButton asChild size="lg" className="w-full sm:w-auto">
                 <Link to={siteConfig.primaryCta.href}>
                   {siteConfig.primaryCta.label}
                 </Link>
               </BrandButton>
-              <BrandButton asChild size="lg" variant="secondary">
+              <BrandButton asChild size="lg" variant="secondary" className="w-full sm:w-auto">
                 <a
                   href={siteConfig.whatsappUrl}
                   target="_blank"

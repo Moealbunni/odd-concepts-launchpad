@@ -37,7 +37,16 @@ function MediaCard({
   return (
     <Reveal delay={index * 80}>
       <Card className={wrapperClassName ? `overflow-hidden p-2 ${wrapperClassName}` : "overflow-hidden p-2"}>
+        <div className="min-w-0 px-1 pb-2 pt-1">
+          <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
+            {groupLabel[getGroup(item)]}
+          </p>
+          <h3 className="mt-1 text-sm font-medium leading-snug text-foreground">
+            {item.title}
+          </h3>
+        </div>
         <div style={{ aspectRatio: boxRatio }} className="w-full">
+
           <VideoPlayer
             title={item.title}
             tag={groupLabel[getGroup(item)]}
