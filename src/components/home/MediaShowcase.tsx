@@ -96,7 +96,9 @@ export function MediaShowcase() {
                   item={item}
                   index={i}
                   objectFit="cover"
+                  boxRatio="9/16"
                   wrapperClassName="mx-auto w-full max-w-[260px]"
+
                 />
               ))}
             </div>
