@@ -27,7 +27,7 @@ export function WhyOddConcepts() {
   return (
     <Section aria-labelledby="why-heading">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
-        <div className="lg:col-span-5">
+        <div className="lg:col-span-7">
           <SectionHeading
             eyebrow="About us"
             title={
@@ -45,7 +45,7 @@ export function WhyOddConcepts() {
           </Reveal>
         </div>
 
-        <Reveal delay={100} className="lg:col-span-3">
+        <Reveal delay={100} className="lg:col-span-5">
           <div className="media-frame h-full max-w-sm rounded-xl border border-border/60 lg:max-w-none">
             <img
               src={museumAsset.url}
@@ -56,35 +56,35 @@ export function WhyOddConcepts() {
             />
           </div>
         </Reveal>
-
-        <Reveal delay={140} className="lg:col-span-4">
-          <Card className="h-full p-7 md:p-8">
-            <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-              What matters here
-            </h3>
-            <ul className="mt-6 space-y-5">
-              {asideItems.map((item) => (
-                <li key={item.title} className="flex items-start gap-4">
-                  <span
-                    className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full border border-border bg-[hsl(var(--surface-elevated))]"
-                    aria-hidden
-                  >
-                    <item.icon className="size-4 text-muted-foreground" strokeWidth={1.5} />
-                  </span>
-                  <div className="flex-1">
-                    <span className="block text-sm font-medium text-foreground md:text-base">
-                      {item.title}
-                    </span>
-                    <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
-                      {item.line}
-                    </span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </Card>
-        </Reveal>
       </div>
+
+      <Reveal delay={140} className="mt-10">
+        <Card className="p-7 md:p-8">
+          <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            What matters here
+          </h3>
+          <ul className="mt-6 space-y-5">
+            {asideItems.map((item) => (
+              <li key={item.title} className="flex items-start gap-4">
+                <span
+                  className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full border border-border bg-[hsl(var(--surface-elevated))]"
+                  aria-hidden
+                >
+                  <item.icon className="size-4 text-muted-foreground" strokeWidth={1.5} />
+                </span>
+                <div className="flex-1">
+                  <span className="block text-sm font-medium text-foreground md:text-base">
+                    {item.title}
+                  </span>
+                  <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+                    {item.line}
+                  </span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </Card>
+      </Reveal>
     </Section>
   );
 }
