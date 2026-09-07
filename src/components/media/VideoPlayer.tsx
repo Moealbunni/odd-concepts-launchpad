@@ -19,6 +19,7 @@ interface VideoPlayerProps {
   posterUrl?: string;
   className?: string;
   objectFit?: "cover" | "contain";
+  onDimensions?: (ratio: number) => void;
 }
 
 /** In-place video player. Never autoplays; user must press play. Starts muted. */
@@ -29,6 +30,7 @@ export function VideoPlayer({
   posterUrl,
   className,
   objectFit = "cover",
+  onDimensions,
 }: VideoPlayerProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -141,7 +143,11 @@ export function VideoPlayer({
           }}
 
           onTimeUpdate={(e) => setProgress(e.currentTarget.currentTime)}
-          onLoadedMetadata={(e) => setDuration(e.currentTarget.duration || 0)}
+          onLoadedMetadata={(e) => {
+            setDuration(e.currentTarget.duration || 0);
+            const { videoWidth: w, videoHeight: h } = e.currentTarget;
+            if (w > 0 && h > 0) onDimensions?.(w / h);
+          }}
           onClick={togglePlay}
         />
       ) : (

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Section } from "@/components/primitives/Section";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { Card } from "@/components/primitives/Card";
@@ -31,16 +32,18 @@ function MediaCard({
   objectFit: "cover" | "contain";
   wrapperClassName?: string;
 }) {
+  const [liveRatio, setLiveRatio] = useState<number | null>(null);
   return (
     <Reveal delay={index * 80}>
       <Card className={wrapperClassName ? `overflow-hidden p-2 ${wrapperClassName}` : "overflow-hidden p-2"}>
-        <div style={{ aspectRatio: String(item.ratio) }} className="w-full">
+        <div style={{ aspectRatio: String(liveRatio ?? item.ratio) }} className="w-full">
           <VideoPlayer
             title={item.title}
             tag={groupLabel[getGroup(item)]}
             videoUrl={item.videoUrl}
             posterUrl={item.posterUrl}
             objectFit={objectFit}
+            onDimensions={setLiveRatio}
           />
         </div>
       </Card>
