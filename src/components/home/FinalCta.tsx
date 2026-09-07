@@ -3,8 +3,10 @@ import { Section } from "@/components/primitives/Section";
 import { Reveal } from "@/components/primitives/Reveal";
 import { BrandButton } from "@/components/primitives/BrandButton";
 import { siteConfig } from "@/config/site";
+import { useT } from "@/i18n/LanguageContext";
 
 export function FinalCta() {
+  const t = useT();
   return (
     <Section aria-labelledby="final-cta-heading">
       <Reveal>
@@ -23,17 +25,15 @@ export function FinalCta() {
               id="final-cta-heading"
               className="text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl"
             >
-              Ready to stop guessing and start{" "}
-              <span className="gradient-text">growing?</span>
+              {t.finalCta.heading}
+              <span className="gradient-text">{t.finalCta.headingGradient}</span>
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-              Get your free Growth Plan. No cost, no obligation, no pressure.
+              {t.finalCta.subtitle}
             </p>
             <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <BrandButton asChild size="lg" className="w-full sm:w-auto">
-                <Link to={siteConfig.primaryCta.href}>
-                  {siteConfig.primaryCta.label}
-                </Link>
+                <Link to={siteConfig.primaryCta.href}>{t.site.primaryCta}</Link>
               </BrandButton>
               <BrandButton asChild size="lg" variant="secondary" className="w-full sm:w-auto">
                 <a
@@ -41,7 +41,7 @@ export function FinalCta() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  WhatsApp Us
+                  {t.site.whatsappCta}
                 </a>
               </BrandButton>
             </div>
