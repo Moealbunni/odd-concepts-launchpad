@@ -1,11 +1,13 @@
 import { useRouterState } from "@tanstack/react-router";
 import { siteConfig } from "@/config/site";
+import { useT } from "@/i18n/LanguageContext";
 
 /**
  * Floating WhatsApp button — fixed bottom-right on every page.
  * Uses safe-area insets so it clears mobile home indicators.
  */
 export function WhatsAppFab() {
+  const t = useT();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   // Hide on the Growth Plan form so the FAB never overlaps the submit button.
   if (pathname === "/free-growth-plan") return null;
@@ -14,7 +16,7 @@ export function WhatsAppFab() {
       href={siteConfig.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Message us on WhatsApp"
+      aria-label={t.site.whatsappAria}
       className="fixed z-40 flex size-14 items-center justify-center rounded-full shadow-[0_10px_30px_-8px_rgba(37,211,102,0.55)] ring-1 ring-black/10 transition-transform duration-200 ease-out hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none motion-reduce:hover:scale-100"
       style={{
         backgroundColor: "#25D366",

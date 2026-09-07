@@ -339,12 +339,12 @@ function MobileDiagram({
 
   return (
     <div className="md:hidden">
-      <div className="relative pl-14">
+      <div className="relative ps-14">
         <svg
           viewBox={`0 0 48 ${totalH}`}
           width="48"
           height={totalH}
-          className="absolute left-0 top-0"
+          className="absolute start-0 top-0"
           role="img"
           aria-label={aria}
         >
