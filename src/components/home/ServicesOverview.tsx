@@ -74,35 +74,37 @@ const availableNow: Service[] = [
 
 function ServiceCard({ name, line, image, soon }: Service & { soon?: boolean }) {
   return (
-    <Card className="h-full hover:translate-y-0 hover:shadow-none">
-      <div className="flex items-start gap-3">
-        <span
-          className="mt-1.5 block size-2 shrink-0 rounded-full gradient-bg"
-          aria-hidden
-        />
-        <div className="flex-1">
-          <div className="flex items-center justify-between gap-3">
-            <h3 className="text-lg font-semibold text-foreground">{name}</h3>
-            {image && (
-              <img
-                src={image.src}
-                alt={image.alt}
-                loading="lazy"
-                decoding="async"
-                className="size-14 shrink-0 rounded-lg border border-border/60 object-cover"
-              />
-            )}
-          </div>
-          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-            {line}
-          </p>
+    <Card className={image ? "h-full overflow-hidden p-0 duration-300" : "h-full duration-300"}>
+      {image && (
+        <div className="media-frame aspect-[4/3] w-full border-b border-border/60">
+          <img
+            src={image.src}
+            alt={image.alt}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
         </div>
-      </div>
-      {soon && (
-        <span className="mt-4 inline-flex items-center rounded-full border border-border px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-          Soon
-        </span>
       )}
+      <div className={image ? "p-6" : undefined}>
+        <div className="flex items-start gap-3">
+          <span
+            className="mt-1.5 block size-2 shrink-0 rounded-full gradient-bg"
+            aria-hidden
+          />
+          <div className="flex-1">
+            <h3 className="text-lg font-semibold text-foreground">{name}</h3>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              {line}
+            </p>
+          </div>
+        </div>
+        {soon && (
+          <span className="mt-4 inline-flex items-center rounded-full border border-border px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+            Soon
+          </span>
+        )}
+      </div>
     </Card>
   );
 }

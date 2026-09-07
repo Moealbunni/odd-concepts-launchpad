@@ -86,14 +86,18 @@ function AboutPage() {
           </div>
 
           <Reveal delay={120}>
-            <img
-              src={palmAsset.url}
-              alt="Aerial night view of Palm Jumeirah lit up in blue and purple"
-              loading="lazy"
-              decoding="async"
-              className="w-full max-w-sm rounded-xl border border-border/60 object-cover md:max-w-none"
+            <div
+              className="media-frame w-full max-w-sm rounded-xl border border-border/60 md:max-w-none"
               style={{ aspectRatio: "4/5" }}
-            />
+            >
+              <img
+                src={palmAsset.url}
+                alt="Aerial night view of Palm Jumeirah lit up in blue and purple"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </Reveal>
         </div>
       </Section>

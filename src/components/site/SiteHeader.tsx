@@ -54,7 +54,7 @@ export function SiteHeader() {
               key={item.href}
               to={item.href}
               activeOptions={{ exact: item.href === "/" }}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground data-[status=active]:text-foreground"
+              className="relative text-sm text-muted-foreground transition-colors duration-300 ease-out hover:text-foreground data-[status=active]:text-foreground after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:transition-transform after:duration-300 after:ease-out after:gradient-bg hover:after:scale-x-100 data-[status=active]:after:scale-x-100"
             >
               {item.label}
             </Link>
