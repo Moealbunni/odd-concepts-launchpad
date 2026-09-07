@@ -126,7 +126,9 @@ export const Route = createFileRoute("/api/public/growth-plan")({
               Authorization: `Bearer ${apiKey}`,
             },
             body: JSON.stringify({
-              from: "Odd Concepts Growth Plan <onboarding@resend.dev>",
+              from:
+                process.env.RESEND_FROM ||
+                "Odd Concepts Growth Plan <onboarding@resend.dev>",
               to: [OWNER_EMAIL],
               reply_to: data.email,
               subject: `Growth Plan enquiry — ${data.businessName}`,
