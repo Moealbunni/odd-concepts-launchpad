@@ -4,10 +4,12 @@ import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { Card } from "@/components/primitives/Card";
 import { Reveal } from "@/components/primitives/Reveal";
 import { BrandButton } from "@/components/primitives/BrandButton";
+import speakerAsset from "@/assets/media/smart-speaker-product.jpg.asset.json";
 
 type Service = {
   name: string;
   line: string;
+  image?: { src: string; alt: string };
 };
 
 const availableNow: Service[] = [
@@ -34,6 +36,10 @@ const availableNow: Service[] = [
   {
     name: "AI Avatar Videos",
     line: "Polished brand videos at a pace and cost that scales.",
+    image: {
+      src: speakerAsset.url,
+      alt: "Presenter holding a smart speaker product toward the camera",
+    },
   },
   {
     name: "Meta Ads",
@@ -66,7 +72,7 @@ const availableNow: Service[] = [
 ];
 
 
-function ServiceCard({ name, line, soon }: Service & { soon?: boolean }) {
+function ServiceCard({ name, line, image, soon }: Service & { soon?: boolean }) {
   return (
     <Card className="h-full hover:translate-y-0 hover:shadow-none">
       <div className="flex items-start gap-3">
@@ -74,7 +80,8 @@ function ServiceCard({ name, line, soon }: Service & { soon?: boolean }) {
           className="mt-1.5 block size-2 shrink-0 rounded-full gradient-bg"
           aria-hidden
         />
-        <div>
+        <div className="flex-1">
+          <div className="flex items-center justify-between gap-3">
           <h3 className="text-lg font-semibold text-foreground">{name}</h3>
           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
             {line}
