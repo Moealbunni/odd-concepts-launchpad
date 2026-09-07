@@ -18,7 +18,8 @@ const tabs = [
   { value: "ugc", label: "UGC", items: ugc },
   { value: "photos", label: "Photos", items: photos },
   { value: "ads", label: "Ads", items: ads },
-];
+].filter((t) => t.items.length > 0);
+
 
 function PhotoCard({ item }: { item: MediaItem }) {
   return (
