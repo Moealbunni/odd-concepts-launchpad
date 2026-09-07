@@ -5,6 +5,7 @@ import { Reveal } from "@/components/primitives/Reveal";
 import { BrandButton } from "@/components/primitives/BrandButton";
 import { FinalCta } from "@/components/home/FinalCta";
 import { siteConfig } from "@/config/site";
+import { useT } from "@/i18n/LanguageContext";
 import palmAsset from "@/assets/media/palm-jumeirah-aerial.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
@@ -30,59 +31,50 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
+  const t = useT();
   return (
     <>
       <Section className="pt-32 md:pt-40">
         <div className="grid gap-10 md:grid-cols-[3fr_2fr] md:items-center md:gap-14">
           <div>
-          <SectionHeading
-            as="h1"
-            eyebrow="About"
-            title={
-              <>
-                A small studio with a{" "}
-                <span className="gradient-text">clear point of view</span>.
-              </>
-            }
-            subtitle="Odd Concepts Digital is a Dubai-based growth studio for ambitious local businesses. We design and run one connected system — websites, visibility, content and response — so attention turns into enquiries and enquiries turn into customers."
-          />
+            <SectionHeading
+              as="h1"
+              eyebrow={t.aboutPage.eyebrow}
+              title={
+                <>
+                  {t.aboutPage.title}
+                  <span className="gradient-text">
+                    {t.aboutPage.titleGradient}
+                  </span>
+                  {t.aboutPage.titleAfter}
+                </>
+              }
+              subtitle={t.aboutPage.subtitle}
+            />
 
-          <div className="mt-14 space-y-10 text-base leading-relaxed text-muted-foreground md:text-lg">
-            <Reveal>
-              <p>
-                We&rsquo;re new — and we&rsquo;d rather be honest about that
-                than borrow someone else&rsquo;s proof. What you see across
-                this site is our own concept work, clearly labelled. When we
-                have client work we&rsquo;re proud to show, it will live right
-                beside it.
-              </p>
-            </Reveal>
-            <Reveal delay={80}>
-              <p>
-                We work best with owners who care about the details, want a
-                partner rather than a vendor, and would rather grow steadily
-                on a solid foundation than chase a shortcut. If that sounds
-                like you, the free Growth Plan is the easiest way to start.
-              </p>
-            </Reveal>
-          </div>
+            <div className="mt-14 space-y-10 text-base leading-relaxed text-muted-foreground md:text-lg">
+              <Reveal>
+                <p>{t.aboutPage.p1}</p>
+              </Reveal>
+              <Reveal delay={80}>
+                <p>{t.aboutPage.p2}</p>
+              </Reveal>
+            </div>
 
-          <Reveal delay={160} className="mt-12 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
-            <BrandButton asChild size="lg" className="w-full sm:w-auto">
-              <Link to={siteConfig.primaryCta.href}>
-                {siteConfig.primaryCta.label}
-              </Link>
-            </BrandButton>
-            <BrandButton asChild size="lg" variant="secondary" className="w-full sm:w-auto">
-              <a
-                href={siteConfig.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp Us
-              </a>
-            </BrandButton>
-          </Reveal>
+            <Reveal delay={160} className="mt-12 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+              <BrandButton asChild size="lg" className="w-full sm:w-auto">
+                <Link to={siteConfig.primaryCta.href}>{t.site.primaryCta}</Link>
+              </BrandButton>
+              <BrandButton asChild size="lg" variant="secondary" className="w-full sm:w-auto">
+                <a
+                  href={siteConfig.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.site.whatsappCta}
+                </a>
+              </BrandButton>
+            </Reveal>
           </div>
 
           <Reveal delay={120}>
@@ -92,7 +84,7 @@ function AboutPage() {
             >
               <img
                 src={palmAsset.url}
-                alt="Aerial night view of Palm Jumeirah lit up in blue and purple"
+                alt={t.aboutPage.imageAlt}
                 loading="lazy"
                 decoding="async"
                 className="h-full w-full object-cover"

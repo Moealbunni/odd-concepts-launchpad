@@ -12,6 +12,7 @@ import { ConceptWork } from "@/components/home/ConceptWork";
 import { WhyOddConcepts } from "@/components/home/WhyOddConcepts";
 import { FaqSection, faqs } from "@/components/home/FaqSection";
 import { FinalCta } from "@/components/home/FinalCta";
+import { useT } from "@/i18n/LanguageContext";
 import skylineAsset from "@/assets/media/dubai-skyline.jpg.asset.json";
 
 
@@ -44,6 +45,7 @@ export const Route = createFileRoute("/")({
 });
 
 function HomePage() {
+  const t = useT();
   return (
     <>
       <section aria-labelledby="hero-heading" className="relative overflow-hidden">
@@ -60,7 +62,7 @@ function HomePage() {
           <Reveal>
             <span className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
               <span className="size-1.5 rounded-full gradient-bg" aria-hidden />
-              Digital growth studio · Dubai
+              {t.hero.eyebrow}
             </span>
           </Reveal>
 
@@ -69,45 +71,43 @@ function HomePage() {
               id="hero-heading"
               className="depth-heading text-[clamp(2.75rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.02em] text-foreground"
             >
-              We don’t just build websites. We build the system that{" "}
-              <span className="gradient-text">brings you customers.</span>
+              {t.hero.h1}
+              <span className="gradient-text">{t.hero.h1Gradient}</span>
             </h1>
           </Reveal>
 
           <Reveal delay={220} className="mt-8 max-w-[55ch]">
             <p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
-              Premium websites, sharper visibility and modern content — designed and run as one system that turns attention into enquiries and customers.
+              {t.hero.subhead}
             </p>
           </Reveal>
 
           <Reveal delay={320} className="mt-12 w-full">
             <div className="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
               <BrandButton asChild size="lg" className="w-full sm:w-auto">
-                <Link to={siteConfig.primaryCta.href}>
-                  {siteConfig.primaryCta.label}
-                </Link>
+                <Link to={siteConfig.primaryCta.href}>{t.site.primaryCta}</Link>
               </BrandButton>
               <BrandButton asChild size="lg" variant="ghost" className="w-full sm:w-auto">
-                <a href="#growth-system">See the Growth System</a>
+                <a href="#growth-system">{t.hero.secondaryLink}</a>
               </BrandButton>
             </div>
 
             <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
-              <span>or</span>
+              <span>{t.hero.or}</span>
               <a
                 href={siteConfig.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline-offset-4 hover:text-foreground hover:underline"
               >
-                message us on WhatsApp
+                {t.hero.whatsappInline}
               </a>
             </div>
           </Reveal>
 
           <Reveal delay={420} className="mt-10">
             <p className="font-mono text-xs tracking-[0.12em] text-muted-foreground/60">
-              No inflated claims · No borrowed proof · Built with care in Dubai
+              {t.hero.reassurance}
             </p>
           </Reveal>
         </Container>
@@ -121,7 +121,7 @@ function HomePage() {
               >
                 <img
                   src={skylineAsset.url}
-                  alt="Dubai skyline at night with the Burj Khalifa and glowing light trails"
+                  alt={t.hero.skylineAlt}
                   loading="lazy"
                   decoding="async"
                   width={1920}
@@ -131,10 +131,10 @@ function HomePage() {
               </div>
               <figcaption className="mt-6 text-center">
                 <span className="block text-xs font-medium uppercase tracking-[0.28em] text-muted-foreground">
-                  UAE Today
+                  {t.hero.captionSmall}
                 </span>
                 <span className="mt-2 block text-lg font-semibold tracking-[-0.01em] sm:text-2xl">
-                  <span className="gradient-text">World Wide Tomorrow</span>
+                  <span className="gradient-text">{t.hero.captionLarge}</span>
                 </span>
               </figcaption>
             </figure>
