@@ -110,32 +110,37 @@ export const Route = createFileRoute("/api/public/growth-plan")({
         }
         const data = parsed.data;
 
-        const apiKey = process.env.RESEND_API_KEY;
-        if (!apiKey) {
-          console.error("RESEND_API_KEY is not configured");
+        const resendKey = process.env.RESEND_API_KEY;
+        const lovableKey = process.env.LOVABLE_API_KEY;
+        if (!resendKey || !lovableKey) {
+          console.error("Resend connector is not configured");
           // Return 200 so the client can show the honest WhatsApp / email
           // fallback instead of the app surfacing a server error.
           return Response.json({ ok: false, error: "email_not_configured" });
         }
 
         try {
-          const res = await fetch("https://api.resend.com/emails", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${apiKey}`,
+          const res = await fetch(
+            "https://connector-gateway.lovable.dev/resend/emails",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${lovableKey}`,
+                "X-Connection-Api-Key": resendKey,
+              },
+              body: JSON.stringify({
+                from:
+                  process.env.RESEND_FROM ||
+                  "Odd Concepts Digital <growth@oddconceptsdigital.com>",
+                to: [OWNER_EMAIL],
+                reply_to: data.email,
+                subject: `Growth Plan enquiry — ${data.businessName}`,
+                html: renderHtml(data),
+                text: renderText(data),
+              }),
             },
-            body: JSON.stringify({
-              from:
-                process.env.RESEND_FROM ||
-                "Odd Concepts Growth Plan <onboarding@resend.dev>",
-              to: [OWNER_EMAIL],
-              reply_to: data.email,
-              subject: `Growth Plan enquiry — ${data.businessName}`,
-              html: renderHtml(data),
-              text: renderText(data),
-            }),
-          });
+          );
 
           if (!res.ok) {
             const errBody = await res.text();
