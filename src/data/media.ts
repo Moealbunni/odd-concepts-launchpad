@@ -41,6 +41,7 @@ export type MediaItem = {
 export const mediaItems: MediaItem[] = [
   { id: "m-room44", title: "Venue Promo", ratio: 1620 / 1080, videoUrl: room44Video.url, posterUrl: room44Poster.url },
   { id: "m-amer", title: "Company Mascot & Storyline", ratio: 1620 / 1080, videoUrl: amerrVideo.url, posterUrl: amerrPoster.url },
+  { id: "m-4429", title: "Cinematic Realism — Story Telling", ratio: 1936 / 1080, videoUrl: v4429.url, posterUrl: p4429.url },
   { id: "m-4745", title: "Company Promo I", ratio: 1080 / 1920, videoUrl: v4745.url, posterUrl: p4745.url },
   { id: "m-5217", title: "Company Promo II", ratio: 1620 / 1080, videoUrl: v5217.url, posterUrl: p5217.url },
   { id: "m-4744", title: "Company Promo III", ratio: 1080 / 1920, videoUrl: v4744.url, posterUrl: p4744.url },
