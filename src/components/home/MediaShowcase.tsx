@@ -83,7 +83,7 @@ export function MediaShowcase() {
           <TabsContent value="cinematic" className="mt-10">
             <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8">
               {cinematicItems.map((item, i) => (
-                <MediaCard key={item.id} item={item} index={i} objectFit="contain" />
+                <MediaCard key={item.id} item={item} index={i} objectFit="contain" boxRatio="16/9" />
               ))}
             </div>
           </TabsContent>
