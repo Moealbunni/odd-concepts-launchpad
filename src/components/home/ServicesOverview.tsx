@@ -82,7 +82,17 @@ function ServiceCard({ name, line, image, soon }: Service & { soon?: boolean }) 
         />
         <div className="flex-1">
           <div className="flex items-center justify-between gap-3">
-          <h3 className="text-lg font-semibold text-foreground">{name}</h3>
+            <h3 className="text-lg font-semibold text-foreground">{name}</h3>
+            {image && (
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+                decoding="async"
+                className="size-14 shrink-0 rounded-lg border border-border/60 object-cover"
+              />
+            )}
+          </div>
           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
             {line}
           </p>
