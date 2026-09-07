@@ -8,6 +8,8 @@ import v3761 from "@/assets/media/img_3761.mp4.asset.json";
 import p3761 from "@/assets/media/img_3761.jpg.asset.json";
 import v4062 from "@/assets/media/img_4062.mp4.asset.json";
 import p4062 from "@/assets/media/img_4062.jpg.asset.json";
+import v4429 from "@/assets/media/img_4429.mp4.asset.json";
+import p4429 from "@/assets/media/img_4429.jpg.asset.json";
 import v4370 from "@/assets/media/img_4370.mp4.asset.json";
 import p4370 from "@/assets/media/img_4370.jpg.asset.json";
 import v4378 from "@/assets/media/img_4378.mp4.asset.json";
