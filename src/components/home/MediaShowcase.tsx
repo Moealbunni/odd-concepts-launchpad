@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { Section } from "@/components/primitives/Section";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { Card } from "@/components/primitives/Card";
@@ -25,31 +25,32 @@ function MediaCard({
   item,
   index,
   objectFit,
+  boxRatio,
   wrapperClassName,
 }: {
   item: MediaItem;
   index: number;
   objectFit: "cover" | "contain";
+  boxRatio: string;
   wrapperClassName?: string;
 }) {
-  const [liveRatio, setLiveRatio] = useState<number | null>(null);
   return (
     <Reveal delay={index * 80}>
       <Card className={wrapperClassName ? `overflow-hidden p-2 ${wrapperClassName}` : "overflow-hidden p-2"}>
-        <div style={{ aspectRatio: String(liveRatio ?? item.ratio) }} className="w-full">
+        <div style={{ aspectRatio: boxRatio }} className="w-full">
           <VideoPlayer
             title={item.title}
             tag={groupLabel[getGroup(item)]}
             videoUrl={item.videoUrl}
             posterUrl={item.posterUrl}
             objectFit={objectFit}
-            onDimensions={setLiveRatio}
           />
         </div>
       </Card>
     </Reveal>
   );
 }
+
 
 export function MediaShowcase() {
   return (
@@ -82,7 +83,7 @@ export function MediaShowcase() {
           <TabsContent value="cinematic" className="mt-10">
             <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8">
               {cinematicItems.map((item, i) => (
-                <MediaCard key={item.id} item={item} index={i} objectFit="contain" />
+                <MediaCard key={item.id} item={item} index={i} objectFit="contain" boxRatio="16/9" />
               ))}
             </div>
           </TabsContent>
@@ -95,7 +96,9 @@ export function MediaShowcase() {
                   item={item}
                   index={i}
                   objectFit="cover"
+                  boxRatio="9/16"
                   wrapperClassName="mx-auto w-full max-w-[260px]"
+
                 />
               ))}
             </div>
