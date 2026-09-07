@@ -74,7 +74,7 @@ const availableNow: Service[] = [
 
 function ServiceCard({ name, line, image, soon }: Service & { soon?: boolean }) {
   return (
-    <Card className={image ? "h-full overflow-hidden p-0" : "h-full"}>
+    <Card className={image ? "h-full overflow-hidden p-0 duration-300" : "h-full duration-300"}>
       {image && (
         <div className="media-frame aspect-[4/3] w-full border-b border-border/60">
           <img
