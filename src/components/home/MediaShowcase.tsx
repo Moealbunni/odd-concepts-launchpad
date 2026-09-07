@@ -90,13 +90,12 @@ export function MediaShowcase() {
             <TabsTrigger
               key={t.value}
               value={t.value}
-              className="relative rounded-none border-0 bg-transparent px-4 py-3 text-sm font-medium text-muted-foreground shadow-none data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none after:absolute after:inset-x-2 after:bottom-0 after:h-[2px] after:rounded-full after:opacity-0 after:content-[''] data-[state=active]:after:opacity-100"
-              style={{ ["--tw-after" as string]: "" }}
+              className="relative rounded-none border-0 bg-transparent px-4 py-3 text-sm font-medium text-muted-foreground shadow-none data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none"
             >
               <span className="relative z-10">{t.label}</span>
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-x-2 bottom-0 h-[2px] rounded-full opacity-0 motion-safe:transition-opacity data-[state=active]:opacity-100 [[data-state=active]_&]:opacity-100"
+                className="pointer-events-none absolute inset-x-2 bottom-0 h-[2px] rounded-full opacity-0 motion-safe:transition-opacity [[data-state=active]_&]:opacity-100"
                 style={{ backgroundImage: "var(--gradient-brand)" }}
               />
             </TabsTrigger>
