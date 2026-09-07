@@ -31,6 +31,18 @@ export function TheReality() {
             </p>
           </div>
         </Reveal>
+        </div>
+
+        <Reveal delay={200}>
+          <img
+            src={lighttrailsAsset.url}
+            alt="Dubai city street at night with blue light trails rising between towers"
+            loading="lazy"
+            decoding="async"
+            className="w-full max-w-sm rounded-xl border border-border/60 object-cover md:max-w-none"
+            style={{ aspectRatio: "4/5" }}
+          />
+        </Reveal>
       </div>
     </Section>
   );
