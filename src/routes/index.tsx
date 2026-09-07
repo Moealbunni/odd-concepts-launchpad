@@ -12,6 +12,8 @@ import { ConceptWork } from "@/components/home/ConceptWork";
 import { WhyOddConcepts } from "@/components/home/WhyOddConcepts";
 import { FaqSection, faqs } from "@/components/home/FaqSection";
 import { FinalCta } from "@/components/home/FinalCta";
+import skylineAsset from "@/assets/media/dubai-skyline.jpg.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -109,7 +111,37 @@ function HomePage() {
             </p>
           </Reveal>
         </Container>
+
+        <Container className="pb-20 sm:pb-24">
+          <Reveal delay={120}>
+            <figure className="m-0">
+              <div
+                className="overflow-hidden rounded-2xl border border-border/60 bg-background/40 shadow-2xl"
+                style={{ aspectRatio: "1920 / 815" }}
+              >
+                <img
+                  src={skylineAsset.url}
+                  alt="Dubai skyline at night with the Burj Khalifa and glowing light trails"
+                  loading="lazy"
+                  decoding="async"
+                  width={1920}
+                  height={815}
+                  className="h-full w-full object-cover object-center"
+                />
+              </div>
+              <figcaption className="mt-6 text-center">
+                <span className="block text-xs font-medium uppercase tracking-[0.28em] text-muted-foreground">
+                  UAE Today
+                </span>
+                <span className="mt-2 block text-lg font-semibold tracking-[-0.01em] sm:text-2xl">
+                  <span className="gradient-text">World Wide Tomorrow</span>
+                </span>
+              </figcaption>
+            </figure>
+          </Reveal>
+        </Container>
       </section>
+
 
       <TheReality />
       <GrowthSystem />
