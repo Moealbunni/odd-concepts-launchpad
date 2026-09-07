@@ -4,11 +4,14 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import { BrandButton } from "@/components/primitives/BrandButton";
+import { useT } from "@/i18n/LanguageContext";
 import { Wordmark } from "./Wordmark";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const mainNav = siteConfig.nav.filter((n) => n.href !== "/free-growth-plan");
 
 export function SiteHeader() {
+  const t = useT();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -54,38 +57,42 @@ export function SiteHeader() {
               key={item.href}
               to={item.href}
               activeOptions={{ exact: item.href === "/" }}
-              className="relative text-sm text-muted-foreground transition-colors duration-300 ease-out hover:text-foreground data-[status=active]:text-foreground after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:transition-transform after:duration-300 after:ease-out after:gradient-bg hover:after:scale-x-100 data-[status=active]:after:scale-x-100"
+              className="relative text-sm text-muted-foreground transition-colors duration-300 ease-out hover:text-foreground data-[status=active]:text-foreground after:absolute after:-bottom-1.5 after:start-0 after:h-px after:w-full after:origin-[left] after:scale-x-0 after:transition-transform after:duration-300 after:ease-out after:gradient-bg hover:after:scale-x-100 data-[status=active]:after:scale-x-100 rtl:after:origin-[right]"
             >
-              {item.label}
+              {t.nav[item.key]}
             </Link>
           ))}
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
+          <LanguageSwitcher />
           <BrandButton asChild variant="secondary" size="sm">
             <a
               href={siteConfig.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              WhatsApp Us
+              {t.site.whatsappCta}
             </a>
           </BrandButton>
           <BrandButton asChild size="sm">
-            <Link to={siteConfig.primaryCta.href}>{siteConfig.primaryCta.label}</Link>
+            <Link to={siteConfig.primaryCta.href}>{t.site.primaryCta}</Link>
           </BrandButton>
         </div>
 
-        <button
-          type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-foreground md:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher />
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-foreground"
+            aria-label={open ? t.site.closeMenu : t.site.openMenu}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -104,7 +111,7 @@ export function SiteHeader() {
               activeOptions={{ exact: item.href === "/" }}
               className="rounded-lg px-3 py-3 text-base text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground data-[status=active]:text-foreground"
             >
-              {item.label}
+              {t.nav[item.key]}
             </Link>
           ))}
           <div className="mt-4 flex flex-col gap-3">
@@ -114,11 +121,11 @@ export function SiteHeader() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                WhatsApp Us
+                {t.site.whatsappCta}
               </a>
             </BrandButton>
             <BrandButton asChild>
-              <Link to={siteConfig.primaryCta.href}>{siteConfig.primaryCta.label}</Link>
+              <Link to={siteConfig.primaryCta.href}>{t.site.primaryCta}</Link>
             </BrandButton>
           </div>
         </nav>
