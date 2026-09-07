@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { Card } from "@/components/primitives/Card";
 import { Reveal } from "@/components/primitives/Reveal";
 import { VideoPlayer } from "@/components/media/VideoPlayer";
+import { VideoPlaybackProvider } from "@/components/media/VideoPlaybackContext";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   ads,
@@ -79,6 +80,7 @@ function MediaGrid({ items }: { items: MediaItem[] }) {
 export function MediaShowcase() {
   return (
     <Section aria-labelledby="media-showcase-heading">
+      <VideoPlaybackProvider>
       <SectionHeading
         eyebrow="Studio output"
         title={<span id="media-showcase-heading">Video, UGC, photos &amp; ads.</span>}
@@ -109,6 +111,7 @@ export function MediaShowcase() {
           </TabsContent>
         ))}
       </Tabs>
+      </VideoPlaybackProvider>
     </Section>
   );
 }

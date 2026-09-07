@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import {
   Pause,
   Play,
@@ -8,6 +8,7 @@ import {
   VolumeX,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useVideoPlayback } from "./VideoPlaybackContext";
 
 interface VideoPlayerProps {
   title: string;
@@ -17,7 +18,7 @@ interface VideoPlayerProps {
   className?: string;
 }
 
-/** In-place video player. Never autoplays; user must press play. */
+/** In-place video player. Never autoplays; user must press play. Starts muted. */
 export function VideoPlayer({
   title,
   tag,
@@ -29,10 +30,12 @@ export function VideoPlayer({
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [started, setStarted] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(true);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [controlsVisible, setControlsVisible] = useState(false);
+  const playback = useVideoPlayback();
+  const playerId = useId();
 
   const showControls = useCallback(() => {
     setControlsVisible(true);
@@ -45,6 +48,14 @@ export function VideoPlayer({
   useEffect(() => () => {
     if (hideTimer.current) clearTimeout(hideTimer.current);
   }, []);
+
+  useEffect(() => {
+    if (!playback) return;
+    return playback.register(playerId, () => {
+      videoRef.current?.pause();
+    });
+  }, [playback, playerId]);
+
 
   const togglePlay = useCallback(() => {
     const el = videoRef.current;
@@ -88,15 +99,19 @@ export function VideoPlayer({
           poster={posterUrl}
           preload="metadata"
           playsInline
+          muted={muted}
           className="h-full w-full object-cover"
           onPlay={() => {
             setPlaying(true);
+            playback?.notifyPlaying(playerId);
             showControls();
           }}
           onPause={() => {
             setPlaying(false);
+            playback?.notifyStopped(playerId);
             setControlsVisible(true);
           }}
+
           onTimeUpdate={(e) => setProgress(e.currentTarget.currentTime)}
           onLoadedMetadata={(e) => setDuration(e.currentTarget.duration || 0)}
           onClick={togglePlay}
