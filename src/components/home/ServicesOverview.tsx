@@ -4,12 +4,10 @@ import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { Card } from "@/components/primitives/Card";
 import { Reveal } from "@/components/primitives/Reveal";
 import { BrandButton } from "@/components/primitives/BrandButton";
-import speakerAsset from "@/assets/media/smart-speaker-product.jpg.asset.json";
 
 type Service = {
   name: string;
   line: string;
-  image?: { src: string; alt: string };
 };
 
 const availableNow: Service[] = [
@@ -36,10 +34,6 @@ const availableNow: Service[] = [
   {
     name: "AI Avatar Videos",
     line: "Polished brand videos at a pace and cost that scales.",
-    image: {
-      src: speakerAsset.url,
-      alt: "Presenter holding a smart speaker product toward the camera",
-    },
   },
   {
     name: "Meta Ads",
@@ -72,21 +66,10 @@ const availableNow: Service[] = [
 ];
 
 
-function ServiceCard({ name, line, image, soon }: Service & { soon?: boolean }) {
+function ServiceCard({ name, line, soon }: Service & { soon?: boolean }) {
   return (
-    <Card className={image ? "h-full overflow-hidden p-0 duration-300" : "h-full duration-300"}>
-      {image && (
-        <div className="media-frame aspect-[4/3] w-full border-b border-border/60">
-          <img
-            src={image.src}
-            alt={image.alt}
-            loading="lazy"
-            decoding="async"
-            className="h-full w-full object-cover"
-          />
-        </div>
-      )}
-      <div className={image ? "p-6" : undefined}>
+    <Card className="h-full duration-300">
+      <div>
         <div className="flex items-start gap-3">
           <span
             className="mt-1.5 block size-2 shrink-0 rounded-full gradient-bg"
