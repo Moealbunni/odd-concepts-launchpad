@@ -4,6 +4,7 @@ import { Section } from "@/components/primitives/Section";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { BrandButton } from "@/components/primitives/BrandButton";
 import { siteConfig } from "@/config/site";
+import { useT } from "@/i18n/LanguageContext";
 
 /**
  * The six-stage growth system — one connected system that ascends from
@@ -20,48 +21,6 @@ import { siteConfig } from "@/config/site";
  */
 
 type Stage = { n: string; name: string; verb: string; line: string };
-
-const stages: Stage[] = [
-  {
-    n: "01",
-    name: "Visibility",
-    verb: "Get found",
-    line: "When people search, you’re the one they find.",
-  },
-  {
-    n: "02",
-    name: "Trust",
-    verb: "Look premium",
-    line: "A first impression that makes you the obvious choice.",
-  },
-  {
-    n: "03",
-    name: "Preference",
-    verb: "Get chosen",
-    line: "Reputation and content that tip the decision your way.",
-  },
-  {
-    n: "04",
-    name: "Capture",
-    verb: "Get the enquiry",
-    line: "Make it effortless to take the next step.",
-  },
-  {
-    n: "05",
-    name: "Response",
-    verb: "Never miss a lead",
-    line: "Every enquiry answered, day or night.",
-  },
-  {
-    n: "06",
-    name: "Growth",
-    verb: "Grow on autopilot",
-    line: "One visit becomes repeat, compounding revenue.",
-  },
-];
-
-const ariaSummary =
-  "Growth system diagram: six connected stages that turn attention into growth — Visibility, Trust, Preference, Capture, Response, Growth.";
 
 /** Hook: fires `true` once when the element scrolls into view. */
 function useInView<T extends HTMLElement>(threshold = 0.25) {
@@ -97,6 +56,8 @@ function useReducedMotion() {
 }
 
 export function GrowthSystem() {
+  const t = useT();
+  const stages = t.growth.stages;
   const [ref, inView] = useInView<HTMLDivElement>(0.2);
   const reduced = useReducedMotion();
   const play = inView || reduced;
@@ -108,30 +69,38 @@ export function GrowthSystem() {
       className="bg-[hsl(var(--surface-elevated))]/40"
     >
       <SectionHeading
-        eyebrow="The Growth System"
+        eyebrow={t.growth.eyebrow}
         title={
           <span id="growth-heading">
-            One connected system — from invisible to{" "}
-            <span className="gradient-text">growing</span>.
+            {t.growth.title}
+            <span className="gradient-text">{t.growth.titleGradient}</span>
+            {t.growth.titleAfter}
           </span>
         }
-        subtitle="Six stages, one engine. Each stage builds on the last — turning quiet visibility into a business that grows on its own."
+        subtitle={t.growth.subtitle}
       />
 
       <div ref={ref} className="mt-16">
-        <DesktopDiagram play={play} reduced={reduced} />
-        <MobileDiagram play={play} reduced={reduced} />
+        <DesktopDiagram
+          play={play}
+          reduced={reduced}
+          stages={stages}
+          aria={t.growth.aria}
+          stagesAria={t.growth.stagesAria}
+        />
+        <MobileDiagram
+          play={play}
+          reduced={reduced}
+          stages={stages}
+          aria={t.growth.aria}
+        />
       </div>
 
       <div className="mt-14 flex flex-col items-center gap-3">
         <BrandButton asChild variant="secondary" size="lg">
-          <Link to={siteConfig.primaryCta.href}>
-            Map this system to your business
-          </Link>
+          <Link to={siteConfig.primaryCta.href}>{t.growth.button}</Link>
         </BrandButton>
-        <p className="text-xs text-muted-foreground">
-          Free Growth Plan — no pressure, no obligation.
-        </p>
+        <p className="text-xs text-muted-foreground">{t.growth.note}</p>
       </div>
     </Section>
   );
@@ -141,7 +110,19 @@ export function GrowthSystem() {
 /* Desktop: horizontal ascending curve                                */
 /* ------------------------------------------------------------------ */
 
-function DesktopDiagram({ play, reduced }: { play: boolean; reduced: boolean }) {
+function DesktopDiagram({
+  play,
+  reduced,
+  stages,
+  aria,
+  stagesAria,
+}: {
+  play: boolean;
+  reduced: boolean;
+  stages: Stage[];
+  aria: string;
+  stagesAria: string;
+}) {
   // Six evenly-spaced columns so the copy grid below aligns exactly.
   const W = 1200;
   const H = 440;
@@ -171,7 +152,7 @@ function DesktopDiagram({ play, reduced }: { play: boolean; reduced: boolean }) 
         viewBox={`0 0 ${W} ${H}`}
         className="h-auto w-full"
         role="img"
-        aria-label={ariaSummary}
+        aria-label={aria}
       >
         <defs>
           <linearGradient id="gs-grad" x1="0" y1="1" x2="1" y2="0">
@@ -294,7 +275,7 @@ function DesktopDiagram({ play, reduced }: { play: boolean; reduced: boolean }) 
       {/* Aligned copy grid — six columns match node x centres exactly */}
       <ul
         className="mt-4 grid grid-cols-6 gap-x-4"
-        aria-label="Growth system stages"
+        aria-label={stagesAria}
       >
         {stages.map((s, i) => {
           const delay = 700 + i * 100;
@@ -326,7 +307,17 @@ function DesktopDiagram({ play, reduced }: { play: boolean; reduced: boolean }) 
 /* Mobile: dedicated vertical variant                                 */
 /* ------------------------------------------------------------------ */
 
-function MobileDiagram({ play, reduced }: { play: boolean; reduced: boolean }) {
+function MobileDiagram({
+  play,
+  reduced,
+  stages,
+  aria,
+}: {
+  play: boolean;
+  reduced: boolean;
+  stages: Stage[];
+  aria: string;
+}) {
   // Fixed row height so the SVG curve maps precisely to node centres.
   const rowH = 128;
   const nodeCount = stages.length;
@@ -355,7 +346,7 @@ function MobileDiagram({ play, reduced }: { play: boolean; reduced: boolean }) {
           height={totalH}
           className="absolute left-0 top-0"
           role="img"
-          aria-label={ariaSummary}
+          aria-label={aria}
         >
           <defs>
             <linearGradient id="gs-grad-m" x1="0" y1="1" x2="0" y2="0">
