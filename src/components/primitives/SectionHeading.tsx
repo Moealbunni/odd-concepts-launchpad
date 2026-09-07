@@ -34,7 +34,7 @@ export function SectionHeading({
         </Reveal>
       )}
       <Reveal delay={80}>
-        <Heading className="text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
+        <Heading className="depth-heading text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
           {title}
         </Heading>
       </Reveal>
