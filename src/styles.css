@@ -187,3 +187,8 @@
     filter: none;
   }
 }
+
+/* Soft depth on large headings — a whisper of shadow for dimensionality. */
+@utility depth-heading {
+  text-shadow: 0 2px 24px hsl(0 0% 0% / 0.35);
+}
