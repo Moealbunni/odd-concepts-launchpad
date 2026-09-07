@@ -43,12 +43,7 @@ function makeSchema(t: Translations) {
   });
 }
 
-const schema = makeSchema(
-  // Shape only — messages come from the language-aware schema at submit time.
-  { form: { validation: {} } } as unknown as Translations,
-);
-
-export type GrowthPlanFormValues = z.infer<typeof schema>;
+export type GrowthPlanFormValues = z.infer<ReturnType<typeof makeSchema>>;
 
 type Errors = Partial<Record<keyof GrowthPlanFormValues, string>>;
 
