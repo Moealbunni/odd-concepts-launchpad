@@ -5,6 +5,7 @@ import { Reveal } from "@/components/primitives/Reveal";
 import { BrandButton } from "@/components/primitives/BrandButton";
 import { FinalCta } from "@/components/home/FinalCta";
 import { siteConfig } from "@/config/site";
+import palmAsset from "@/assets/media/palm-jumeirah-aerial.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -32,7 +33,8 @@ function AboutPage() {
   return (
     <>
       <Section className="pt-32 md:pt-40">
-        <div className="max-w-3xl">
+        <div className="grid gap-10 md:grid-cols-[3fr_2fr] md:items-center md:gap-14">
+          <div>
           <SectionHeading
             as="h1"
             eyebrow="About"

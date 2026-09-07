@@ -3,12 +3,17 @@ import { Section } from "@/components/primitives/Section";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { Card } from "@/components/primitives/Card";
 import { Reveal } from "@/components/primitives/Reveal";
+import museumAsset from "@/assets/media/museum-of-the-future.jpg.asset.json";
 
 const asideItems = [
   {
     icon: MapPin,
     title: "Based in Dubai",
     line: "A boutique digital growth studio working with ambitious local businesses across the UAE.",
+    image: {
+      src: museumAsset.url,
+      alt: "Museum of the Future illuminated at night in Dubai",
+    },
   },
   {
     icon: Target,
@@ -58,10 +63,21 @@ export function WhyOddConcepts() {
                   >
                     <item.icon className="size-4 text-muted-foreground" strokeWidth={1.5} />
                   </span>
-                  <div>
-                    <span className="block text-sm font-medium text-foreground md:text-base">
-                      {item.title}
-                    </span>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="block text-sm font-medium text-foreground md:text-base">
+                        {item.title}
+                      </span>
+                      {"image" in item && item.image && (
+                        <img
+                          src={item.image.src}
+                          alt={item.image.alt}
+                          loading="lazy"
+                          decoding="async"
+                          className="size-14 shrink-0 rounded-lg border border-border/60 object-cover"
+                        />
+                      )}
+                    </div>
                     <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
                       {item.line}
                     </span>
