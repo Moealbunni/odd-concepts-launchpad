@@ -6,6 +6,8 @@ import {
   RotateCw,
   Volume2,
   VolumeX,
+  Maximize2,
+  Minimize2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useVideoPlayback } from "./VideoPlaybackContext";
@@ -16,6 +18,7 @@ interface VideoPlayerProps {
   videoUrl?: string;
   posterUrl?: string;
   className?: string;
+  objectFit?: "cover" | "contain";
 }
 
 /** In-place video player. Never autoplays; user must press play. Starts muted. */
@@ -25,7 +28,9 @@ export function VideoPlayer({
   videoUrl,
   posterUrl,
   className,
+  objectFit = "cover",
 }: VideoPlayerProps) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [started, setStarted] = useState(false);
@@ -34,6 +39,7 @@ export function VideoPlayer({
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [controlsVisible, setControlsVisible] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const playback = useVideoPlayback();
   const playerId = useId();
 
@@ -48,6 +54,22 @@ export function VideoPlayer({
   useEffect(() => () => {
     if (hideTimer.current) clearTimeout(hideTimer.current);
   }, []);
+
+  useEffect(() => {
+    const onChange = () => {
+      setIsFullscreen(document.fullscreenElement === containerRef.current);
+    };
+    document.addEventListener("fullscreenchange", onChange);
+    return () => document.removeEventListener("fullscreenchange", onChange);
+  }, []);
+
+  const toggleFullscreen = () => {
+    const el = containerRef.current;
+    if (!el) return;
+    if (document.fullscreenElement === el) void document.exitFullscreen();
+    else void el.requestFullscreen?.();
+    showControls();
+  };
 
   useEffect(() => {
     if (!playback) return;
@@ -89,6 +111,7 @@ export function VideoPlayer({
         "group/player relative h-full w-full overflow-hidden rounded-xl bg-[hsl(var(--surface-elevated))]",
         className,
       )}
+      ref={containerRef}
       onMouseMove={showControls}
       onMouseLeave={() => playing && setControlsVisible(false)}
     >
@@ -100,7 +123,12 @@ export function VideoPlayer({
           preload="metadata"
           playsInline
           muted={muted}
-          className="h-full w-full object-cover"
+          className={cn(
+            "h-full w-full",
+            isFullscreen || objectFit === "contain"
+              ? "bg-[hsl(240_10%_4%)] object-contain"
+              : "object-cover",
+          )}
           onPlay={() => {
             setPlaying(true);
             playback?.notifyPlaying(playerId);
@@ -207,6 +235,14 @@ export function VideoPlayer({
             className="ml-auto inline-flex size-8 items-center justify-center rounded-md text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             {muted ? <VolumeX className="size-4" /> : <Volume2 className="size-4" />}
+          </button>
+          <button
+            type="button"
+            onClick={toggleFullscreen}
+            aria-label={isFullscreen ? "Exit fullscreen" : "Expand video"}
+            className="inline-flex size-8 items-center justify-center rounded-md text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            {isFullscreen ? <Minimize2 className="size-4" /> : <Maximize2 className="size-4" />}
           </button>
         </div>
       </div>
