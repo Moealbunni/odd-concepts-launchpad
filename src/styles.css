@@ -160,3 +160,27 @@
 @utility gradient-bg {
   background-image: var(--gradient-brand);
 }
+
+/* Contained, premium image hover zoom (used by inline photo placements). */
+.media-frame {
+  overflow: hidden;
+}
+
+.media-frame img {
+  transition:
+    transform 450ms ease-out,
+    filter 450ms ease-out;
+  will-change: transform;
+}
+
+.media-frame:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-frame:hover img {
+    transform: none;
+    filter: none;
+  }
+}
