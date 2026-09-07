@@ -4,12 +4,10 @@ import { SectionHeading } from "@/components/primitives/SectionHeading";
 import { Card } from "@/components/primitives/Card";
 import { Reveal } from "@/components/primitives/Reveal";
 import { BrandButton } from "@/components/primitives/BrandButton";
-import speakerAsset from "@/assets/media/smart-speaker-product.jpg.asset.json";
 
 type Service = {
   name: string;
   line: string;
-  image?: { src: string; alt: string };
 };
 
 const availableNow: Service[] = [
