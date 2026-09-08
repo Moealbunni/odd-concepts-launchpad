@@ -24,6 +24,8 @@ import v4745 from "@/assets/media/img_4745.mp4.asset.json";
 import p4745 from "@/assets/media/img_4745.jpg.asset.json";
 import v5015 from "@/assets/media/img_5015.mp4.asset.json";
 import p5015 from "@/assets/media/img_5015.jpg.asset.json";
+import vViral from "@/assets/media/viral_video_ideas.mp4.asset.json";
+import pViral from "@/assets/media/viral_video_ideas.jpg.asset.json";
 import v5217 from "@/assets/media/img_5217.mp4.asset.json";
 import p5217 from "@/assets/media/img_5217.jpg.asset.json";
 
@@ -41,6 +43,7 @@ export type MediaItem = {
 export const mediaItems: MediaItem[] = [
   { id: "m-room44", title: "Venue Promo", ratio: 1620 / 1080, videoUrl: room44Video.url, posterUrl: room44Poster.url },
   { id: "m-amer", title: "Company Mascot & Storyline", ratio: 1620 / 1080, videoUrl: amerrVideo.url, posterUrl: amerrPoster.url },
+  { id: "m-viral", title: "Viral Video Ideas", ratio: 1914 / 1080, videoUrl: vViral.url, posterUrl: pViral.url },
   { id: "m-4429", title: "Cinematic Realism — Story Telling", ratio: 1936 / 1080, videoUrl: v4429.url, posterUrl: p4429.url },
   { id: "m-4745", title: "Company Promo I", ratio: 1080 / 1920, videoUrl: v4745.url, posterUrl: p4745.url },
   { id: "m-5217", title: "Company Promo II", ratio: 1620 / 1080, videoUrl: v5217.url, posterUrl: p5217.url },

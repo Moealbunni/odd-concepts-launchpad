@@ -342,6 +342,7 @@ export const en = {
     titles: {
       "m-room44": "Venue Promo",
       "m-amer": "Company Mascot & Storyline",
+      "m-viral": "Viral Video Ideas",
       "m-4429": "Cinematic Realism — Story Telling",
       "m-4745": "Company Promo I",
       "m-5217": "Company Promo II",
@@ -750,6 +751,7 @@ export const ar: Translations = {
     titles: {
       "m-room44": "إعلان ترويجي للمكان",
       "m-amer": "تميمة الشركة والقصة",
+      "m-viral": "أفكار فيديوهات فيرال",
       "m-4429": "واقعية سينمائية — سرد قصصي",
       "m-4745": "إعلان الشركة الأول",
       "m-5217": "إعلان الشركة الثاني",
