@@ -28,6 +28,8 @@ import vViral from "@/assets/media/viral_video_ideas.mp4.asset.json";
 import pViral from "@/assets/media/viral_video_ideas.jpg.asset.json";
 import v5217 from "@/assets/media/img_5217.mp4.asset.json";
 import p5217 from "@/assets/media/img_5217.jpg.asset.json";
+import vClientAd from "@/assets/media/client_ad.mp4.asset.json";
+import pClientAd from "@/assets/media/client_ad.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
 
@@ -41,6 +43,7 @@ export type MediaItem = {
 
 /** Single source of truth. Group membership is derived from `ratio`, never hardcoded. */
 export const mediaItems: MediaItem[] = [
+  { id: "m-clientad", title: "Client Ad", ratio: 1936 / 1080, videoUrl: vClientAd.url, posterUrl: pClientAd.url },
   { id: "m-room44", title: "Venue Promo", ratio: 1620 / 1080, videoUrl: room44Video.url, posterUrl: room44Poster.url },
   { id: "m-amer", title: "Company Mascot & Storyline", ratio: 1620 / 1080, videoUrl: amerrVideo.url, posterUrl: amerrPoster.url },
   { id: "m-viral", title: "Viral Video Ideas", ratio: 1914 / 1080, videoUrl: vViral.url, posterUrl: pViral.url },
