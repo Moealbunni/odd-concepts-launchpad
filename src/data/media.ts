@@ -30,6 +30,10 @@ import v5217 from "@/assets/media/img_5217.mp4.asset.json";
 import p5217 from "@/assets/media/img_5217.jpg.asset.json";
 import vClientAd from "@/assets/media/client_ad.mp4.asset.json";
 import pClientAd from "@/assets/media/client_ad.jpg.asset.json";
+import vCineAd1 from "@/assets/media/cinematic_ad_1.mp4.asset.json";
+import pCineAd1 from "@/assets/media/cinematic_ad_1.jpg.asset.json";
+import vCineAd2 from "@/assets/media/cinematic_ad_2.mp4.asset.json";
+import pCineAd2 from "@/assets/media/cinematic_ad_2.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
 
