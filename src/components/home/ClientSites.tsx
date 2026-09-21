@@ -10,6 +10,7 @@ const clients = [
   { name: "Room 44", url: "https://room44dubai.com/" },
   { name: "VenYa", url: "https://venyadom.com/" },
   { name: "Amer Central AC", url: "https://amercentralac.com/" },
+  { name: "The Spot Network", url: "https://thespot-network.com/" },
 ];
 
 export function ClientSites() {
