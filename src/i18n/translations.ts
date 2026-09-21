@@ -341,6 +341,8 @@ export const en = {
     tabReels: "Reels",
     titles: {
       "m-clientad": "Client Ad",
+      "m-cinead1": "Cinematic Ad I",
+      "m-cinead2": "Cinematic Ad II",
       "m-room44": "Venue Promo",
       "m-amer": "Company Mascot & Storyline",
       "m-viral": "Viral Video Ideas",
@@ -751,6 +753,8 @@ export const ar: Translations = {
     tabReels: "ريلز",
     titles: {
       "m-clientad": "إعلان عميل",
+      "m-cinead1": "إعلان سينمائي الأول",
+      "m-cinead2": "إعلان سينمائي الثاني",
       "m-room44": "إعلان ترويجي للمكان",
       "m-amer": "تميمة الشركة والقصة",
       "m-viral": "أفكار فيديوهات فيرال",
