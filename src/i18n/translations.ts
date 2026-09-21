@@ -753,6 +753,8 @@ export const ar: Translations = {
     tabReels: "ريلز",
     titles: {
       "m-clientad": "إعلان عميل",
+      "m-cinead1": "إعلان سينمائي الأول",
+      "m-cinead2": "إعلان سينمائي الثاني",
       "m-room44": "إعلان ترويجي للمكان",
       "m-amer": "تميمة الشركة والقصة",
       "m-viral": "أفكار فيديوهات فيرال",
