@@ -341,6 +341,8 @@ export const en = {
     tabReels: "Reels",
     titles: {
       "m-clientad": "Client Ad",
+      "m-cinead1": "Cinematic Ad I",
+      "m-cinead2": "Cinematic Ad II",
       "m-room44": "Venue Promo",
       "m-amer": "Company Mascot & Storyline",
       "m-viral": "Viral Video Ideas",
