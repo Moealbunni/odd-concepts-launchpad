@@ -48,6 +48,8 @@ export type MediaItem = {
 /** Single source of truth. Group membership is derived from `ratio`, never hardcoded. */
 export const mediaItems: MediaItem[] = [
   { id: "m-clientad", title: "Client Ad", ratio: 1936 / 1080, videoUrl: vClientAd.url, posterUrl: pClientAd.url },
+  { id: "m-cinead1", title: "Cinematic Ad I", ratio: 1936 / 1080, videoUrl: vCineAd1.url, posterUrl: pCineAd1.url },
+  { id: "m-cinead2", title: "Cinematic Ad II", ratio: 1936 / 1080, videoUrl: vCineAd2.url, posterUrl: pCineAd2.url },
   { id: "m-room44", title: "Venue Promo", ratio: 1620 / 1080, videoUrl: room44Video.url, posterUrl: room44Poster.url },
   { id: "m-amer", title: "Company Mascot & Storyline", ratio: 1620 / 1080, videoUrl: amerrVideo.url, posterUrl: amerrPoster.url },
   { id: "m-viral", title: "Viral Video Ideas", ratio: 1914 / 1080, videoUrl: vViral.url, posterUrl: pViral.url },
