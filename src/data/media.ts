@@ -38,6 +38,16 @@ import vSpotAd from "@/assets/media/the_spot_ad.mp4.asset.json";
 import pSpotAd from "@/assets/media/the_spot_ad.jpg.asset.json";
 import vRoom44Reel from "@/assets/media/room44_reel.mp4.asset.json";
 import pRoom44Reel from "@/assets/media/room44_reel.jpg.asset.json";
+import vEvArt1 from "@/assets/media/event_artwork_1.mp4.asset.json";
+import pEvArt1 from "@/assets/media/event_artwork_1.jpg.asset.json";
+import vEvArt2 from "@/assets/media/event_artwork_2.mp4.asset.json";
+import pEvArt2 from "@/assets/media/event_artwork_2.jpg.asset.json";
+import vEvArt3 from "@/assets/media/event_artwork_3.mp4.asset.json";
+import pEvArt3 from "@/assets/media/event_artwork_3.jpg.asset.json";
+import vEvArt4 from "@/assets/media/event_artwork_4.mp4.asset.json";
+import pEvArt4 from "@/assets/media/event_artwork_4.jpg.asset.json";
+import vEvArt5 from "@/assets/media/event_artwork_5.mp4.asset.json";
+import pEvArt5 from "@/assets/media/event_artwork_5.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
 
@@ -68,6 +78,11 @@ export const mediaItems: MediaItem[] = [
   { id: "m-4519", title: "Story Telling", ratio: 1930 / 1080, videoUrl: v4519.url, posterUrl: p4519.url },
   { id: "m-3761", title: "Futuristic Promo", ratio: 1080 / 1920, videoUrl: v3761.url, posterUrl: p3761.url },
   { id: "m-3694", title: "Modeling Photoshoot", ratio: 1440 / 2560, videoUrl: v3694.url, posterUrl: p3694.url },
+  { id: "m-evart1", title: "Event Artwork I", ratio: 1080 / 1920, videoUrl: vEvArt1.url, posterUrl: pEvArt1.url },
+  { id: "m-evart2", title: "Event Artwork II", ratio: 1080 / 1920, videoUrl: vEvArt2.url, posterUrl: pEvArt2.url },
+  { id: "m-evart3", title: "Event Artwork III", ratio: 1080 / 1920, videoUrl: vEvArt3.url, posterUrl: pEvArt3.url },
+  { id: "m-evart4", title: "Event Artwork IV", ratio: 1080 / 1920, videoUrl: vEvArt4.url, posterUrl: pEvArt4.url },
+  { id: "m-evart5", title: "Event Artwork V", ratio: 1080 / 1920, videoUrl: vEvArt5.url, posterUrl: pEvArt5.url },
   { id: "m-4062", title: "Cinematic Story Telling I", ratio: 2548 / 1080, videoUrl: v4062.url, posterUrl: p4062.url },
   { id: "m-4370", title: "Cinematic Story Telling II", ratio: 1914 / 1080, videoUrl: v4370.url, posterUrl: p4370.url },
   { id: "m-4378", title: "Instagram Virality — Cinematic Shoot", ratio: 1930 / 1080, videoUrl: v4378.url, posterUrl: p4378.url },
