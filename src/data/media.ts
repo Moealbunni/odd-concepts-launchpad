@@ -54,6 +54,12 @@ import vViralReel2 from "@/assets/media/viral_reel_2.mp4.asset.json";
 import pViralReel2 from "@/assets/media/viral_reel_2.jpg.asset.json";
 import vViralReel3 from "@/assets/media/viral_reel_3.mp4.asset.json";
 import pViralReel3 from "@/assets/media/viral_reel_3.jpg.asset.json";
+import vCineStory3 from "@/assets/media/cine_story_3.mp4.asset.json";
+import pCineStory3 from "@/assets/media/cine_story_3.jpg.asset.json";
+import vCineStory4 from "@/assets/media/cine_story_4.mp4.asset.json";
+import pCineStory4 from "@/assets/media/cine_story_4.jpg.asset.json";
+import vCineStory5 from "@/assets/media/cine_story_5.mp4.asset.json";
+import pCineStory5 from "@/assets/media/cine_story_5.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
 
@@ -94,6 +100,9 @@ export const mediaItems: MediaItem[] = [
   { id: "m-viralreel3", title: "Viral Reel III", ratio: 720 / 1280, videoUrl: vViralReel3.url, posterUrl: pViralReel3.url },
   { id: "m-4062", title: "Cinematic Story Telling I", ratio: 2548 / 1080, videoUrl: v4062.url, posterUrl: p4062.url },
   { id: "m-4370", title: "Cinematic Story Telling II", ratio: 1914 / 1080, videoUrl: v4370.url, posterUrl: p4370.url },
+  { id: "m-cinestory3", title: "Cinematic Story Telling III", ratio: 1280 / 720, videoUrl: vCineStory3.url, posterUrl: pCineStory3.url },
+  { id: "m-cinestory4", title: "Cinematic Story Telling IV", ratio: 1280 / 720, videoUrl: vCineStory4.url, posterUrl: pCineStory4.url },
+  { id: "m-cinestory5", title: "Cinematic Story Telling V", ratio: 1280 / 720, videoUrl: vCineStory5.url, posterUrl: pCineStory5.url },
   { id: "m-4378", title: "Instagram Virality — Cinematic Shoot", ratio: 1930 / 1080, videoUrl: v4378.url, posterUrl: p4378.url },
   
 ];
