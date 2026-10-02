@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  lazyRouteComponent,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -145,7 +146,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
-  errorComponent: ErrorComponent,
+  errorComponent: lazyRouteComponent(async () => ({ default: ErrorComponent })),
 });
 
 function RootShell({ children }: { children: ReactNode }) {
