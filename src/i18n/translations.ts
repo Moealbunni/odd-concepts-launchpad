@@ -342,7 +342,8 @@ export const en = {
     titles: {
       "m-clientad": "Client Ad",
       "m-cinead1": "Cinematic Ad I",
-      "m-cinead2": "Cinematic Ad II",
+          "m-cinead2": "Cinematic Ad II",
+          "m-spotad": "Cinematic Ad III",
       "m-room44": "Venue Promo",
       "m-amer": "Company Mascot & Storyline",
       "m-viral": "Viral Video Ideas",
@@ -754,7 +755,8 @@ export const ar: Translations = {
     titles: {
       "m-clientad": "إعلان عميل",
       "m-cinead1": "إعلان سينمائي الأول",
-      "m-cinead2": "إعلان سينمائي الثاني",
+          "m-cinead2": "إعلان سينمائي الثاني",
+          "m-spotad": "إعلان سينمائي ثالث",
       "m-room44": "إعلان ترويجي للمكان",
       "m-amer": "تميمة الشركة والقصة",
       "m-viral": "أفكار فيديوهات فيرال",
