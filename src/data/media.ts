@@ -48,6 +48,12 @@ import vEvArt4 from "@/assets/media/event_artwork_4.mp4.asset.json";
 import pEvArt4 from "@/assets/media/event_artwork_4.jpg.asset.json";
 import vEvArt5 from "@/assets/media/event_artwork_5.mp4.asset.json";
 import pEvArt5 from "@/assets/media/event_artwork_5.jpg.asset.json";
+import vViralReel1 from "@/assets/media/viral_reel_1.mp4.asset.json";
+import pViralReel1 from "@/assets/media/viral_reel_1.jpg.asset.json";
+import vViralReel2 from "@/assets/media/viral_reel_2.mp4.asset.json";
+import pViralReel2 from "@/assets/media/viral_reel_2.jpg.asset.json";
+import vViralReel3 from "@/assets/media/viral_reel_3.mp4.asset.json";
+import pViralReel3 from "@/assets/media/viral_reel_3.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
 
@@ -83,6 +89,9 @@ export const mediaItems: MediaItem[] = [
   { id: "m-evart3", title: "Event Artwork III", ratio: 1080 / 1920, videoUrl: vEvArt3.url, posterUrl: pEvArt3.url },
   { id: "m-evart4", title: "Event Artwork IV", ratio: 1080 / 1920, videoUrl: vEvArt4.url, posterUrl: pEvArt4.url },
   { id: "m-evart5", title: "Event Artwork V", ratio: 1080 / 1920, videoUrl: vEvArt5.url, posterUrl: pEvArt5.url },
+  { id: "m-viralreel1", title: "Viral Reel I", ratio: 720 / 1280, videoUrl: vViralReel1.url, posterUrl: pViralReel1.url },
+  { id: "m-viralreel2", title: "Viral Reel II", ratio: 720 / 1280, videoUrl: vViralReel2.url, posterUrl: pViralReel2.url },
+  { id: "m-viralreel3", title: "Viral Reel III", ratio: 720 / 1280, videoUrl: vViralReel3.url, posterUrl: pViralReel3.url },
   { id: "m-4062", title: "Cinematic Story Telling I", ratio: 2548 / 1080, videoUrl: v4062.url, posterUrl: p4062.url },
   { id: "m-4370", title: "Cinematic Story Telling II", ratio: 1914 / 1080, videoUrl: v4370.url, posterUrl: p4370.url },
   { id: "m-4378", title: "Instagram Virality — Cinematic Shoot", ratio: 1930 / 1080, videoUrl: v4378.url, posterUrl: p4378.url },

@@ -365,6 +365,9 @@ export const en = {
       "m-evart3": "Event Artwork III",
       "m-evart4": "Event Artwork IV",
       "m-evart5": "Event Artwork V",
+      "m-viralreel1": "Viral Reel I",
+      "m-viralreel2": "Viral Reel II",
+      "m-viralreel3": "Viral Reel III",
     } as Record<string, string>,
   },
   aboutPage: {
@@ -784,6 +787,9 @@ export const ar: Translations = {
       "m-evart3": "تصميم الفعاليات الثالث",
       "m-evart4": "تصميم الفعاليات الرابع",
       "m-evart5": "تصميم الفعاليات الخامس",
+      "m-viralreel1": "ريلز فيروسي الأول",
+      "m-viralreel2": "ريلز فيروسي الثاني",
+      "m-viralreel3": "ريلز فيروسي الثالث",
     },
   },
   aboutPage: {
