@@ -360,6 +360,11 @@ export const en = {
       "m-4062": "Cinematic Story Telling I",
       "m-4370": "Cinematic Story Telling II",
       "m-4378": "Instagram Virality — Cinematic Shoot",
+      "m-evart1": "Event Artwork I",
+      "m-evart2": "Event Artwork II",
+      "m-evart3": "Event Artwork III",
+      "m-evart4": "Event Artwork IV",
+      "m-evart5": "Event Artwork V",
     } as Record<string, string>,
   },
   aboutPage: {
@@ -774,6 +779,11 @@ export const ar: Translations = {
       "m-4062": "سرد سينمائي أول",
       "m-4370": "سرد سينمائي ثاني",
       "m-4378": "انتشار إنستغرام — لقطة سينمائية",
+      "m-evart1": "تصميم الفعاليات الأول",
+      "m-evart2": "تصميم الفعاليات الثاني",
+      "m-evart3": "تصميم الفعاليات الثالث",
+      "m-evart4": "تصميم الفعاليات الرابع",
+      "m-evart5": "تصميم الفعاليات الخامس",
     },
   },
   aboutPage: {
