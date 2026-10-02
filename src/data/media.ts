@@ -36,6 +36,8 @@ import vCineAd2 from "@/assets/media/cinematic_ad_2.mp4.asset.json";
 import pCineAd2 from "@/assets/media/cinematic_ad_2.jpg.asset.json";
 import vSpotAd from "@/assets/media/the_spot_ad.mp4.asset.json";
 import pSpotAd from "@/assets/media/the_spot_ad.jpg.asset.json";
+import vRoom44Reel from "@/assets/media/room44_reel.mp4.asset.json";
+import pRoom44Reel from "@/assets/media/room44_reel.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
 
@@ -62,6 +64,7 @@ export const mediaItems: MediaItem[] = [
   { id: "m-4744", title: "Company Promo III", ratio: 1080 / 1920, videoUrl: v4744.url, posterUrl: p4744.url },
   { id: "m-4693", title: "Company Promo IV", ratio: 1080 / 1936, videoUrl: v4693.url, posterUrl: p4693.url },
   { id: "m-5015", title: "Venue Photoshoot", ratio: 1080 / 1936, videoUrl: v5015.url, posterUrl: p5015.url },
+  { id: "m-room44reel", title: "Venue Promo", ratio: 1080 / 1920, videoUrl: vRoom44Reel.url, posterUrl: pRoom44Reel.url },
   { id: "m-4519", title: "Story Telling", ratio: 1930 / 1080, videoUrl: v4519.url, posterUrl: p4519.url },
   { id: "m-3761", title: "Futuristic Promo", ratio: 1080 / 1920, videoUrl: v3761.url, posterUrl: p3761.url },
   { id: "m-3694", title: "Modeling Photoshoot", ratio: 1440 / 2560, videoUrl: v3694.url, posterUrl: p3694.url },
