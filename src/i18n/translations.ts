@@ -110,6 +110,8 @@ export const en = {
     subtitle:
       "Most agencies sell you a single service and leave you to join the dots. We design and run one system — every part below plugs into a stage of your growth.",
     seeAll: "See all services",
+    expandMore: "Expand for more",
+    showLess: "Show less",
     items: [
       {
         name: "Premium Websites",
@@ -595,6 +597,8 @@ export const ar: Translations = {
     subtitle:
       "معظم الوكالات تبيعك خدمة واحدة وتتركك تربط بين الأجزاء. نحن نصمم وندير نظامًا واحدًا — كل جزء أدناه يرتبط بمرحلة من نموّكم.",
     seeAll: "عرض جميع الخدمات",
+    expandMore: "اضغط للمزيد",
+    showLess: "عرض أقل",
     items: [
       {
         name: "مواقع إلكترونية متميزة",
