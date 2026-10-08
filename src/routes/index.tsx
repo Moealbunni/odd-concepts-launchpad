@@ -8,7 +8,6 @@ import { GrowthSystem } from "@/components/home/GrowthSystem";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { WeUnderstand } from "@/components/home/WeUnderstand";
 import { HowItWorks } from "@/components/home/HowItWorks";
-import { ConceptWork } from "@/components/home/ConceptWork";
 import { WhyOddConcepts } from "@/components/home/WhyOddConcepts";
 import { FaqSection, faqs } from "@/components/home/FaqSection";
 import { FinalCta } from "@/components/home/FinalCta";
@@ -148,7 +147,6 @@ function HomePage() {
       <ServicesOverview />
       <WeUnderstand />
       <HowItWorks />
-      <ConceptWork />
       <WhyOddConcepts />
       <FaqSection />
       <FinalCta />
