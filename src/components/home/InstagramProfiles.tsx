@@ -43,7 +43,7 @@ export function InstagramProfiles() {
         subtitle={t.instagram.subtitle}
       />
 
-      <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {accounts.map((a, i) => (
           <Reveal key={a.name} delay={i * 100}>
             <a
@@ -53,7 +53,15 @@ export function InstagramProfiles() {
               aria-label={t.instagram.followAria.replace("{name}", a.name)}
               className="block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              <Card className="flex h-full items-center justify-between gap-4 p-6">
+              <Card className="showcase-card flex h-full min-h-40 flex-col items-start justify-between gap-6 border-highlight-border/60 p-6">
+                <div className="flex w-full items-center justify-between gap-2">
+                  <Instagram className="size-6 shrink-0 text-highlight" aria-hidden="true" />
+                  {a.comingSoon && (
+                    <span className="whitespace-nowrap rounded-full border border-highlight-border bg-highlight-soft px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-highlight">
+                      {t.instagram.comingSoon}
+                    </span>
+                  )}
+                </div>
                 <div className="min-w-0">
                   <h3
                     className="text-base font-semibold text-foreground md:text-lg"
@@ -62,22 +70,11 @@ export function InstagramProfiles() {
                     {a.name}
                   </h3>
                   <p
-                    className="mt-0.5 truncate text-sm text-muted-foreground"
+                    className="mt-1 text-sm text-highlight/80"
                     dir="ltr"
                   >
                     {a.handle}
                   </p>
-                </div>
-                <div className="flex shrink-0 items-center gap-2">
-                  {a.comingSoon && (
-                    <span className="whitespace-nowrap rounded-full border border-border bg-background/60 px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                      {t.instagram.comingSoon}
-                    </span>
-                  )}
-                  <Instagram
-                    className="size-5 shrink-0 text-muted-foreground transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:text-foreground"
-                    aria-hidden="true"
-                  />
                 </div>
               </Card>
             </a>

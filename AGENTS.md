@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep shared page, card, and button gradient/shadow treatments in global semantic CSS tokens; shared primitives consume them so colour refreshes remain consistent across all routes.

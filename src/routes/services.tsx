@@ -21,6 +21,8 @@ export const Route = createFileRoute("/services")({
         content:
           "One connected system — websites, visibility, content, ads and an AI receptionist — that turns attention into customers.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/services" },
     ],
     links: [{ rel: "canonical", href: "/services" }],

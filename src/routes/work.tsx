@@ -22,6 +22,8 @@ export const Route = createFileRoute("/work")({
         content:
           "Live client websites, Instagram accounts we run, and real production work.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/work" },
     ],
     links: [{ rel: "canonical", href: "/work" }],

@@ -62,6 +62,9 @@
   --color-surface-elevated: hsl(var(--surface-elevated));
   --color-brand-primary: hsl(var(--brand-primary));
   --color-brand-accent: hsl(var(--brand-accent));
+  --color-highlight: var(--highlight);
+  --color-highlight-soft: var(--highlight-soft);
+  --color-highlight-border: var(--highlight-border);
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -71,28 +74,37 @@
 
   --background: 240 11% 4%;          /* #08080A */
   --foreground: 0 0% 98%;             /* #FAFAFA */
-  --card: 240 8% 6%;                  /* #0F0F12 */
+  --card: 200 23% 9%;
   --card-foreground: 0 0% 98%;
   --popover: 240 8% 6%;
   --popover-foreground: 0 0% 98%;
-  --surface-elevated: 240 7% 9%;      /* #16161A */
+  --surface-elevated: 200 24% 12%;
 
   --primary: 217 91% 60%;             /* #3B82F6 */
   --primary-foreground: 0 0% 100%;
-  --secondary: 240 7% 9%;
+  --secondary: 200 24% 12%;
   --secondary-foreground: 0 0% 98%;
-  --muted: 240 7% 9%;
-  --muted-foreground: 240 6% 63%;     /* #9A9AA5 */
+  --muted: 200 20% 12%;
+  --muted-foreground: 200 10% 70%;
   --accent: 272 91% 65%;              /* #A855F7 */
   --accent-foreground: 0 0% 100%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 98%;
-  --border: 240 12% 15%;              /* #24242B */
-  --input: 240 12% 15%;
+  --border: 200 24% 21%;
+  --input: 200 24% 21%;
   --ring: 217 91% 60%;
 
   --brand-primary: 217 91% 60%;
-  --brand-accent: 272 91% 65%;
+  --brand-accent: 188 80% 55%;
+  --highlight: oklch(0.83 0.13 195);
+  --highlight-soft: oklch(0.25 0.045 205);
+  --highlight-border: oklch(0.43 0.065 205);
+  --gradient-page: linear-gradient(120deg, hsl(var(--background)) 12%, hsl(200 40% 10%) 60%, hsl(var(--background)) 100%);
+  --gradient-card: linear-gradient(135deg, hsl(var(--surface-elevated)), hsl(var(--card)) 75%);
+  --gradient-showcase: linear-gradient(125deg, oklch(0.29 0.055 210), oklch(0.2 0.032 225) 80%);
+  --shadow-card: 0 10px 40px -15px hsl(var(--brand-primary) / 0.4);
+  --shadow-button: 0 10px 30px -10px hsl(var(--brand-primary) / 0.6);
+  --shadow-button-hover: 0 16px 40px -10px hsl(var(--brand-accent) / 0.55);
 
   --chart-1: 217 91% 60%;
   --chart-2: 272 91% 65%;
@@ -109,7 +121,7 @@
   --sidebar-border: 240 12% 15%;
   --sidebar-ring: 217 91% 60%;
 
-  --gradient-brand: linear-gradient(135deg, #3B82F6 0%, #A855F7 100%);
+  --gradient-brand: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-accent)));
 }
 
 @layer base {
@@ -174,6 +186,31 @@
 
 @utility gradient-bg {
   background-image: var(--gradient-brand);
+}
+
+.site-surface {
+  background-image: var(--gradient-page);
+  background-attachment: fixed;
+}
+
+.studio-card {
+  background-image: var(--gradient-card);
+}
+
+.studio-card:hover {
+  box-shadow: var(--shadow-card);
+}
+
+.showcase-card {
+  background-image: var(--gradient-showcase);
+}
+
+.brand-button-primary {
+  box-shadow: var(--shadow-button);
+}
+
+.brand-button-primary:hover {
+  box-shadow: var(--shadow-button-hover);
 }
 
 /* Contained, premium image hover zoom (used by inline photo placements). */
