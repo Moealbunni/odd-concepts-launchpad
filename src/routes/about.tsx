@@ -23,6 +23,10 @@ export const Route = createFileRoute("/about")({
         content:
           "A Dubai-based digital growth studio helping ambitious local businesses turn attention into customers.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: palmAsset.url },
+      { name: "twitter:image", content: palmAsset.url },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
