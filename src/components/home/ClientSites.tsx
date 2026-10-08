@@ -34,17 +34,16 @@ export function ClientSites() {
               aria-label={t.clientSites.visitAria.replace("{name}", c.name)}
               className="block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              <Card className="showcase-card flex h-full min-h-40 flex-col items-start justify-between gap-6 border-highlight-border/60 p-6">
+              <Card className="showcase-card flex h-full min-h-40 flex-col items-start justify-between gap-6 p-6">
                 <div className="flex w-full items-center justify-between">
                   <Globe2 className="size-6 text-highlight" aria-hidden="true" />
                 <ArrowUpRight
-                  className="size-5 shrink-0 text-highlight transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:-scale-x-100"
+                  className="size-5 shrink-0 text-muted-foreground transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:-scale-x-100"
                   aria-hidden="true"
                 />
                 </div>
                 <div className="w-full min-w-0" dir="ltr">
                   <h3 className="text-lg font-semibold text-foreground md:text-xl">{c.name}</h3>
-                  <p className="mt-1 break-all text-xs leading-relaxed text-highlight/80">{new URL(c.url).hostname}</p>
                 </div>
               </Card>
             </a>
