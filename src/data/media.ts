@@ -30,6 +30,8 @@ import v5217 from "@/assets/media/img_5217.mp4.asset.json";
 import p5217 from "@/assets/media/img_5217.jpg.asset.json";
 import vClientAd from "@/assets/media/client_ad.mp4.asset.json";
 import pClientAd from "@/assets/media/client_ad.jpg.asset.json";
+import vClientAd2 from "@/assets/media/client_ad_2.mp4.asset.json";
+import pClientAd2 from "@/assets/media/client_ad_2.jpg.asset.json";
 import vCineAd1 from "@/assets/media/cinematic_ad_1.mp4.asset.json";
 import pCineAd1 from "@/assets/media/cinematic_ad_1.jpg.asset.json";
 import vCineAd2 from "@/assets/media/cinematic_ad_2.mp4.asset.json";
@@ -74,6 +76,7 @@ export type MediaItem = {
 /** Single source of truth. Group membership is derived from `ratio`, never hardcoded. */
 export const mediaItems: MediaItem[] = [
   { id: "m-clientad", title: "Client Ad", ratio: 1936 / 1080, videoUrl: vClientAd.url, posterUrl: pClientAd.url },
+  { id: "m-clientad2", title: "Client Ad II", ratio: 1920 / 1080, videoUrl: vClientAd2.url, posterUrl: pClientAd2.url },
   { id: "m-cinead1", title: "Cinematic Ad I", ratio: 1936 / 1080, videoUrl: vCineAd1.url, posterUrl: pCineAd1.url },
   { id: "m-cinead2", title: "Cinematic Ad II", ratio: 1936 / 1080, videoUrl: vCineAd2.url, posterUrl: pCineAd2.url },
   { id: "m-spotad", title: "Cinematic Ad III", ratio: 1920 / 1080, videoUrl: vSpotAd.url, posterUrl: pSpotAd.url },
