@@ -322,6 +322,7 @@ export const en = {
     tabReels: "Reels",
     titles: {
       "m-clientad": "Client Ad",
+      "m-clientad2": "Client Ad II",
       "m-cinead1": "Cinematic Ad I",
           "m-cinead2": "Cinematic Ad II",
           "m-spotad": "Cinematic Ad III",
@@ -726,6 +727,7 @@ export const ar: Translations = {
     tabReels: "ريلز",
     titles: {
       "m-clientad": "إعلان عميل",
+      "m-clientad2": "إعلان عميل ثاني",
       "m-cinead1": "إعلان سينمائي الأول",
           "m-cinead2": "إعلان سينمائي الثاني",
           "m-spotad": "إعلان سينمائي ثالث",
