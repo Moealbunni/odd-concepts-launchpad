@@ -53,7 +53,7 @@ export function InstagramProfiles() {
               aria-label={t.instagram.followAria.replace("{name}", a.name)}
               className="block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              <Card className="showcase-card flex h-full min-h-40 flex-col items-start justify-between gap-6 border-highlight-border/60 p-6">
+              <Card className="showcase-card flex h-full min-h-40 flex-col items-start justify-between gap-6 p-6">
                 <div className="flex w-full items-center justify-between gap-2">
                   <Instagram className="size-6 shrink-0 text-highlight" aria-hidden="true" />
                   {a.comingSoon && (
@@ -70,7 +70,7 @@ export function InstagramProfiles() {
                     {a.name}
                   </h3>
                   <p
-                    className="mt-1 text-sm text-highlight/80"
+                    className="mt-1 text-sm text-muted-foreground"
                     dir="ltr"
                   >
                     {a.handle}

@@ -305,7 +305,17 @@ export const en = {
     titleGradient: "work",
     titleAfter: ".",
     subtitle:
-      "Live client websites, Instagram accounts we run, and real production work — everything below is shipped and in use today.",
+      "Live client websites, Instagram accounts we run, and real production work — alongside the intelligent systems we build for businesses.",
+  },
+  automationWork: {
+    eyebrow: "LLMs & business automation",
+    title: "Intelligence beyond the website.",
+    subtitle: "We build LLM-powered workflows around your business knowledge, customer conversations and everyday operations.",
+    items: [
+      { title: "Custom LLM workflows", detail: "Connect your documents and business knowledge to AI assistants that answer questions, draft responses and organise information — with human review where it matters." },
+      { title: "WhatsApp automation", detail: "Turn enquiries into structured conversations: answer common questions, qualify leads, collect booking details and hand over to your team when needed." },
+      { title: "Connected business operations", detail: "Link WhatsApp, Instagram, forms and your CRM to route enquiries, trigger follow-ups and reduce repetitive admin across your business." },
+    ],
   },
   clientSites: {
     eyebrow: "Live client work",
@@ -747,7 +757,17 @@ export const ar: Translations = {
     titleGradient: "العمل",
     titleAfter: ".",
     subtitle:
-      "مواقع عملاء حقيقية، حسابات إنستغرام نديرها، وأعمال إنتاج فعلية — كل ما يلي منشور وقيد الاستخدام اليوم.",
+      "مواقع عملاء حقيقية، حسابات إنستغرام نديرها، وأعمال إنتاج فعلية — إلى جانب الأنظمة الذكية التي نبنيها للشركات.",
+  },
+  automationWork: {
+    eyebrow: "نماذج اللغة الكبيرة وأتمتة الأعمال",
+    title: "ذكاء يتجاوز الموقع الإلكتروني.",
+    subtitle: "نبني أنظمة تعتمد على نماذج اللغة الكبيرة (LLM)، وتربط معرفة شركتكم بمحادثات العملاء والعمليات اليومية.",
+    items: [
+      { title: "أنظمة مخصصة بنماذج اللغة الكبيرة", detail: "نربط مستنداتكم ومعرفة شركتكم بمساعدين ذكيين يجيبون عن الأسئلة ويصيغون الردود وينظمون المعلومات، مع مراجعة بشرية عند الحاجة." },
+      { title: "أتمتة واتساب", detail: "نحوّل الاستفسارات إلى محادثات منظمة: إجابات عن الأسئلة الشائعة، تأهيل العملاء المحتملين، جمع تفاصيل الحجز، وتحويل المحادثة إلى فريقكم عند الحاجة." },
+      { title: "عمليات أعمال مترابطة", detail: "نربط واتساب وإنستغرام والنماذج بنظام إدارة العملاء لتوجيه الاستفسارات وإرسال المتابعات وتقليل المهام الإدارية المتكررة." },
+    ],
   },
   clientSites: {
     eyebrow: "أعمال عملاء حقيقية",
