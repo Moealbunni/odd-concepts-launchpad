@@ -1,8 +1,8 @@
 # Roadmap
 
-- [ ] Add four uploaded Reels in the requested order and names.
-- [ ] Organize Studio Output with category filters and compact “Show more” controls.
-- [ ] Verify English/Arabic presentation on mobile and desktop.
+- [x] Add four uploaded Reels in the requested order and names.
+- [x] Organize Studio Output with category filters and compact “Show more” controls.
+- [x] Verify English/Arabic presentation on mobile and desktop.
 
 - [x] Tone down cyan across shared surfaces and showcase cards; hide website addresses.
 - [x] Add bilingual LLM and WhatsApp automation section to Work without invented proof.
