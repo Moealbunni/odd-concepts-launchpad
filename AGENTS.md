@@ -11,3 +11,4 @@
 
 - Keep shared page, card, and button gradient/shadow treatments in global semantic CSS tokens; shared primitives consume them so colour refreshes remain consistent across all routes.
 - Keep the Work automation capability section in a dedicated component with bilingual copy in the existing translation dictionary, separate from client proof so capabilities are not mistaken for shipped case studies.
+- Keep Studio Output media in one typed dataset with format derived from aspect ratio and explicit filter categories, so new work stays organized without duplicating galleries.

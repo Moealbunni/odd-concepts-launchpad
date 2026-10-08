@@ -338,6 +338,13 @@ export const en = {
     subtitle: "Real production work — organized by format.",
     tabCinematic: "Cinematic",
     tabReels: "Reels",
+    filterAll: "All",
+    categories: {
+      ads: "Ads", storytelling: "Storytelling", promos: "Promos", avatar: "Avatar",
+      videoEdits: "Video Edits", eventArtwork: "Event Artwork", viral: "Viral", shoots: "Shoots",
+    },
+    showMore: "Show more",
+    showLess: "Show less",
     titles: {
       "m-clientad": "Client Ad",
       "m-clientad2": "Client Ad II",
@@ -371,6 +378,10 @@ export const en = {
       "m-viralreel1": "Viral Reel I",
       "m-viralreel2": "Viral Reel II",
       "m-viralreel3": "Viral Reel III",
+      "m-avatar1": "Avatar I",
+      "m-videoedits": "Video Edits",
+      "m-avatar2": "Avatar II",
+      "m-avatar3": "Avatar III",
     } as Record<string, string>,
   },
   aboutPage: {
@@ -788,6 +799,13 @@ export const ar: Translations = {
     subtitle: "أعمال إنتاج حقيقية — منظمة حسب الشكل.",
     tabCinematic: "سينمائي",
     tabReels: "ريلز",
+    filterAll: "الكل",
+    categories: {
+      ads: "إعلانات", storytelling: "سرد قصصي", promos: "ترويجي", avatar: "أفاتار",
+      videoEdits: "مونتاج فيديو", eventArtwork: "تصاميم فعاليات", viral: "فيرال", shoots: "تصوير",
+    },
+    showMore: "عرض المزيد",
+    showLess: "عرض أقل",
     titles: {
       "m-clientad": "إعلان عميل",
       "m-clientad2": "إعلان عميل ثاني",
@@ -821,6 +839,10 @@ export const ar: Translations = {
       "m-viralreel1": "ريلز فيروسي الأول",
       "m-viralreel2": "ريلز فيروسي الثاني",
       "m-viralreel3": "ريلز فيروسي الثالث",
+      "m-avatar1": "أفاتار الأول",
+      "m-videoedits": "مونتاج فيديو",
+      "m-avatar2": "أفاتار الثاني",
+      "m-avatar3": "أفاتار الثالث",
     },
   },
   aboutPage: {

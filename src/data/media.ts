@@ -62,51 +62,65 @@ import vCineStory4 from "@/assets/media/cine_story_4.mp4.asset.json";
 import pCineStory4 from "@/assets/media/cine_story_4.jpg.asset.json";
 import vCineStory5 from "@/assets/media/cine_story_5.mp4.asset.json";
 import pCineStory5 from "@/assets/media/cine_story_5.jpg.asset.json";
+import vAvatar1 from "@/assets/media/avatar_1.mp4.asset.json";
+import pAvatar1 from "@/assets/media/avatar_1.jpg.asset.json";
+import vVideoEdits from "@/assets/media/video_edits.mp4.asset.json";
+import pVideoEdits from "@/assets/media/video_edits.jpg.asset.json";
+import vAvatar2 from "@/assets/media/avatar_2.mp4.asset.json";
+import pAvatar2 from "@/assets/media/avatar_2.jpg.asset.json";
+import vAvatar3 from "@/assets/media/avatar_3.mp4.asset.json";
+import pAvatar3 from "@/assets/media/avatar_3.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
+export type MediaCategory = "ads" | "storytelling" | "promos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots";
 
 export type MediaItem = {
   id: string;
   title: string;
   ratio: number; // width / height — determines grouping: >=1 cinematic, <1 reels
+  category: MediaCategory;
   videoUrl: string;
   posterUrl: string;
 };
 
 /** Single source of truth. Group membership is derived from `ratio`, never hardcoded. */
 export const mediaItems: MediaItem[] = [
-  { id: "m-clientad", title: "Client Ad", ratio: 1936 / 1080, videoUrl: vClientAd.url, posterUrl: pClientAd.url },
-  { id: "m-clientad2", title: "Client Ad II", ratio: 1920 / 1080, videoUrl: vClientAd2.url, posterUrl: pClientAd2.url },
-  { id: "m-cinead1", title: "Cinematic Ad I", ratio: 1936 / 1080, videoUrl: vCineAd1.url, posterUrl: pCineAd1.url },
-  { id: "m-cinead2", title: "Cinematic Ad II", ratio: 1936 / 1080, videoUrl: vCineAd2.url, posterUrl: pCineAd2.url },
-  { id: "m-spotad", title: "Cinematic Ad III", ratio: 1920 / 1080, videoUrl: vSpotAd.url, posterUrl: pSpotAd.url },
-  { id: "m-room44", title: "Venue Promo", ratio: 1620 / 1080, videoUrl: room44Video.url, posterUrl: room44Poster.url },
-  { id: "m-amer", title: "Company Mascot & Storyline", ratio: 1620 / 1080, videoUrl: amerrVideo.url, posterUrl: amerrPoster.url },
-  { id: "m-viral", title: "Viral Video Ideas", ratio: 1914 / 1080, videoUrl: vViral.url, posterUrl: pViral.url },
-  { id: "m-4429", title: "Cinematic Realism — Story Telling", ratio: 1936 / 1080, videoUrl: v4429.url, posterUrl: p4429.url },
-  { id: "m-4745", title: "Company Promo I", ratio: 1080 / 1920, videoUrl: v4745.url, posterUrl: p4745.url },
-  { id: "m-5217", title: "Company Promo II", ratio: 1620 / 1080, videoUrl: v5217.url, posterUrl: p5217.url },
-  { id: "m-4744", title: "Company Promo III", ratio: 1080 / 1920, videoUrl: v4744.url, posterUrl: p4744.url },
-  { id: "m-4693", title: "Company Promo IV", ratio: 1080 / 1936, videoUrl: v4693.url, posterUrl: p4693.url },
-  { id: "m-5015", title: "Venue Photoshoot", ratio: 1080 / 1936, videoUrl: v5015.url, posterUrl: p5015.url },
-  { id: "m-room44reel", title: "Venue Promo", ratio: 1080 / 1920, videoUrl: vRoom44Reel.url, posterUrl: pRoom44Reel.url },
-  { id: "m-4519", title: "Story Telling", ratio: 1930 / 1080, videoUrl: v4519.url, posterUrl: p4519.url },
-  { id: "m-3761", title: "Futuristic Promo", ratio: 1080 / 1920, videoUrl: v3761.url, posterUrl: p3761.url },
-  { id: "m-3694", title: "Modeling Photoshoot", ratio: 1440 / 2560, videoUrl: v3694.url, posterUrl: p3694.url },
-  { id: "m-evart1", title: "Event Artwork I", ratio: 1080 / 1920, videoUrl: vEvArt1.url, posterUrl: pEvArt1.url },
-  { id: "m-evart2", title: "Event Artwork II", ratio: 1080 / 1920, videoUrl: vEvArt2.url, posterUrl: pEvArt2.url },
-  { id: "m-evart3", title: "Event Artwork III", ratio: 1080 / 1920, videoUrl: vEvArt3.url, posterUrl: pEvArt3.url },
-  { id: "m-evart4", title: "Event Artwork IV", ratio: 1080 / 1920, videoUrl: vEvArt4.url, posterUrl: pEvArt4.url },
-  { id: "m-evart5", title: "Event Artwork V", ratio: 1080 / 1920, videoUrl: vEvArt5.url, posterUrl: pEvArt5.url },
-  { id: "m-viralreel1", title: "Viral Reel I", ratio: 720 / 1280, videoUrl: vViralReel1.url, posterUrl: pViralReel1.url },
-  { id: "m-viralreel2", title: "Viral Reel II", ratio: 720 / 1280, videoUrl: vViralReel2.url, posterUrl: pViralReel2.url },
-  { id: "m-viralreel3", title: "Viral Reel III", ratio: 720 / 1280, videoUrl: vViralReel3.url, posterUrl: pViralReel3.url },
-  { id: "m-4062", title: "Cinematic Story Telling I", ratio: 2548 / 1080, videoUrl: v4062.url, posterUrl: p4062.url },
-  { id: "m-4370", title: "Cinematic Story Telling II", ratio: 1914 / 1080, videoUrl: v4370.url, posterUrl: p4370.url },
-  { id: "m-cinestory3", title: "Cinematic Story Telling III", ratio: 1280 / 720, videoUrl: vCineStory3.url, posterUrl: pCineStory3.url },
-  { id: "m-cinestory4", title: "Cinematic Story Telling IV", ratio: 1280 / 720, videoUrl: vCineStory4.url, posterUrl: pCineStory4.url },
-  { id: "m-cinestory5", title: "Cinematic Story Telling V", ratio: 1280 / 720, videoUrl: vCineStory5.url, posterUrl: pCineStory5.url },
-  { id: "m-4378", title: "Instagram Virality — Cinematic Shoot", ratio: 1930 / 1080, videoUrl: v4378.url, posterUrl: p4378.url },
+  { id: "m-clientad", title: "Client Ad", ratio: 1936 / 1080, category: "ads", videoUrl: vClientAd.url, posterUrl: pClientAd.url },
+  { id: "m-clientad2", title: "Client Ad II", ratio: 1920 / 1080, category: "ads", videoUrl: vClientAd2.url, posterUrl: pClientAd2.url },
+  { id: "m-cinead1", title: "Cinematic Ad I", ratio: 1936 / 1080, category: "ads", videoUrl: vCineAd1.url, posterUrl: pCineAd1.url },
+  { id: "m-cinead2", title: "Cinematic Ad II", ratio: 1936 / 1080, category: "ads", videoUrl: vCineAd2.url, posterUrl: pCineAd2.url },
+  { id: "m-spotad", title: "Cinematic Ad III", ratio: 1920 / 1080, category: "ads", videoUrl: vSpotAd.url, posterUrl: pSpotAd.url },
+  { id: "m-room44", title: "Venue Promo", ratio: 1620 / 1080, category: "promos", videoUrl: room44Video.url, posterUrl: room44Poster.url },
+  { id: "m-amer", title: "Company Mascot & Storyline", ratio: 1620 / 1080, category: "storytelling", videoUrl: amerrVideo.url, posterUrl: amerrPoster.url },
+  { id: "m-viral", title: "Viral Video Ideas", ratio: 1914 / 1080, category: "viral", videoUrl: vViral.url, posterUrl: pViral.url },
+  { id: "m-4429", title: "Cinematic Realism — Story Telling", ratio: 1936 / 1080, category: "storytelling", videoUrl: v4429.url, posterUrl: p4429.url },
+  { id: "m-4745", title: "Company Promo I", ratio: 1080 / 1920, category: "promos", videoUrl: v4745.url, posterUrl: p4745.url },
+  { id: "m-5217", title: "Company Promo II", ratio: 1620 / 1080, category: "promos", videoUrl: v5217.url, posterUrl: p5217.url },
+  { id: "m-4744", title: "Company Promo III", ratio: 1080 / 1920, category: "promos", videoUrl: v4744.url, posterUrl: p4744.url },
+  { id: "m-4693", title: "Company Promo IV", ratio: 1080 / 1936, category: "promos", videoUrl: v4693.url, posterUrl: p4693.url },
+  { id: "m-5015", title: "Venue Photoshoot", ratio: 1080 / 1936, category: "shoots", videoUrl: v5015.url, posterUrl: p5015.url },
+  { id: "m-room44reel", title: "Venue Promo", ratio: 1080 / 1920, category: "promos", videoUrl: vRoom44Reel.url, posterUrl: pRoom44Reel.url },
+  { id: "m-4519", title: "Story Telling", ratio: 1930 / 1080, category: "storytelling", videoUrl: v4519.url, posterUrl: p4519.url },
+  { id: "m-3761", title: "Futuristic Promo", ratio: 1080 / 1920, category: "promos", videoUrl: v3761.url, posterUrl: p3761.url },
+  { id: "m-3694", title: "Modeling Photoshoot", ratio: 1440 / 2560, category: "shoots", videoUrl: v3694.url, posterUrl: p3694.url },
+  { id: "m-evart1", title: "Event Artwork I", ratio: 1080 / 1920, category: "eventArtwork", videoUrl: vEvArt1.url, posterUrl: pEvArt1.url },
+  { id: "m-evart2", title: "Event Artwork II", ratio: 1080 / 1920, category: "eventArtwork", videoUrl: vEvArt2.url, posterUrl: pEvArt2.url },
+  { id: "m-evart3", title: "Event Artwork III", ratio: 1080 / 1920, category: "eventArtwork", videoUrl: vEvArt3.url, posterUrl: pEvArt3.url },
+  { id: "m-evart4", title: "Event Artwork IV", ratio: 1080 / 1920, category: "eventArtwork", videoUrl: vEvArt4.url, posterUrl: pEvArt4.url },
+  { id: "m-evart5", title: "Event Artwork V", ratio: 1080 / 1920, category: "eventArtwork", videoUrl: vEvArt5.url, posterUrl: pEvArt5.url },
+  { id: "m-viralreel1", title: "Viral Reel I", ratio: 720 / 1280, category: "viral", videoUrl: vViralReel1.url, posterUrl: pViralReel1.url },
+  { id: "m-viralreel2", title: "Viral Reel II", ratio: 720 / 1280, category: "viral", videoUrl: vViralReel2.url, posterUrl: pViralReel2.url },
+  { id: "m-viralreel3", title: "Viral Reel III", ratio: 720 / 1280, category: "viral", videoUrl: vViralReel3.url, posterUrl: pViralReel3.url },
+  { id: "m-avatar1", title: "Avatar I", ratio: 720 / 1280, category: "avatar", videoUrl: vAvatar1.url, posterUrl: pAvatar1.url },
+  { id: "m-videoedits", title: "Video Edits", ratio: 1080 / 1920, category: "videoEdits", videoUrl: vVideoEdits.url, posterUrl: pVideoEdits.url },
+  { id: "m-avatar2", title: "Avatar II", ratio: 720 / 1280, category: "avatar", videoUrl: vAvatar2.url, posterUrl: pAvatar2.url },
+  { id: "m-avatar3", title: "Avatar III", ratio: 720 / 1280, category: "avatar", videoUrl: vAvatar3.url, posterUrl: pAvatar3.url },
+  { id: "m-4062", title: "Cinematic Story Telling I", ratio: 2548 / 1080, category: "storytelling", videoUrl: v4062.url, posterUrl: p4062.url },
+  { id: "m-4370", title: "Cinematic Story Telling II", ratio: 1914 / 1080, category: "storytelling", videoUrl: v4370.url, posterUrl: p4370.url },
+  { id: "m-cinestory3", title: "Cinematic Story Telling III", ratio: 1280 / 720, category: "storytelling", videoUrl: vCineStory3.url, posterUrl: pCineStory3.url },
+  { id: "m-cinestory4", title: "Cinematic Story Telling IV", ratio: 1280 / 720, category: "storytelling", videoUrl: vCineStory4.url, posterUrl: pCineStory4.url },
+  { id: "m-cinestory5", title: "Cinematic Story Telling V", ratio: 1280 / 720, category: "storytelling", videoUrl: vCineStory5.url, posterUrl: pCineStory5.url },
+  { id: "m-4378", title: "Instagram Virality — Cinematic Shoot", ratio: 1930 / 1080, category: "shoots", videoUrl: v4378.url, posterUrl: p4378.url },
   
 ];
 
