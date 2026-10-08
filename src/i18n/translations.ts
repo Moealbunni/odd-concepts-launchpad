@@ -226,33 +226,6 @@ export const en = {
       },
     ],
   },
-  concept: {
-    eyebrow: "Proof of craft",
-    title: "Proof is in the work.",
-    subtitle:
-      "We’re a new studio, so we’ll be straight with you — what you see here is concept work, the standard we build to. Every piece is labelled for exactly what it is. When we have client work we’re proud to show, it’ll live right here beside it.",
-    tag: "Concept",
-    disclaimer:
-      "All work shown is conceptual and created for demonstration purposes. No clients, logos, results or testimonials are invented.",
-    items: [
-      {
-        title: "The Growth System",
-        line: "How visibility, trust, content and conversion fit together as one connected machine.",
-      },
-      {
-        title: "Website & interface design",
-        line: "Premium, fast, conversion-focused layouts that sell before the visitor reads a second paragraph.",
-      },
-      {
-        title: "Brand & content concepts",
-        line: "Tone, messaging and visual systems that make a local business feel unmistakably credible.",
-      },
-      {
-        title: "Industry brand photography",
-        line: "Conceptual photo direction for salons, clinics, cafés and studios — the kind of visual trust that stops the scroll.",
-      },
-    ],
-  },
   why: {
     eyebrow: "About us",
     title: "A studio, not an agency.",
@@ -320,11 +293,11 @@ export const en = {
   },
   workPage: {
     eyebrow: "Work",
-    title: "The standard we ",
-    titleGradient: "build to",
+    title: "Proof is in the ",
+    titleGradient: "work",
     titleAfter: ".",
     subtitle:
-      "We're a new studio, so we won't dress up someone else's work as ours. What you see here is concept work — clearly labelled — until real client work is ready to sit beside it.",
+      "Live client websites, Instagram accounts we run, and real production work — everything below is shipped and in use today.",
   },
   clientSites: {
     eyebrow: "Live client work",
@@ -332,6 +305,14 @@ export const en = {
     subtitle: "Real client websites, live and in use today.",
     /** `{name}` is replaced with the (untranslated) client name. */
     visitAria: "Visit {name} website (opens in new tab)",
+  },
+  instagram: {
+    eyebrow: "Instagram",
+    title: "Accounts we run.",
+    subtitle: "Live Instagram accounts we build, run and grow for our clients.",
+    /** `{name}` is replaced with the (untranslated) account name. */
+    followAria: "Open {name} on Instagram (opens in new tab)",
+    comingSoon: "Coming soon",
   },
   media: {
     eyebrow: "Studio output",
@@ -380,7 +361,7 @@ export const en = {
     titleAfter: ".",
     subtitle:
       "Odd Concepts Digital is a Dubai-based growth studio for ambitious local businesses. We design and run one connected system — websites, visibility, content and response — so attention turns into enquiries and enquiries turn into customers.",
-    p1: "We’re new — and we’d rather be honest about that than borrow someone else’s proof. What you see across this site is our own concept work, clearly labelled. When we have client work we’re proud to show, it will live right beside it.",
+    p1: "Everything on this site is our own work: live client websites, Instagram accounts we run, and real production. We build and operate the whole system for our clients — that’s the proof we stand behind.",
     p2: "We work best with owners who care about the details, want a partner rather than a vendor, and would rather grow steadily on a solid foundation than chase a shortcut. If that sounds like you, the free Growth Plan is the easiest way to start.",
     imageAlt: "Aerial night view of Palm Jumeirah lit up in blue and purple",
   },
@@ -466,7 +447,7 @@ export const en = {
       "The Odd Concepts Digital website is provided for information and enquiry only. Content, wording, visuals and structure are ours — please don’t copy or reuse them without asking.",
     workShownH: "Work shown.",
     workShownB:
-      "Any portfolio pieces marked “Concept” are creative demonstrations of the standard we build to, not paid client work.",
+      "Work shown on this site is our own production, alongside live client websites and Instagram accounts we build and run.",
     growthPlanH: "Growth Plan.",
     growthPlanB:
       "The Growth Plan is offered free of charge with no obligation. It reflects our honest opinion at the time of writing and is not a guarantee of results.",
@@ -481,7 +462,6 @@ export const en = {
     explore: "Explore",
     readyToGrow: "Ready to grow?",
     rightsReserved: "All rights reserved.",
-    portfolioDisclaimer: "Portfolio pieces shown are concept work and creative demonstrations.",
   },
 };
 
