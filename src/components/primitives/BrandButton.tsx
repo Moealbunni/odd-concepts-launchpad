@@ -9,10 +9,10 @@ const brandButtonVariants = cva(
     variants: {
       variant: {
         primary:
-          "text-white shadow-[0_10px_30px_-10px_hsl(var(--brand-primary)/0.6)] hover:shadow-[0_16px_40px_-10px_hsl(var(--brand-accent)/0.55)] hover:-translate-y-0.5 gradient-bg",
+          "brand-button-primary text-primary-foreground hover:-translate-y-0.5 gradient-bg",
         secondary:
-          "border border-border bg-transparent text-foreground hover:border-foreground/40 hover:bg-white/5",
-        ghost: "text-foreground/80 hover:text-foreground hover:bg-white/5",
+          "border border-highlight-border bg-highlight-soft/30 text-highlight hover:border-highlight hover:bg-highlight-soft",
+        ghost: "text-foreground/80 hover:text-highlight hover:bg-highlight-soft/50",
       },
       size: {
         sm: "h-9 px-4 text-sm",

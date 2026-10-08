@@ -28,7 +28,7 @@ export function SectionHeading({
     >
       {eyebrow && (
         <Reveal>
-          <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+          <span className="text-xs font-medium uppercase tracking-[0.2em] text-highlight">
             {eyebrow}
           </span>
         </Reveal>
