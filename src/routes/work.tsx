@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Section } from "@/components/primitives/Section";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
-import { ConceptWork } from "@/components/home/ConceptWork";
 import { ClientSites } from "@/components/home/ClientSites";
+import { InstagramProfiles } from "@/components/home/InstagramProfiles";
 import { MediaShowcase } from "@/components/home/MediaShowcase";
 import { FinalCta } from "@/components/home/FinalCta";
 import { useT } from "@/i18n/LanguageContext";
@@ -14,13 +14,13 @@ export const Route = createFileRoute("/work")({
       {
         name: "description",
         content:
-          "Concept work and creative demonstrations — the standard we build to. Every piece is clearly labelled as concept, not client work.",
+          "Real work, shipped and in use — live client websites, Instagram accounts we run, and our own production work.",
       },
       { property: "og:title", content: "Work — Odd Concepts Digital" },
       {
         property: "og:description",
         content:
-          "Concept work and creative demonstrations — the standard we build to.",
+          "Live client websites, Instagram accounts we run, and real production work.",
       },
       { property: "og:url", content: "/work" },
     ],
@@ -48,8 +48,8 @@ function WorkPage() {
         />
       </Section>
       <ClientSites />
+      <InstagramProfiles />
       <MediaShowcase />
-      <ConceptWork />
       <FinalCta />
     </>
   );

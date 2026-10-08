@@ -86,9 +86,8 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
+        <div className="mt-12 border-t border-border pt-6 text-xs text-muted-foreground">
           <p>© {year} {siteConfig.name}. {t.footer.rightsReserved}</p>
-          <p className="italic">{t.footer.portfolioDisclaimer}</p>
         </div>
       </Container>
     </footer>
