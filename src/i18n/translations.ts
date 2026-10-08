@@ -226,33 +226,6 @@ export const en = {
       },
     ],
   },
-  concept: {
-    eyebrow: "Proof of craft",
-    title: "Proof is in the work.",
-    subtitle:
-      "We’re a new studio, so we’ll be straight with you — what you see here is concept work, the standard we build to. Every piece is labelled for exactly what it is. When we have client work we’re proud to show, it’ll live right here beside it.",
-    tag: "Concept",
-    disclaimer:
-      "All work shown is conceptual and created for demonstration purposes. No clients, logos, results or testimonials are invented.",
-    items: [
-      {
-        title: "The Growth System",
-        line: "How visibility, trust, content and conversion fit together as one connected machine.",
-      },
-      {
-        title: "Website & interface design",
-        line: "Premium, fast, conversion-focused layouts that sell before the visitor reads a second paragraph.",
-      },
-      {
-        title: "Brand & content concepts",
-        line: "Tone, messaging and visual systems that make a local business feel unmistakably credible.",
-      },
-      {
-        title: "Industry brand photography",
-        line: "Conceptual photo direction for salons, clinics, cafés and studios — the kind of visual trust that stops the scroll.",
-      },
-    ],
-  },
   why: {
     eyebrow: "About us",
     title: "A studio, not an agency.",
@@ -320,11 +293,11 @@ export const en = {
   },
   workPage: {
     eyebrow: "Work",
-    title: "The standard we ",
-    titleGradient: "build to",
+    title: "Proof is in the ",
+    titleGradient: "work",
     titleAfter: ".",
     subtitle:
-      "We're a new studio, so we won't dress up someone else's work as ours. What you see here is concept work — clearly labelled — until real client work is ready to sit beside it.",
+      "Live client websites, Instagram accounts we run, and real production work — everything below is shipped and in use today.",
   },
   clientSites: {
     eyebrow: "Live client work",
@@ -332,6 +305,14 @@ export const en = {
     subtitle: "Real client websites, live and in use today.",
     /** `{name}` is replaced with the (untranslated) client name. */
     visitAria: "Visit {name} website (opens in new tab)",
+  },
+  instagram: {
+    eyebrow: "Instagram",
+    title: "Accounts we run.",
+    subtitle: "Live Instagram accounts we build, run and grow for our clients.",
+    /** `{name}` is replaced with the (untranslated) account name. */
+    followAria: "Open {name} on Instagram (opens in new tab)",
+    comingSoon: "Coming soon",
   },
   media: {
     eyebrow: "Studio output",
@@ -380,7 +361,7 @@ export const en = {
     titleAfter: ".",
     subtitle:
       "Odd Concepts Digital is a Dubai-based growth studio for ambitious local businesses. We design and run one connected system — websites, visibility, content and response — so attention turns into enquiries and enquiries turn into customers.",
-    p1: "We’re new — and we’d rather be honest about that than borrow someone else’s proof. What you see across this site is our own concept work, clearly labelled. When we have client work we’re proud to show, it will live right beside it.",
+    p1: "Everything on this site is our own work: live client websites, Instagram accounts we run, and real production. We build and operate the whole system for our clients — that’s the proof we stand behind.",
     p2: "We work best with owners who care about the details, want a partner rather than a vendor, and would rather grow steadily on a solid foundation than chase a shortcut. If that sounds like you, the free Growth Plan is the easiest way to start.",
     imageAlt: "Aerial night view of Palm Jumeirah lit up in blue and purple",
   },
@@ -466,7 +447,7 @@ export const en = {
       "The Odd Concepts Digital website is provided for information and enquiry only. Content, wording, visuals and structure are ours — please don’t copy or reuse them without asking.",
     workShownH: "Work shown.",
     workShownB:
-      "Any portfolio pieces marked “Concept” are creative demonstrations of the standard we build to, not paid client work.",
+      "Work shown on this site is our own production, alongside live client websites and Instagram accounts we build and run.",
     growthPlanH: "Growth Plan.",
     growthPlanB:
       "The Growth Plan is offered free of charge with no obligation. It reflects our honest opinion at the time of writing and is not a guarantee of results.",
@@ -481,7 +462,6 @@ export const en = {
     explore: "Explore",
     readyToGrow: "Ready to grow?",
     rightsReserved: "All rights reserved.",
-    portfolioDisclaimer: "Portfolio pieces shown are concept work and creative demonstrations.",
   },
 };
 
@@ -652,33 +632,6 @@ export const ar: Translations = {
       },
     ],
   },
-  concept: {
-    eyebrow: "دليل الحرفية",
-    title: "الإثبات في العمل نفسه.",
-    subtitle:
-      "نحن استوديو جديد، لذا سنكون صريحين معكم — ما ترونه هنا هو عمل مفاهيمي، وهو المعيار الذي نبني وفقه. كل عمل موسوم بوضوح لما هو عليه فعلاً. وعندما يكون لدينا عمل حقيقي لعملاء نفخر بعرضه، سيظهر هنا بجانبه.",
-    tag: "مفاهيمي",
-    disclaimer:
-      "كل الأعمال المعروضة هنا هي أعمال مفاهيمية أُنشئت لأغراض العرض فقط. لا عملاء ولا نتائج ولا شهادات مختلقة.",
-    items: [
-      {
-        title: "نظام النمو",
-        line: "كيف يترابط الظهور والثقة والمحتوى والتحويل كآلة واحدة متصلة.",
-      },
-      {
-        title: "تصميم المواقع والواجهات",
-        line: "تصاميم متميزة وسريعة وموجهة للتحويل تبيع قبل أن يقرأ الزائر الفقرة الثانية.",
-      },
-      {
-        title: "مفاهيم العلامة والمحتوى",
-        line: "نبرة ورسائل وأنظمة بصرية تجعل العمل المحلي يبدو موثوقًا بلا شك.",
-      },
-      {
-        title: "تصوير العلامات القطاعي",
-        line: "توجيه تصوير مفاهيمي للصالونات والعيادات والمقاهي والاستوديوهات — نوع الثقة البصرية التي توقف التمرير.",
-      },
-    ],
-  },
   why: {
     eyebrow: "من نحن",
     title: "استوديو، لا وكالة.",
@@ -746,17 +699,24 @@ export const ar: Translations = {
   },
   workPage: {
     eyebrow: "أعمالنا",
-    title: "المعيار الذي ",
-    titleGradient: "نبني وفقه",
+    title: "الإثبات في ",
+    titleGradient: "العمل",
     titleAfter: ".",
     subtitle:
-      "نحن استوديو جديد، لذا لن نُقدّم عمل الآخرين وكأنه عملنا. ما ترونه هنا هو عمل مفاهيمي — موسوم بوضوح — إلى أن يصبح لدينا عمل عملاء حقيقي يجلس بجانبه.",
+      "مواقع عملاء حقيقية، حسابات إنستغرام نديرها، وأعمال إنتاج فعلية — كل ما يلي منشور وقيد الاستخدام اليوم.",
   },
   clientSites: {
     eyebrow: "أعمال عملاء حقيقية",
     title: "مواقع أطلقناها بالفعل.",
     subtitle: "مواقع عملاء حقيقية، تعمل الآن.",
     visitAria: "زيارة موقع {name} (يفتح في نافذة جديدة)",
+  },
+  instagram: {
+    eyebrow: "إنستغرام",
+    title: "حسابات نديرها.",
+    subtitle: "حسابات إنستغرام حقيقية نبنيها ونديرها ونعمل على تنميتها لعملائنا.",
+    followAria: "فتح حساب {name} على إنستغرام (يفتح في نافذة جديدة)",
+    comingSoon: "قريبًا",
   },
   media: {
     eyebrow: "إنتاج الاستوديو",
@@ -805,7 +765,7 @@ export const ar: Translations = {
     titleAfter: ".",
     subtitle:
       "Odd Concepts Digital استوديو نمو مقره دبي لخدمة الأعمال المحلية الطموحة. نصمم وندير نظامًا واحدًا متكاملاً — المواقع، الظهور، المحتوى والاستجابة — بحيث يتحول الاهتمام إلى استفسارات، والاستفسارات إلى عملاء.",
-    p1: "نحن جدد — ونفضّل أن نكون صادقين حيال ذلك بدلًا من استعارة إثبات الآخرين. ما ترونه في هذا الموقع هو عملنا المفاهيمي الخاص، موسوم بوضوح. وعندما يكون لدينا عمل عملاء نفخر بعرضه، سيظهر هنا بجانبه مباشرة.",
+    p1: "كل ما في هذا الموقع هو عملنا: مواقع عملاء حقيقية، حسابات إنستغرام نديرها، وأعمال إنتاج فعلية. نبني وندير النظام كاملًا لعملائنا — وهذا هو الإثبات الذي نقف خلفه.",
     p2: "نعمل بشكل أفضل مع أصحاب الأعمال الذين يهتمون بالتفاصيل، ويريدون شريكًا لا مجرد مورّد، ويفضّلون النمو التدريجي على أساس متين بدلًا من ملاحقة حل سريع. إذا كان هذا يصفكم، فإن خطة النمو المجانية هي أسهل طريقة للبدء.",
     imageAlt: "منظر جوي ليلي لنخلة جميرا مضاءة بالأزرق والبنفسجي",
   },
@@ -890,7 +850,7 @@ export const ar: Translations = {
       "موقع Odd Concepts Digital مُقدَّم لأغراض المعلومات والاستفسار فقط. المحتوى والنصوص والعناصر البصرية والهيكل ملك لنا — يُرجى عدم نسخها أو إعادة استخدامها دون إذن.",
     workShownH: "الأعمال المعروضة.",
     workShownB:
-      "أي أعمال في معرضنا موسومة بـ«مفاهيمي» هي عروض إبداعية للمعيار الذي نبني وفقه، وليست أعمالًا مدفوعة لعملاء.",
+      "الأعمال المعروضة في هذا الموقع هي إنتاجنا الخاص، إلى جانب مواقع عملاء حقيقية وحسابات إنستغرام نبنيها ونديرها.",
     growthPlanH: "خطة النمو.",
     growthPlanB:
       "تُقدَّم خطة النمو مجانًا وبلا أي التزام. وهي تعكس رأينا الصادق وقت كتابتها، وليست ضمانًا للنتائج.",
@@ -905,7 +865,6 @@ export const ar: Translations = {
     explore: "استكشف",
     readyToGrow: "جاهزون للنمو؟",
     rightsReserved: "جميع الحقوق محفوظة.",
-    portfolioDisclaimer: "الأعمال المعروضة هي أعمال مفاهيمية وعروض إبداعية.",
   },
 };
 
