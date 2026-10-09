@@ -26,6 +26,8 @@ import v5015 from "@/assets/media/img_5015.mp4.asset.json";
 import p5015 from "@/assets/media/img_5015.jpg.asset.json";
 import vViral from "@/assets/media/viral_video_ideas.mp4.asset.json";
 import pViral from "@/assets/media/viral_video_ideas.jpg.asset.json";
+import vWinter from "@/assets/media/winter_is_coming.mp4.asset.json";
+import pWinter from "@/assets/media/winter_is_coming.jpg.asset.json";
 import v5217 from "@/assets/media/img_5217.mp4.asset.json";
 import p5217 from "@/assets/media/img_5217.jpg.asset.json";
 import vClientAd from "@/assets/media/client_ad.mp4.asset.json";
@@ -93,6 +95,7 @@ export const mediaItems: MediaItem[] = [
   { id: "m-room44", title: "Venue Promo", ratio: 1620 / 1080, category: "promos", videoUrl: room44Video.url, posterUrl: room44Poster.url },
   { id: "m-amer", title: "Company Mascot & Storyline", ratio: 1620 / 1080, category: "storytelling", videoUrl: amerrVideo.url, posterUrl: amerrPoster.url },
   { id: "m-viral", title: "Viral Video Ideas", ratio: 1914 / 1080, category: "viral", videoUrl: vViral.url, posterUrl: pViral.url },
+  { id: "m-winter", title: "Viral Video", ratio: 1440 / 1080, category: "viral", videoUrl: vWinter.url, posterUrl: pWinter.url },
   { id: "m-4429", title: "Cinematic Realism — Story Telling", ratio: 1936 / 1080, category: "storytelling", videoUrl: v4429.url, posterUrl: p4429.url },
   { id: "m-4745", title: "Company Promo I", ratio: 1080 / 1920, category: "promos", videoUrl: v4745.url, posterUrl: p4745.url },
   { id: "m-5217", title: "Company Promo II", ratio: 1620 / 1080, category: "promos", videoUrl: v5217.url, posterUrl: p5217.url },
