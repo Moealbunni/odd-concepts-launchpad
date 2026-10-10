@@ -10,6 +10,6 @@
 <!-- LOVABLE:END -->
 
 - Keep shared page, card, and button gradient/shadow treatments in global semantic CSS tokens; shared primitives consume them so colour refreshes remain consistent across all routes.
-- Render decorative background media once in SiteLayout with globally tokenized intensity, so every route shares the same treatment without blocking interaction.
+- Render decorative background media once in SiteLayout at its natural aspect ratio with document-scrolling, seamless CSS linework and globally tokenized intensity, so every route stays sharp and continuous without blocking interaction.
 - Keep the Work automation capability section in a dedicated component with bilingual copy in the existing translation dictionary, separate from client proof so capabilities are not mistaken for shipped case studies.
 - Keep Studio Output media in one typed dataset with format derived from aspect ratio and explicit filter categories, so new work stays organized without duplicating galleries.

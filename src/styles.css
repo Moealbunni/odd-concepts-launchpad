@@ -124,6 +124,9 @@
   --gradient-brand: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-accent)));
   --background-art-opacity: 0.65;
   --background-art-mobile-opacity: 0.45;
+  --background-line-blue: hsl(var(--brand-primary) / 0.065);
+  --background-line-purple: hsl(var(--brand-accent) / 0.055);
+  --background-linework: repeating-linear-gradient(125deg, transparent 0 260px, var(--background-line-blue) 261px 262px, transparent 263px 520px), repeating-linear-gradient(35deg, transparent 0 390px, var(--background-line-purple) 391px 392px, transparent 393px 780px);
 }
 
 @layer base {
@@ -192,12 +195,17 @@
 
 .site-surface {
   background-image: var(--gradient-page);
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .studio-backdrop {
   opacity: var(--background-art-opacity);
   mix-blend-mode: screen;
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 55%, transparent 100%);
+}
+
+.studio-backdrop-lines {
+  background-image: var(--background-linework);
 }
 
 @media (max-width: 639px) {
