@@ -122,6 +122,8 @@
   --sidebar-ring: 217 91% 60%;
 
   --gradient-brand: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-accent)));
+  --background-art-opacity: 0.65;
+  --background-art-mobile-opacity: 0.45;
 }
 
 @layer base {
@@ -191,6 +193,17 @@
 .site-surface {
   background-image: var(--gradient-page);
   background-attachment: fixed;
+}
+
+.studio-backdrop {
+  opacity: var(--background-art-opacity);
+  mix-blend-mode: screen;
+}
+
+@media (max-width: 639px) {
+  .studio-backdrop {
+    opacity: var(--background-art-mobile-opacity);
+  }
 }
 
 .studio-card {
