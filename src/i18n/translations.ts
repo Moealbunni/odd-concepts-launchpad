@@ -343,7 +343,7 @@ export const en = {
     filterAll: "All",
     categories: {
       ads: "Ads", storytelling: "Storytelling", promos: "Promos", avatar: "Avatar",
-      videoEdits: "Video Edits", eventArtwork: "Event Artwork", viral: "Viral", shoots: "Shoots",
+      videoEdits: "Video Edits", eventArtwork: "Event Artwork", viral: "Viral", shoots: "Shoots", musicVideo: "Music Video",
     },
     showMore: "Show more",
     showLess: "Show less",
@@ -353,6 +353,7 @@ export const en = {
       "m-cinead1": "Cinematic Ad I",
           "m-cinead2": "Cinematic Ad II",
           "m-spotad": "Cinematic Ad III",
+      "m-musicvideo": "Music Video",
       "m-room44": "Venue Promo",
       "m-amer": "Company Mascot & Storyline",
       "m-viral": "Viral Video Ideas",
@@ -807,7 +808,7 @@ export const ar: Translations = {
     filterAll: "الكل",
     categories: {
       ads: "إعلانات", storytelling: "سرد قصصي", promos: "ترويجي", avatar: "أفاتار",
-      videoEdits: "مونتاج فيديو", eventArtwork: "تصاميم فعاليات", viral: "فيرال", shoots: "تصوير",
+      videoEdits: "مونتاج فيديو", eventArtwork: "تصاميم فعاليات", viral: "فيرال", shoots: "تصوير", musicVideo: "فيديو موسيقي",
     },
     showMore: "عرض المزيد",
     showLess: "عرض أقل",
@@ -817,6 +818,7 @@ export const ar: Translations = {
       "m-cinead1": "إعلان سينمائي الأول",
           "m-cinead2": "إعلان سينمائي الثاني",
           "m-spotad": "إعلان سينمائي ثالث",
+      "m-musicvideo": "فيديو موسيقي",
       "m-room44": "إعلان ترويجي للمكان",
       "m-amer": "تميمة الشركة والقصة",
       "m-viral": "أفكار فيديوهات فيرال",
