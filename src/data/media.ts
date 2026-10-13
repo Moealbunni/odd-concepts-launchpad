@@ -72,9 +72,11 @@ import vAvatar2 from "@/assets/media/avatar_2.mp4.asset.json";
 import pAvatar2 from "@/assets/media/avatar_2.jpg.asset.json";
 import vAvatar3 from "@/assets/media/avatar_3.mp4.asset.json";
 import pAvatar3 from "@/assets/media/avatar_3.jpg.asset.json";
+import vMusicVideo from "@/assets/media/music_video.mp4.asset.json";
+import pMusicVideo from "@/assets/media/music_video.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
-export type MediaCategory = "ads" | "storytelling" | "promos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots";
+export type MediaCategory = "ads" | "storytelling" | "promos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots" | "musicVideo";
 
 export type MediaItem = {
   id: string;
@@ -92,6 +94,7 @@ export const mediaItems: MediaItem[] = [
   { id: "m-cinead1", title: "Cinematic Ad I", ratio: 1936 / 1080, category: "ads", videoUrl: vCineAd1.url, posterUrl: pCineAd1.url },
   { id: "m-cinead2", title: "Cinematic Ad II", ratio: 1936 / 1080, category: "ads", videoUrl: vCineAd2.url, posterUrl: pCineAd2.url },
   { id: "m-spotad", title: "Cinematic Ad III", ratio: 1920 / 1080, category: "ads", videoUrl: vSpotAd.url, posterUrl: pSpotAd.url },
+  { id: "m-musicvideo", title: "Music Video", ratio: 1440 / 1080, category: "musicVideo", videoUrl: vMusicVideo.url, posterUrl: pMusicVideo.url },
   { id: "m-room44", title: "Venue Promo", ratio: 1620 / 1080, category: "promos", videoUrl: room44Video.url, posterUrl: room44Poster.url },
   { id: "m-amer", title: "Company Mascot & Storyline", ratio: 1620 / 1080, category: "storytelling", videoUrl: amerrVideo.url, posterUrl: amerrPoster.url },
   { id: "m-viral", title: "Viral Video Ideas", ratio: 1914 / 1080, category: "viral", videoUrl: vViral.url, posterUrl: pViral.url },

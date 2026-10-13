@@ -13,3 +13,6 @@
 - [x] Verify English/Arabic layout and external links.
 
 - [x] Add 4 uploaded photos inline: TheReality (lighttrails), WhyOddConcepts Dubai item (museum), About intro (palm), AI Avatar Videos card (smart speaker)
+
+- [x] Add uploaded clip to Cinematic as “Music Video” with its own category filter.
+- [x] Verify English/Arabic layout for the new clip on mobile and desktop.
