@@ -31,6 +31,12 @@ const accounts = [
     url: "https://www.instagram.com/venya.dom/",
     comingSoon: true,
   },
+  {
+    name: "Soul Brunch PC",
+    handle: "@soulbrunchpuntacana",
+    url: "https://www.instagram.com/soulbrunchpuntacana/",
+    comingSoon: true,
+  },
 ];
 
 export function InstagramProfiles() {
