@@ -201,7 +201,11 @@
 .studio-backdrop {
   opacity: var(--background-art-opacity);
   mix-blend-mode: screen;
-  mask-image: linear-gradient(to bottom, transparent, black 12%, black 55%, transparent 100%);
+  /* Dissolve every edge, including the sides on screens wider than the art. */
+  mask-image:
+    linear-gradient(to right, transparent, black 18%, black 82%, transparent),
+    linear-gradient(to bottom, transparent, black 18%, black 50%, transparent);
+  mask-composite: intersect;
 }
 
 .studio-backdrop-lines {
