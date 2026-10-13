@@ -16,3 +16,6 @@
 
 - [x] Add uploaded clip to Cinematic as “Music Video” with its own category filter.
 - [x] Verify English/Arabic layout for the new clip on mobile and desktop.
+
+- [x] Add Soul Brunch PC to the Instagram accounts with “coming soon” and balance the card row.
+- [x] Verify English/Arabic layout for the Instagram accounts on mobile and desktop.
