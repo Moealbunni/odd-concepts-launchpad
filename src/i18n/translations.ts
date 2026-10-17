@@ -145,7 +145,7 @@ export const en = {
       },
       {
         name: "Paid Ads",
-        line: "Meta, TikTok, Google and ChatGPT — one strategy, every platform.",
+        line: "Meta, TikTok, Google and the new ChatGPT Ads — one strategy, every platform.",
         detail: "We plan, launch and manage your campaigns across Facebook & Instagram, TikTok, Google and ChatGPT ads — targeting, creative, budgets and weekly optimisation.",
       },
       {
@@ -656,7 +656,7 @@ export const ar: Translations = {
       },
       {
         name: "الإعلانات المدفوعة",
-        line: "ميتا وتيك توك وجوجل وChatGPT — استراتيجية واحدة لكل المنصات.",
+        line: "ميتا وتيك توك وجوجل وإعلانات ChatGPT الجديدة — استراتيجية واحدة لكل المنصات.",
         detail: "نخطط حملاتكم ونطلقها ونديرها على فيسبوك وإنستغرام وتيك توك وجوجل وإعلانات ChatGPT — الاستهداف والتصاميم والميزانيات والتحسين الأسبوعي.",
       },
       {
