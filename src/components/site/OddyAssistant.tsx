@@ -23,9 +23,10 @@ import { useLanguage } from "@/i18n/LanguageContext";
 const STORAGE_KEY = "ocd-oddy";
 
 export function OddyAssistant() {
-  const { t, lang } = useLanguage();
+  const { t, lang, setLang } = useLanguage();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [open, setOpen] = useState(false);
+  const [langChosen, setLangChosen] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const loaded = useRef(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -98,7 +99,7 @@ export function OddyAssistant() {
             {messages.length > 0 && (
               <button
                 type="button"
-                onClick={() => { stop(); setMessages([]); setError(null); }}
+                onClick={() => { stop(); setMessages([]); setError(null); setLangChosen(false); }}
                 aria-label={t.oddy.reset}
                 title={t.oddy.reset}
                 className="rounded-full p-2 text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -123,7 +124,27 @@ export function OddyAssistant() {
                   <MessageResponse>{t.oddy.greeting}</MessageResponse>
                 </MessageContent>
               </Message>
-              {messages.length === 0 && (
+              {messages.length === 0 && !langChosen && (
+                <div className="space-y-2">
+                  <p className="text-xs text-muted-foreground">Choose your language · اختر لغتك</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {([
+                      ["en", "English"],
+                      ["ar", "العربية"],
+                    ] as const).map(([code, label]) => (
+                      <button
+                        key={code}
+                        type="button"
+                        onClick={() => { setLang(code); setLangChosen(true); }}
+                        className="rounded-xl border border-highlight-border bg-highlight-soft px-3 py-2.5 text-sm font-medium text-foreground hover:border-highlight"
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {messages.length === 0 && langChosen && (
                 <div className="flex flex-wrap gap-2">
                   {t.oddy.suggestions.map((s) => (
                     <button
