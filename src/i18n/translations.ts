@@ -510,6 +510,7 @@ export const en = {
   footer: {
     call: "Call",
     whatsappButton: "Chat on WhatsApp",
+    instagramButton: "Follow us on Instagram",
     contact: "Contact",
     explore: "Explore",
     readyToGrow: "Ready to grow?",
@@ -1000,6 +1001,7 @@ export const ar: Translations = {
   footer: {
     call: "اتصل",
     whatsappButton: "تواصل عبر واتساب",
+    instagramButton: "تابعنا على إنستغرام",
     contact: "التواصل",
     explore: "استكشف",
     readyToGrow: "جاهزون للنمو؟",
