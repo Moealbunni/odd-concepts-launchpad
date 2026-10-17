@@ -31,6 +31,7 @@ export function initMetaPixel(): void {
     window.fbq("init", PIXEL_ID);
     window.fbq("track", "PageView");
     inited = true;
+    installWhatsAppContactTracking();
     return;
   }
   const n: FbqCallable = function (...args: unknown[]) {
@@ -55,6 +56,7 @@ export function initMetaPixel(): void {
   n("init", PIXEL_ID);
   n("track", "PageView");
   inited = true;
+  installWhatsAppContactTracking();
 }
 
 export function isMetaPixelInitialized(): boolean {
