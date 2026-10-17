@@ -21,3 +21,6 @@
 - [x] Verify English/Arabic layout for the Instagram accounts on mobile and desktop.
 [x] Install Meta Pixel behind the regional consent banner with a "Cookie settings" link in the footer.
 [x] Verify English/Arabic banner behaviour, acceptance, refusal and reopening on desktop and mobile.
+
+- [x] Add the studio's own Instagram (@oddconceptsdigital) to the footer and to Oddy's answers.
+- [x] Verify English/Arabic footer layout on mobile and desktop.
