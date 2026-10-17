@@ -464,9 +464,9 @@ export const en = {
     storedH: "How it’s stored.",
     storedB:
       "Enquiries are delivered to us by email. We keep them only for as long as needed to help you — you can ask us to delete yours at any time.",
-    cookiesH: "Cookies.",
+    cookiesH: "Cookies & advertising measurement.",
     cookiesB:
-      "This site doesn’t set marketing or tracking cookies. Any cookies used are strictly necessary for the site to function.",
+      "With your permission where required by law, this site uses the Meta (Facebook) Pixel to measure how visitors use the site — such as which pages are viewed — and to measure and improve our advertising on Facebook and Instagram. It may set cookies and receive data such as pages visited and actions taken here. Visitors in regions that require consent are measured only after accepting via our cookie banner; you can change your choice any time through “Cookie settings” in the footer or by contacting us.",
     choicesH: "Your choices.",
     choicesB: "To request access, correction or deletion of your data, email us at",
     disclaimer:
@@ -496,6 +496,14 @@ export const en = {
     explore: "Explore",
     readyToGrow: "Ready to grow?",
     rightsReserved: "All rights reserved.",
+  },
+  consent: {
+    title: "Cookies & privacy.",
+    body: "With your permission, we use a small cookie (the Meta Pixel) to measure how visitors use this site and to improve our ads on Facebook and Instagram. You can accept or decline — the site works the same either way.",
+    accept: "Accept",
+    reject: "Decline",
+    privacyLink: "Privacy policy",
+    settings: "Cookie settings",
   },
 };
 
@@ -928,9 +936,9 @@ export const ar: Translations = {
     storedH: "كيف يتم تخزينها.",
     storedB:
       "تُرسَل الاستفسارات إلينا عبر البريد الإلكتروني. نحتفظ بها فقط للمدة اللازمة لمساعدتكم — يمكنكم طلب حذف بياناتكم في أي وقت.",
-    cookiesH: "ملفات تعريف الارتباط.",
+    cookiesH: "ملفات الارتباط وقياس الإعلانات.",
     cookiesB:
-      "لا يستخدم هذا الموقع ملفات تعريف ارتباط تسويقية أو تتبعية. أي ملفات مستخدمة ضرورية فقط لعمل الموقع.",
+      "وبإذنكم حيث يشترطه القانون، يستخدم هذا الموقع Meta Pixel (بيكسل فيسبوك) لقياس كيفية استخدام الزوار للموقع — مثل الصفحات التي تُشاهَد — ولقياس إعلاناتنا على فيسبوك وإنستغرام وتحسينها. وقد يضع ملفات ارتباط ويستلم بيانات مثل الصفحات المُتاحة والأفعال المتخذة هنا. الزوار في المناطق التي تشترط الموافقة لا يُقاسون إلا بعد القبول عبر شريط ملفات الارتباط؛ ويمكنكم تغيير اختياركم في أي وقت عبر «إعدادات ملفات الارتباط» في أسفل الموقع أو بمراسلتنا.",
     choicesH: "خياراتكم.",
     choicesB: "لطلب الوصول إلى بياناتكم أو تصحيحها أو حذفها، راسلونا عبر البريد الإلكتروني",
     disclaimer:
@@ -960,6 +968,14 @@ export const ar: Translations = {
     explore: "استكشف",
     readyToGrow: "جاهزون للنمو؟",
     rightsReserved: "جميع الحقوق محفوظة.",
+  },
+  consent: {
+    title: "ملفات الارتباط والخصوصية.",
+    body: "وبإذنكم، نستخدم ملف ارتباط صغير (Meta Pixel) لقياس كيفية استخدام الزوار لهذا الموقع ولتحسين إعلاناتنا على فيسبوك وإنستغرام. يمكنكم القبول أو الرفض — والموقع يعمل بنفس الطريقة.",
+    accept: "قبول",
+    reject: "رفض",
+    privacyLink: "سياسة الخصوصية",
+    settings: "إعدادات ملفات الارتباط",
   },
 };
 
