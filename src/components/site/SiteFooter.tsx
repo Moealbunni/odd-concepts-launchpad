@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import { Container } from "@/components/primitives/Container";
 import { BrandButton } from "@/components/primitives/BrandButton";
 import { useT } from "@/i18n/LanguageContext";
+import { OPEN_COOKIE_SETTINGS_EVENT } from "@/lib/consent";
 import { Wordmark } from "./Wordmark";
 
 export function SiteFooter() {
@@ -82,6 +83,17 @@ export function SiteFooter() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={() =>
+                    window.dispatchEvent(new CustomEvent(OPEN_COOKIE_SETTINGS_EVENT))
+                  }
+                  className="inline-flex min-h-8 items-center text-start transition-colors hover:text-foreground"
+                >
+                  {t.consent.settings}
+                </button>
+              </li>
             </ul>
           </div>
         </div>
