@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { siteConfig } from "../config/site";
 import { SiteLayout } from "../components/site/SiteLayout";
+import { ConsentBanner } from "../components/site/ConsentBanner";
 import { LanguageProvider } from "../i18n/LanguageContext";
 
 function NotFoundComponent() {
@@ -175,6 +176,7 @@ function RootComponent() {
         <SiteLayout>
           <Outlet />
         </SiteLayout>
+        <ConsentBanner />
       </LanguageProvider>
     </QueryClientProvider>
   );
