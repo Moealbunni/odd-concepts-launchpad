@@ -13,3 +13,4 @@
 - Render decorative background media once in SiteLayout at its natural aspect ratio with document-scrolling, four-edge feathered masking, seamless CSS linework and globally tokenized intensity, so every route stays sharp and continuous without a visible image rectangle or blocked interaction.
 - Keep the Work automation capability section in a dedicated component with bilingual copy in the existing translation dictionary, separate from client proof so capabilities are not mistaken for shipped case studies.
 - Keep Studio Output media in one typed dataset with format derived from aspect ratio and explicit filter categories, so new work stays organized without duplicating galleries.
+- The Oddy assistant builds its knowledge from the bilingual translations dictionary and siteConfig at request time, so website copy changes automatically reach its answers.
