@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
 import { useRouterState } from "@tanstack/react-router";
-import { RotateCcw, X } from "lucide-react";
+import { Minus, Trash2, X } from "lucide-react";
 import {
   Conversation,
   ConversationContent,
@@ -27,6 +27,7 @@ export function OddyAssistant() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [open, setOpen] = useState(false);
   const [langChosen, setLangChosen] = useState(false);
+  const [confirmClear, setConfirmClear] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const loaded = useRef(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -88,7 +89,7 @@ export function OddyAssistant() {
           role="dialog"
           aria-label={t.oddy.name}
           dir={lang === "ar" ? "rtl" : "ltr"}
-          className="fixed inset-x-2 bottom-2 z-50 flex h-[min(640px,calc(100dvh-1rem))] flex-col overflow-hidden rounded-2xl border border-highlight-border bg-card shadow-2xl sm:inset-x-auto sm:end-6 sm:bottom-6 sm:w-[400px]"
+          className="fixed inset-x-2 bottom-2 z-50 flex h-[min(72dvh,560px)] sm:h-[min(640px,calc(100dvh-3rem))] flex-col overflow-hidden rounded-2xl border border-highlight-border bg-card shadow-2xl sm:inset-x-auto sm:end-6 sm:bottom-6 sm:w-[400px]"
         >
           <header className="flex items-center gap-3 border-b border-border px-4 py-3">
             <img src={oddyAvatar} alt="" width={40} height={40} className="size-10" />
@@ -99,23 +100,40 @@ export function OddyAssistant() {
             {messages.length > 0 && (
               <button
                 type="button"
-                onClick={() => { stop(); setMessages([]); setError(null); setLangChosen(false); }}
+                onClick={() => setConfirmClear(true)}
                 aria-label={t.oddy.reset}
                 title={t.oddy.reset}
                 className="rounded-full p-2 text-muted-foreground hover:bg-muted hover:text-foreground"
               >
-                <RotateCcw className="size-4" />
+                <Trash2 className="size-4" />
               </button>
             )}
             <button
               type="button"
               onClick={() => setOpen(false)}
+              aria-label={t.oddy.minimize}
+              title={t.oddy.minimize}
+              className="rounded-full p-2 text-muted-foreground hover:bg-muted hover:text-foreground"
+            >
+              <Minus className="size-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
               aria-label={t.oddy.close}
+              title={t.oddy.close}
               className="rounded-full p-2 text-muted-foreground hover:bg-muted hover:text-foreground"
             >
               <X className="size-4" />
             </button>
           </header>
+          {confirmClear && (
+            <div role="alertdialog" className="flex flex-wrap items-center gap-2 border-b border-border bg-highlight-soft px-4 py-3 text-sm">
+              <p className="min-w-0 flex-1 text-foreground">{t.oddy.clearConfirm}</p>
+              <button type="button" onClick={() => setConfirmClear(false)} className="rounded-full px-3 py-1.5 text-muted-foreground hover:bg-muted hover:text-foreground">{t.oddy.clearNo}</button>
+              <button type="button" onClick={() => { stop(); setMessages([]); setError(null); setLangChosen(false); setConfirmClear(false); }} className="rounded-full bg-destructive px-3 py-1.5 font-medium text-destructive-foreground">{t.oddy.clearYes}</button>
+            </div>
+          )}
 
           <Conversation className="flex-1">
             <ConversationContent className="gap-5 p-4">
