@@ -177,6 +177,8 @@ export function GrowthPlanForm() {
       if (!res.ok || !payload?.ok) {
         console.warn("Growth plan submission returned", res.status);
         setSendFailed(true);
+      } else {
+        trackMetaEvent("Lead", { content_name: "Free Growth Plan" });
       }
     } catch (err) {
       console.warn("Growth plan submission failed:", err);

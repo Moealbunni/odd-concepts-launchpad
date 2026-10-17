@@ -70,3 +70,31 @@ export function grantMetaConsent(): void {
 export function revokeMetaConsent(): void {
   if (inited) window.fbq?.("consent", "revoke");
 }
+
+/**
+ * Standard event, sent only when the pixel was initialized (consent permitted)
+ * and never with personal data. Each call gets a unique event id.
+ */
+export function trackMetaEvent(name: "Lead" | "Contact", params: Record<string, string> = {}): void {
+  if (!inited || !window.fbq) return;
+  const eventID = `${name.toLowerCase()}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+  window.fbq("track", name, params, { eventID });
+}
+
+let contactListener = false;
+
+/** One delegated listener: any tap on a wa.me link anywhere (incl. Oddy's replies) reports Contact. */
+export function installWhatsAppContactTracking(): void {
+  if (contactListener || typeof document === "undefined") return;
+  contactListener = true;
+  document.addEventListener(
+    "click",
+    (e) => {
+      const a = (e.target as Element | null)?.closest?.("a[href]") as HTMLAnchorElement | null;
+      if (a && /^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(a.href)) {
+        trackMetaEvent("Contact", { content_name: "WhatsApp" });
+      }
+    },
+    true,
+  );
+}
