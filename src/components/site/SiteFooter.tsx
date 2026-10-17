@@ -54,6 +54,20 @@ export function SiteFooter() {
                 </a>
               </li>
             </ul>
+            <div className="mt-6 flex flex-col gap-3">
+              <BrandButton asChild variant="secondary" size="md" className="w-full">
+                <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  <WhatsAppGlyph className="size-4 shrink-0" />
+                  {t.footer.whatsappButton}
+                </a>
+              </BrandButton>
+              <BrandButton asChild variant="secondary" size="md" className="w-full">
+                <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer">
+                  <Instagram className="size-4 shrink-0" aria-hidden="true" />
+                  {t.footer.instagramButton}
+                </a>
+              </BrandButton>
+            </div>
           </div>
 
           <div>
@@ -107,24 +121,10 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-5 border-t border-border pt-6 md:flex-row md:items-center md:justify-between">
+        <div className="mt-12 border-t border-border pt-6">
           <p className="text-xs text-muted-foreground">
             © {year} {siteConfig.name}. {t.footer.rightsReserved}
           </p>
-          <div className="flex flex-col gap-3 sm:flex-row md:flex-row">
-            <BrandButton asChild variant="secondary" size="sm" className="w-full sm:w-auto">
-              <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <WhatsAppGlyph className="size-4 shrink-0" />
-                {t.footer.whatsappButton}
-              </a>
-            </BrandButton>
-            <BrandButton asChild variant="secondary" size="sm" className="w-full sm:w-auto">
-              <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer">
-                <Instagram className="size-4 shrink-0" aria-hidden="true" />
-                {t.footer.instagramButton}
-              </a>
-            </BrandButton>
-          </div>
         </div>
       </Container>
     </footer>
