@@ -77,7 +77,7 @@ export function ConsentBanner() {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 px-4 pb-4 md:px-6 md:pb-6">
+    <div className="pointer-events-none fixed inset-x-0 bottom-0 z-50 px-4 pb-4 md:px-6 md:pb-6">
       <div
         role="dialog"
         aria-label={t.consent.title}
