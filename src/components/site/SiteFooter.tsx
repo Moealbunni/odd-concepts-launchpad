@@ -1,3 +1,4 @@
+import { Instagram } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/primitives/Container";
