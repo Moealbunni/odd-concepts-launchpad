@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { SiteHeader } from "./SiteHeader";
 import { SiteFooter } from "./SiteFooter";
-import { WhatsAppFab } from "./WhatsAppFab";
+import { OddyAssistant } from "./OddyAssistant";
 import studioBackground from "@/assets/studio-background.jpg";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
@@ -22,7 +22,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         {children}
       </main>
       <SiteFooter />
-      <WhatsAppFab />
+      <OddyAssistant />
     </div>
   );
 }

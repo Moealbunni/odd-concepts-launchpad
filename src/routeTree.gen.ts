@@ -17,6 +17,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as WorkRouteImport } from './routes/work'
+import { Route as ApiOddyRouteImport } from './routes/api/oddy'
 import { Route as ApiPublicGrowthPlanRouteImport } from './routes/api/public/growth-plan'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +60,11 @@ const WorkRoute = WorkRouteImport.update({
   path: '/work',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiOddyRoute = ApiOddyRouteImport.update({
+  id: '/api/oddy',
+  path: '/api/oddy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicGrowthPlanRoute = ApiPublicGrowthPlanRouteImport.update({
   id: '/api/public/growth-plan',
   path: '/api/public/growth-plan',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
+  '/api/oddy': typeof ApiOddyRoute
   '/api/public/growth-plan': typeof ApiPublicGrowthPlanRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
+  '/api/oddy': typeof ApiOddyRoute
   '/api/public/growth-plan': typeof ApiPublicGrowthPlanRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/work': typeof WorkRoute
+  '/api/oddy': typeof ApiOddyRoute
   '/api/public/growth-plan': typeof ApiPublicGrowthPlanRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/work'
+    | '/api/oddy'
     | '/api/public/growth-plan'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/work'
+    | '/api/oddy'
     | '/api/public/growth-plan'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/work'
+    | '/api/oddy'
     | '/api/public/growth-plan'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   WorkRoute: typeof WorkRoute
+  ApiOddyRoute: typeof ApiOddyRoute
   ApiPublicGrowthPlanRoute: typeof ApiPublicGrowthPlanRoute
 }
 
@@ -205,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/oddy': {
+      id: '/api/oddy'
+      path: '/api/oddy'
+      fullPath: '/api/oddy'
+      preLoaderRoute: typeof ApiOddyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/growth-plan': {
       id: '/api/public/growth-plan'
       path: '/api/public/growth-plan'
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   WorkRoute: WorkRoute,
+  ApiOddyRoute: ApiOddyRoute,
   ApiPublicGrowthPlanRoute: ApiPublicGrowthPlanRoute,
 }
 export const routeTree = rootRouteImport
