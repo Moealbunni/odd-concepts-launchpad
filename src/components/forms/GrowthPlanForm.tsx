@@ -1,3 +1,4 @@
+import { trackMetaEvent } from "@/lib/meta-pixel";
 import { useMemo, useState, type ReactNode } from "react";
 import { z } from "zod";
 import { BrandButton } from "@/components/primitives/BrandButton";
