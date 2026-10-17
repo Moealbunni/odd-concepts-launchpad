@@ -53,9 +53,44 @@ export function OddyAssistant() {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
   }, [messages, status]);
 
+  // Desktop only: auto-focus. On phones this would pop the keyboard instantly.
   useEffect(() => {
-    if (open && status === "ready") textareaRef.current?.focus();
+    if (open && status === "ready" && window.matchMedia("(min-width: 640px)").matches) {
+      textareaRef.current?.focus();
+    }
   }, [open, status]);
+
+  // Phones: full-screen sheet sized to the visible area (shrinks above the
+  // keyboard) and the page behind it is locked so it can't scroll.
+  const [mobileBox, setMobileBox] = useState<{ top: number; height: number } | null>(null);
+  useEffect(() => {
+    if (!open) return;
+    const mq = window.matchMedia("(max-width: 639px)");
+    if (!mq.matches) return;
+    const html = document.documentElement;
+    const body = document.body;
+    const scrollY = window.scrollY;
+    const prev = { o: html.style.overflow, p: body.style.position, t: body.style.top, w: body.style.width };
+    html.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
+    const vv = window.visualViewport;
+    const update = () => setMobileBox({ top: vv?.offsetTop ?? 0, height: vv?.height ?? window.innerHeight });
+    update();
+    vv?.addEventListener("resize", update);
+    vv?.addEventListener("scroll", update);
+    return () => {
+      vv?.removeEventListener("resize", update);
+      vv?.removeEventListener("scroll", update);
+      html.style.overflow = prev.o;
+      body.style.position = prev.p;
+      body.style.top = prev.t;
+      body.style.width = prev.w;
+      window.scrollTo(0, scrollY);
+      setMobileBox(null);
+    };
+  }, [open]);
 
   if (pathname === "/free-growth-plan" && !open) return null;
 
@@ -89,9 +124,10 @@ export function OddyAssistant() {
           role="dialog"
           aria-label={t.oddy.name}
           dir={lang === "ar" ? "rtl" : "ltr"}
-          className="fixed inset-x-2 bottom-2 z-50 flex h-[min(72dvh,560px)] sm:h-[min(640px,calc(100dvh-3rem))] flex-col overflow-hidden rounded-2xl border border-highlight-border bg-card shadow-2xl sm:inset-x-auto sm:end-6 sm:bottom-6 sm:w-[400px]"
+          style={mobileBox ? { top: mobileBox.top, height: mobileBox.height } : undefined}
+          className="fixed inset-x-0 top-0 z-[60] flex h-[100dvh] flex-col overflow-hidden overscroll-contain bg-card sm:inset-x-auto sm:top-auto sm:end-6 sm:bottom-6 sm:h-[min(640px,calc(100dvh-3rem))] sm:w-[400px] sm:rounded-2xl sm:border sm:border-highlight-border sm:shadow-2xl"
         >
-          <header className="flex items-center gap-3 border-b border-border px-4 py-3">
+          <header className="flex shrink-0 items-center gap-3 border-b border-border px-4 py-3" style={{ paddingTop: "max(0.75rem, env(safe-area-inset-top))" }}>
             <img src={oddyAvatar} alt="" width={40} height={40} className="size-10" />
             <div className="min-w-0 flex-1">
               <p className="font-semibold text-foreground">{t.oddy.name}</p>
@@ -135,7 +171,7 @@ export function OddyAssistant() {
             </div>
           )}
 
-          <Conversation className="flex-1">
+          <Conversation className="min-h-0 flex-1 overscroll-contain">
             <ConversationContent className="gap-5 p-4">
               <Message from="assistant">
                 <MessageContent>
@@ -191,10 +227,10 @@ export function OddyAssistant() {
             <ConversationScrollButton />
           </Conversation>
 
-          <div className="border-t border-border p-3">
+          <div className="shrink-0 border-t border-border p-3" style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}>
             <PromptInput onSubmit={(msg) => send(msg.text)}>
               <PromptInputBody>
-                <PromptInputTextarea ref={textareaRef} placeholder={t.oddy.placeholder} />
+                <PromptInputTextarea ref={textareaRef} placeholder={t.oddy.placeholder} className="min-h-11 max-h-28 text-base sm:text-sm" />
               </PromptInputBody>
               <PromptInputFooter className="justify-end">
                 <PromptInputSubmit status={status} onStop={stop} />
