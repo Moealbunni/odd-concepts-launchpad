@@ -87,7 +87,7 @@ export function OddyAssistant() {
       body.style.position = prev.p;
       body.style.top = prev.t;
       body.style.width = prev.w;
-      window.scrollTo(0, scrollY);
+      window.scrollTo({ top: scrollY, behavior: "instant" as ScrollBehavior });
       setMobileBox(null);
     };
   }, [open]);
