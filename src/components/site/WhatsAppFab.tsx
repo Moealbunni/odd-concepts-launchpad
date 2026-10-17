@@ -17,9 +17,8 @@ export function WhatsAppFab() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={t.site.whatsappAria}
-      className="fixed z-40 flex size-14 items-center justify-center rounded-full shadow-[0_10px_30px_-8px_rgba(37,211,102,0.55)] ring-1 ring-black/10 transition-transform duration-200 ease-out hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none motion-reduce:hover:scale-100"
+      className="gradient-bg brand-button-primary fixed z-40 flex size-14 items-center justify-center rounded-full ring-1 ring-highlight-border transition-transform duration-200 ease-out hover:-translate-y-0.5 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none motion-reduce:hover:scale-100 motion-reduce:hover:translate-y-0"
       style={{
-        backgroundColor: "#25D366",
         right: "max(1rem, env(safe-area-inset-right))",
         bottom: "max(1rem, env(safe-area-inset-bottom))",
       }}
