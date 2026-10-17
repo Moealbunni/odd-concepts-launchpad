@@ -36,6 +36,11 @@ export function SiteFooter() {
                 </a>
               </li>
               <li>
+                <a href={siteConfig.phoneUrl} className="transition-colors hover:text-foreground">
+                  {t.footer.call} <span dir="ltr">{siteConfig.whatsappDisplay}</span>
+                </a>
+              </li>
+              <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
                   className="transition-colors hover:text-foreground"
@@ -45,6 +50,11 @@ export function SiteFooter() {
                 </a>
               </li>
             </ul>
+            <BrandButton asChild variant="secondary" size="sm" className="mt-5">
+              <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                {t.footer.whatsappButton}
+              </a>
+            </BrandButton>
           </div>
 
           <div>
