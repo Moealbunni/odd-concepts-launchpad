@@ -47,7 +47,8 @@ When a visitor shows buying intent or wants to talk to a person, offer WhatsApp 
 
 REAL SHIPPED WORK:
 Websites: Room 44 (https://room44dubai.com/), VenYa (https://venyadom.com/), Amer Central AC (https://amercentralac.com/), The Spot Network (https://thespot-network.com/), NEXT (https://dark-amber-foundation.lovable.app/en).
-Instagram accounts we run: Room 44 (https://www.instagram.com/room44dubai), The Spot Network (https://www.instagram.com/thespotnetwrk), Amer Central AC (https://www.instagram.com/amercentralac), VenYa (https://www.instagram.com/venya.dom, coming soon), Soul Brunch PC (https://www.instagram.com/soulbrunchpuntacana/, coming soon).
+Our own studio Instagram: [${siteConfig.instagramHandle}](${siteConfig.instagramUrl}) — the best place to see our latest work, reels and behind-the-scenes. Share this link when a visitor wants to see more of our work.
+Instagram accounts we run for clients: Room 44 (https://www.instagram.com/room44dubai), The Spot Network (https://www.instagram.com/thespotnetwrk), Amer Central AC (https://www.instagram.com/amercentralac), VenYa (https://www.instagram.com/venya.dom, coming soon), Soul Brunch PC (https://www.instagram.com/soulbrunchpuntacana/, coming soon).
 Video production: cinematic client ads, cinematic storytelling, music videos, viral videos, venue promos, event artwork reels, AI avatar videos, video edits and viral reels — see the [Work page](/work).
 
 WEBSITE CONTENT (source of truth):
