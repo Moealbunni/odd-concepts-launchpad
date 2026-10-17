@@ -24,3 +24,5 @@
 
 - [x] Add the studio's own Instagram (@oddconceptsdigital) to the footer and to Oddy's answers.
 - [x] Verify English/Arabic footer layout on mobile and desktop.
+- [x] Remove the duplicate Instagram link and place WhatsApp/Instagram buttons in the footer bottom row.
+- [x] Verify no duplicate links and no overlap with the floating Oddy button on mobile and desktop.
