@@ -180,7 +180,7 @@ export function OddyAssistant() {
                 <Message key={m.id} from={m.role}>
                   <MessageContent>
                     {m.parts.map((p, i) =>
-                      p.type === "text" ? <MessageResponse key={i}>{p.text}</MessageResponse> : null,
+                      p.type === "text" ? <div key={i} dir="auto"><MessageResponse>{p.text}</MessageResponse></div> : null,
                     )}
                   </MessageContent>
                 </Message>
