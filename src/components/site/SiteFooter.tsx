@@ -50,12 +50,36 @@ export function SiteFooter() {
                   {siteConfig.email}
                 </a>
               </li>
+              <li>
+                <a
+                  href={siteConfig.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-foreground"
+                >
+                  <Instagram className="size-4 shrink-0" aria-hidden="true" />
+                  <span dir="ltr">{siteConfig.instagramHandle}</span>
+                </a>
+              </li>
             </ul>
-            <BrandButton asChild variant="secondary" size="sm" className="mt-5">
-              <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer">
-                {t.footer.whatsappButton}
-              </a>
-            </BrandButton>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <BrandButton asChild variant="secondary" size="sm">
+                <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  {t.footer.whatsappButton}
+                </a>
+              </BrandButton>
+              <BrandButton asChild variant="secondary" size="sm">
+                <a
+                  href={siteConfig.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t.footer.instagramButton}
+                >
+                  <Instagram className="size-4 shrink-0" aria-hidden="true" />
+                  {t.footer.instagramButton}
+                </a>
+              </BrandButton>
+            </div>
           </div>
 
           <div>
