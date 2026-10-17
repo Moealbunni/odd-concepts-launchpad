@@ -1,3 +1,4 @@
+import { trackMetaEvent } from "@/lib/meta-pixel";
 import { useMemo, useState, type ReactNode } from "react";
 import { z } from "zod";
 import { BrandButton } from "@/components/primitives/BrandButton";
@@ -177,6 +178,8 @@ export function GrowthPlanForm() {
       if (!res.ok || !payload?.ok) {
         console.warn("Growth plan submission returned", res.status);
         setSendFailed(true);
+      } else {
+        trackMetaEvent("Lead", { content_name: "Free Growth Plan" });
       }
     } catch (err) {
       console.warn("Growth plan submission failed:", err);
