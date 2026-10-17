@@ -17,7 +17,7 @@ import {
   PromptInputTextarea,
 } from "@/components/ai-elements/prompt-input";
 import { Shimmer } from "@/components/ai-elements/shimmer";
-import { BrandMark } from "./BrandMark";
+import oddyAvatar from "@/assets/oddy-avatar.png";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const STORAGE_KEY = "ocd-oddy";
@@ -71,13 +71,14 @@ export function OddyAssistant() {
           type="button"
           onClick={() => setOpen(true)}
           aria-label={t.oddy.open}
-          className="gradient-bg brand-button-primary fixed z-40 flex items-center gap-2 rounded-full py-2 pe-5 ps-2 text-sm font-semibold text-primary-foreground ring-1 ring-highlight-border transition-transform hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
+          className="gradient-bg brand-button-primary fixed z-40 flex items-center gap-3 rounded-full py-1.5 pe-5 ps-1.5 text-primary-foreground ring-2 ring-highlight-border ring-offset-2 ring-offset-background transition-transform hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
           style={{ insetInlineEnd: "max(1rem, env(safe-area-inset-right))", bottom: "max(1rem, env(safe-area-inset-bottom))" }}
         >
-          <span className="flex size-10 items-center justify-center rounded-full bg-background/80">
-            <BrandMark className="h-6 w-auto" />
+          <img src={oddyAvatar} alt="" width={48} height={48} className="size-12 drop-shadow-lg" />
+          <span className="flex flex-col items-start leading-tight">
+            <span className="text-sm font-semibold">{t.oddy.open}</span>
+            <span className="text-xs font-normal opacity-80">{t.oddy.role}</span>
           </span>
-          {t.oddy.open}
         </button>
       )}
 
@@ -89,11 +90,7 @@ export function OddyAssistant() {
           className="fixed inset-x-2 bottom-2 z-50 flex h-[min(640px,calc(100dvh-1rem))] flex-col overflow-hidden rounded-2xl border border-highlight-border bg-card shadow-2xl sm:inset-x-auto sm:end-6 sm:bottom-6 sm:w-[400px]"
         >
           <header className="flex items-center gap-3 border-b border-border px-4 py-3">
-            <span className="gradient-bg flex size-10 items-center justify-center rounded-full p-0.5">
-              <span className="flex size-full items-center justify-center rounded-full bg-background">
-                <BrandMark className="h-6 w-auto" />
-              </span>
-            </span>
+            <img src={oddyAvatar} alt="" width={40} height={40} className="size-10" />
             <div className="min-w-0 flex-1">
               <p className="font-semibold text-foreground">{t.oddy.name}</p>
               <p className="truncate text-xs text-muted-foreground">{t.oddy.role}</p>
