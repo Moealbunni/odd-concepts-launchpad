@@ -81,7 +81,7 @@ export function ConsentBanner() {
       <div
         role="dialog"
         aria-label={t.consent.title}
-        className="studio-card mx-auto flex max-w-3xl flex-col gap-4 rounded-xl border border-border/80 bg-background/95 p-5 shadow-lg backdrop-blur md:flex-row md:items-center md:gap-6 md:p-6"
+        className="studio-card pointer-events-auto mx-auto flex max-w-3xl flex-col gap-4 rounded-xl border border-border/80 bg-background/95 p-5 shadow-lg backdrop-blur md:flex-row md:items-center md:gap-6 md:p-6"
       >
         <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-foreground">{t.consent.title}</p>
