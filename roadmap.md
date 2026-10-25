@@ -1,9 +1,9 @@
 # Roadmap
 
-- [ ] Add both Vera Tulum videos to Event Artwork in Reels.
-- [ ] Remove the phone image's outer background and add an Apps section to Work.
-- [ ] Group Cinematic and Reels by matching categories with compact browsing.
-- [ ] Verify category organization, media controls, and English/Arabic layouts.
+- [x] Add both Vera Tulum videos to Event Artwork in Reels.
+- [x] Remove the phone image's outer background and add an Apps section to Work.
+- [x] Group Cinematic and Reels by matching categories with compact browsing.
+- [x] Verify category organization, mute controls, and English/Arabic layouts; audible playback remains unverified in sandbox Chromium.
 
 - [x] Add four uploaded Reels in the requested order and names.
 - [x] Organize Studio Output with category filters and compact “Show more” controls.
@@ -29,5 +29,5 @@
 
 - [x] Add the studio's own Instagram (@oddconceptsdigital) to the footer and to Oddy's answers.
 - [x] Verify English/Arabic footer layout on mobile and desktop.
-- [x] Remove the duplicate Instagram link and place WhatsApp/Instagram buttons in the footer bottom row.
+- [x] Remove the duplicate Instagram link and keep WhatsApp/Instagram buttons in the main footer Contact column.
 - [x] Verify no duplicate links and no overlap with the floating Oddy button on mobile and desktop.
