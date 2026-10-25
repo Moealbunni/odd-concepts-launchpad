@@ -11,10 +11,8 @@ import type { Translations } from "@/i18n/translations";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getGroup, mediaItems, type MediaCategory, type MediaItem } from "@/data/media";
+import { getMediaSections, type MediaGroup, type MediaCategory, type MediaItem } from "@/data/media";
 
-const cinematicItems = mediaItems.filter((i) => getGroup(i) === "cinematic");
-const reelItems = mediaItems.filter((i) => getGroup(i) === "reels");
 type Filter = "all" | MediaCategory;
 
 function itemTitle(t: Translations, item: MediaItem) {
@@ -39,7 +37,7 @@ function MediaCard({
   const t = useT();
   const title = itemTitle(t, item);
   return (
-    <Reveal delay={index * 80}>
+    <Reveal delay={Math.min(index, 3) * 80}>
       <Card className={wrapperClassName ? `overflow-hidden p-2 ${wrapperClassName}` : "overflow-hidden p-2"}>
         <div className="min-w-0 px-1 pb-2 pt-1">
           <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
@@ -66,19 +64,20 @@ function MediaCard({
 export function MediaShowcase() {
   const t = useT();
   const [filters, setFilters] = useState<Record<string, Filter>>({ cinematic: "all", reels: "all" });
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({ cinematic: false, reels: false });
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({ "cinematic-ads": true, "reels-promos": true });
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const tabs = [
-    { value: "cinematic", label: t.media.tabCinematic, items: cinematicItems },
-    { value: "reels", label: t.media.tabReels, items: reelItems },
-  ].filter((tab) => tab.items.length > 0);
+    { value: "cinematic" as const, label: t.media.tabCinematic },
+    { value: "reels" as const, label: t.media.tabReels },
+  ].filter((tab) => getMediaSections(tab.value).length > 0);
 
-  const renderGallery = (value: string, items: MediaItem[], cinematic: boolean) => {
-    const categories = Array.from(new Set(items.map((item) => item.category)));
+  const renderGallery = (value: MediaGroup) => {
+    const cinematic = value === "cinematic";
+    const sections = getMediaSections(value);
+    const categories = sections.map((section) => section.category);
     const activeFilter = filters[value] ?? "all";
-    const filtered = activeFilter === "all" ? items : items.filter((item) => item.category === activeFilter);
-    const limit = cinematic ? 6 : 8;
-    const visible = expanded[value] || activeFilter !== "all" ? filtered : filtered.slice(0, limit);
-    const canExpand = activeFilter === "all" && filtered.length > limit;
+    const filtered = activeFilter === "all" ? sections : sections.filter((section) => section.category === activeFilter);
+    const limit = cinematic ? 2 : 4;
 
     return (
       <>
@@ -93,39 +92,63 @@ export function MediaShowcase() {
               className="shrink-0"
               onClick={() => {
                 setFilters((current) => ({ ...current, [value]: category }));
-                setExpanded((current) => ({ ...current, [value]: false }));
+                if (category !== "all") setOpenSections((current) => ({ ...current, [`${value}-${category}`]: true }));
               }}
             >
               {category === "all" ? t.media.filterAll : t.media.categories[category]}
             </Button>
           ))}
         </div>
-        <div className={cinematic ? "grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8" : "grid grid-cols-2 items-start gap-5 md:grid-cols-3 lg:grid-cols-4"}>
-          {visible.map((item, i) => (
-            <MediaCard
-              key={item.id}
-              item={item}
-              index={i}
-              objectFit={cinematic ? "contain" : "cover"}
-              boxRatio={cinematic ? "16/9" : "9/16"}
-              groupName={cinematic ? t.media.tabCinematic : t.media.tabReels}
-              wrapperClassName={cinematic ? undefined : "mx-auto w-full max-w-[260px]"}
-            />
-          ))}
+        <div className="divide-y divide-border border-y border-border">
+          {filtered.map(({ category, items }) => {
+            const key = `${value}-${category}`;
+            const open = openSections[key] ?? false;
+            const visible = expanded[key] ? items : items.slice(0, limit);
+            return (
+              <div key={key}>
+                <h3>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    aria-expanded={open}
+                    aria-controls={`${key}-content`}
+                    className="h-auto w-full justify-between gap-3 rounded-none px-0 py-5 text-start hover:bg-transparent"
+                    onClick={() => setOpenSections((current) => ({ ...current, [key]: !open }))}
+                  >
+                    <span className="text-base font-semibold text-foreground md:text-lg">{t.media.categories[category]}</span>
+                    <span className="flex shrink-0 items-center gap-4 text-muted-foreground">
+                      <span className="text-sm tabular-nums">{items.length}</span>
+                      {open ? <ChevronUp aria-hidden="true" /> : <ChevronDown aria-hidden="true" />}
+                    </span>
+                  </Button>
+                </h3>
+                {open && (
+                  <div id={`${key}-content`} className="pb-8">
+                    <div className={cinematic ? "grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8" : "grid grid-cols-1 items-start gap-5 min-[480px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"}>
+                      {visible.map((item, i) => (
+                        <MediaCard key={item.id} item={item} index={i}
+                          objectFit={cinematic ? "contain" : "cover"}
+                          boxRatio={cinematic ? "16/9" : "9/16"}
+                          groupName={t.media.categories[category]}
+                          wrapperClassName={cinematic ? undefined : "mx-auto w-full max-w-[260px]"}
+                        />
+                      ))}
+                    </div>
+                    {items.length > limit && (
+                      <div className="mt-6 flex justify-center">
+                        <Button type="button" variant="outline" aria-expanded={expanded[key] ?? false}
+                          onClick={() => setExpanded((current) => ({ ...current, [key]: !current[key] }))}>
+                          {expanded[key] ? <ChevronUp aria-hidden="true" /> : <ChevronDown aria-hidden="true" />}
+                          {expanded[key] ? t.media.showLess : t.media.showMore}
+                        </Button>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
-        {canExpand && (
-          <div className="mt-8 flex justify-center">
-            <Button
-              type="button"
-              variant="outline"
-              onClick={() => setExpanded((current) => ({ ...current, [value]: !current[value] }))}
-              aria-expanded={expanded[value]}
-            >
-              {expanded[value] ? <ChevronUp aria-hidden="true" /> : <ChevronDown aria-hidden="true" />}
-              {expanded[value] ? t.media.showLess : t.media.showMore}
-            </Button>
-          </div>
-        )}
       </>
     );
   };
@@ -158,11 +181,11 @@ export function MediaShowcase() {
           </TabsList>
 
           <TabsContent value="cinematic" className="mt-10">
-            {renderGallery("cinematic", cinematicItems, true)}
+            {renderGallery("cinematic")}
           </TabsContent>
 
           <TabsContent value="reels" className="mt-10">
-            {renderGallery("reels", reelItems, false)}
+            {renderGallery("reels")}
           </TabsContent>
         </Tabs>
       </VideoPlaybackProvider>

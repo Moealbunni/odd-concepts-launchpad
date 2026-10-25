@@ -74,9 +74,13 @@ import vAvatar3 from "@/assets/media/avatar_3.mp4.asset.json";
 import pAvatar3 from "@/assets/media/avatar_3.jpg.asset.json";
 import vMusicVideo from "@/assets/media/music_video.mp4.asset.json";
 import pMusicVideo from "@/assets/media/music_video.jpg.asset.json";
+import vVeraJordan from "@/assets/media/vera-jordan-john.mp4.asset.json";
+import pVeraJordan from "@/assets/media/vera-jordan-john.jpg.asset.json";
+import vVeraAndor from "@/assets/media/vera-andor-gabriel.mp4.asset.json";
+import pVeraAndor from "@/assets/media/vera-andor-gabriel.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
-export type MediaCategory = "ads" | "storytelling" | "promos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots" | "musicVideo";
+export type MediaCategory = "ads" | "storytelling" | "promos" | "venuePromos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots" | "musicVideo";
 
 export type MediaItem = {
   id: string;
@@ -95,7 +99,7 @@ export const mediaItems: MediaItem[] = [
   { id: "m-cinead2", title: "Cinematic Ad II", ratio: 1936 / 1080, category: "ads", videoUrl: vCineAd2.url, posterUrl: pCineAd2.url },
   { id: "m-spotad", title: "Cinematic Ad III", ratio: 1920 / 1080, category: "ads", videoUrl: vSpotAd.url, posterUrl: pSpotAd.url },
   { id: "m-musicvideo", title: "Music Video", ratio: 1440 / 1080, category: "musicVideo", videoUrl: vMusicVideo.url, posterUrl: pMusicVideo.url },
-  { id: "m-room44", title: "Venue Promo", ratio: 1620 / 1080, category: "promos", videoUrl: room44Video.url, posterUrl: room44Poster.url },
+  { id: "m-room44", title: "Venue Promo", ratio: 1620 / 1080, category: "venuePromos", videoUrl: room44Video.url, posterUrl: room44Poster.url },
   { id: "m-amer", title: "Company Mascot & Storyline", ratio: 1620 / 1080, category: "storytelling", videoUrl: amerrVideo.url, posterUrl: amerrPoster.url },
   { id: "m-viral", title: "Viral Video Ideas", ratio: 1914 / 1080, category: "viral", videoUrl: vViral.url, posterUrl: pViral.url },
   { id: "m-winter", title: "Viral Video", ratio: 1440 / 1080, category: "viral", videoUrl: vWinter.url, posterUrl: pWinter.url },
@@ -105,10 +109,12 @@ export const mediaItems: MediaItem[] = [
   { id: "m-4744", title: "Company Promo III", ratio: 1080 / 1920, category: "promos", videoUrl: v4744.url, posterUrl: p4744.url },
   { id: "m-4693", title: "Company Promo IV", ratio: 1080 / 1936, category: "promos", videoUrl: v4693.url, posterUrl: p4693.url },
   { id: "m-5015", title: "Venue Photoshoot", ratio: 1080 / 1936, category: "shoots", videoUrl: v5015.url, posterUrl: p5015.url },
-  { id: "m-room44reel", title: "Venue Promo", ratio: 1080 / 1920, category: "promos", videoUrl: vRoom44Reel.url, posterUrl: pRoom44Reel.url },
+  { id: "m-room44reel", title: "Venue Promo", ratio: 1080 / 1920, category: "venuePromos", videoUrl: vRoom44Reel.url, posterUrl: pRoom44Reel.url },
   { id: "m-4519", title: "Story Telling", ratio: 1930 / 1080, category: "storytelling", videoUrl: v4519.url, posterUrl: p4519.url },
   { id: "m-3761", title: "Futuristic Promo", ratio: 1080 / 1920, category: "promos", videoUrl: v3761.url, posterUrl: p3761.url },
   { id: "m-3694", title: "Modeling Photoshoot", ratio: 1440 / 2560, category: "shoots", videoUrl: v3694.url, posterUrl: p3694.url },
+  { id: "m-verajordan", title: "Vera Tulum — Jordan John", ratio: 1080 / 1920, category: "eventArtwork", videoUrl: vVeraJordan.url, posterUrl: pVeraJordan.url },
+  { id: "m-veraandor", title: "Vera Tulum — Andor Gabriel", ratio: 1080 / 1920, category: "eventArtwork", videoUrl: vVeraAndor.url, posterUrl: pVeraAndor.url },
   { id: "m-evart1", title: "Event Artwork I", ratio: 1080 / 1920, category: "eventArtwork", videoUrl: vEvArt1.url, posterUrl: pEvArt1.url },
   { id: "m-evart2", title: "Event Artwork II", ratio: 1080 / 1920, category: "eventArtwork", videoUrl: vEvArt2.url, posterUrl: pEvArt2.url },
   { id: "m-evart3", title: "Event Artwork III", ratio: 1080 / 1920, category: "eventArtwork", videoUrl: vEvArt3.url, posterUrl: pEvArt3.url },
@@ -132,6 +138,18 @@ export const mediaItems: MediaItem[] = [
 
 export function getGroup(item: MediaItem): MediaGroup {
   return item.ratio >= 1 ? "cinematic" : "reels";
+}
+
+export const categoryOrder: Record<MediaGroup, MediaCategory[]> = {
+  cinematic: ["ads", "storytelling", "promos", "venuePromos", "viral", "shoots", "musicVideo"],
+  reels: ["promos", "venuePromos", "eventArtwork", "viral", "shoots", "avatar", "videoEdits"],
+};
+
+export function getMediaSections(group: MediaGroup) {
+  return categoryOrder[group].map((category) => ({
+    category,
+    items: mediaItems.filter((item) => getGroup(item) === group && item.category === category),
+  })).filter((section) => section.items.length > 0);
 }
 
 export const groupLabel: Record<MediaGroup, string> = {

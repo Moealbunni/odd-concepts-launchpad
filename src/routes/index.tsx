@@ -24,8 +24,6 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: siteConfig.seo.defaultDescription },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: skylineAsset.url },
-      { name: "twitter:image", content: skylineAsset.url },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
