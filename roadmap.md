@@ -36,3 +36,6 @@
 
 - [x] Add both uploaded music promos to Cinematic as “Music Promos” with their own category filter.
 - [x] Verify English/Arabic layout for the new section on mobile and desktop, then publish and verify the live page.
+
+- [x] Refine the Websites cards: quieter backgrounds, smaller arrow controls, no visible addresses.
+- [x] Verify English/Arabic layout on mobile and desktop, then publish and verify the live page.
