@@ -350,6 +350,7 @@ export const en = {
     categories: {
       ads: "Ads", storytelling: "Storytelling", promos: "Company Promos", venuePromos: "Venue Promos", avatar: "Avatars",
       videoEdits: "Video Edits", eventArtwork: "Event Artwork", viral: "Viral", shoots: "Shoots", musicVideo: "Music Video",
+      musicPromo: "Music Promos",
     },
     showMore: "Show more",
     showLess: "Show less",
@@ -394,6 +395,8 @@ export const en = {
       "m-videoedits": "Video Edits",
       "m-avatar2": "Avatar II",
       "m-avatar3": "Avatar III",
+      "m-musicpromo1": "Music Promo I",
+      "m-musicpromo2": "Music Promo II",
     } as Record<string, string>,
   },
   aboutPage: {
@@ -850,6 +853,7 @@ export const ar: Translations = {
     categories: {
       ads: "إعلانات", storytelling: "سرد قصصي", promos: "ترويج الشركات", venuePromos: "ترويج الأماكن", avatar: "أفاتار",
       videoEdits: "مونتاج فيديو", eventArtwork: "تصاميم فعاليات", viral: "فيرال", shoots: "تصوير", musicVideo: "فيديو موسيقي",
+      musicPromo: "بروموهات موسيقية",
     },
     showMore: "عرض المزيد",
     showLess: "عرض أقل",
@@ -894,6 +898,8 @@ export const ar: Translations = {
       "m-videoedits": "مونتاج فيديو",
       "m-avatar2": "أفاتار الثاني",
       "m-avatar3": "أفاتار الثالث",
+      "m-musicpromo1": "برومو موسيقي أول",
+      "m-musicpromo2": "برومو موسيقي ثاني",
     },
   },
   aboutPage: {
