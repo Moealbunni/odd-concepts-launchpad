@@ -78,9 +78,13 @@ import vVeraJordan from "@/assets/media/vera-jordan-john.mp4.asset.json";
 import pVeraJordan from "@/assets/media/vera-jordan-john.jpg.asset.json";
 import vVeraAndor from "@/assets/media/vera-andor-gabriel.mp4.asset.json";
 import pVeraAndor from "@/assets/media/vera-andor-gabriel.jpg.asset.json";
+import vMusicPromo1 from "@/assets/media/music_promo_1.mp4.asset.json";
+import pMusicPromo1 from "@/assets/media/music_promo_1.jpg.asset.json";
+import vMusicPromo2 from "@/assets/media/music_promo_2.mp4.asset.json";
+import pMusicPromo2 from "@/assets/media/music_promo_2.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
-export type MediaCategory = "ads" | "storytelling" | "promos" | "venuePromos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots" | "musicVideo";
+export type MediaCategory = "ads" | "storytelling" | "promos" | "venuePromos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots" | "musicVideo" | "musicPromo";
 
 export type MediaItem = {
   id: string;
@@ -133,7 +137,8 @@ export const mediaItems: MediaItem[] = [
   { id: "m-cinestory4", title: "Cinematic Story Telling IV", ratio: 1280 / 720, category: "storytelling", videoUrl: vCineStory4.url, posterUrl: pCineStory4.url },
   { id: "m-cinestory5", title: "Cinematic Story Telling V", ratio: 1280 / 720, category: "storytelling", videoUrl: vCineStory5.url, posterUrl: pCineStory5.url },
   { id: "m-4378", title: "Instagram Virality — Cinematic Shoot", ratio: 1930 / 1080, category: "shoots", videoUrl: v4378.url, posterUrl: p4378.url },
-  
+  { id: "m-musicpromo1", title: "Music Promo I", ratio: 1920 / 1080, category: "musicPromo", videoUrl: vMusicPromo1.url, posterUrl: pMusicPromo1.url },
+  { id: "m-musicpromo2", title: "Music Promo II", ratio: 1920 / 1080, category: "musicPromo", videoUrl: vMusicPromo2.url, posterUrl: pMusicPromo2.url },
 ];
 
 export function getGroup(item: MediaItem): MediaGroup {
@@ -141,7 +146,7 @@ export function getGroup(item: MediaItem): MediaGroup {
 }
 
 export const categoryOrder: Record<MediaGroup, MediaCategory[]> = {
-  cinematic: ["ads", "storytelling", "promos", "venuePromos", "viral", "shoots", "musicVideo"],
+  cinematic: ["ads", "storytelling", "promos", "venuePromos", "viral", "shoots", "musicVideo", "musicPromo"],
   reels: ["promos", "venuePromos", "eventArtwork", "viral", "shoots", "avatar", "videoEdits"],
 };
 
