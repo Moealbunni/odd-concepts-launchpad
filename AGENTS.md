@@ -12,5 +12,6 @@
 - Keep shared page, card, and button gradient/shadow treatments in global semantic CSS tokens; shared primitives consume them so colour refreshes remain consistent across all routes.
 - Render decorative background media once in SiteLayout at its natural aspect ratio with document-scrolling, four-edge feathered masking, seamless CSS linework and globally tokenized intensity, so every route stays sharp and continuous without a visible image rectangle or blocked interaction.
 - Keep the Work automation capability section in a dedicated component with bilingual copy in the existing translation dictionary, separate from client proof so capabilities are not mistaken for shipped case studies.
-- Keep Studio Output media in one typed dataset with format derived from aspect ratio and explicit filter categories, so new work stays organized without duplicating galleries.
+- Keep Studio Output media, category ordering and grouping in one typed dataset with format derived from aspect ratio; render compact expandable category sections through the shared player so matching work stays together without duplicated galleries.
+- Keep Apps work in a dedicated bilingual section using imported phone mockups, separate from website links and automation capabilities so supplied app imagery is not presented as an invented live launch.
 - The Oddy assistant builds its knowledge from the bilingual translations dictionary and siteConfig at request time, so website copy changes automatically reach its answers.

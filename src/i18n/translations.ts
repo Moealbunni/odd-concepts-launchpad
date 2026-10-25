@@ -334,6 +334,12 @@ export const en = {
     followAria: "Open {name} on Instagram (opens in new tab)",
     comingSoon: "Coming soon",
   },
+  appsWork: {
+    eyebrow: "Apps",
+    title: "arOund",
+    subtitle: "Discover · Swipe · Map",
+    imageAlt: "Three arOund app screens side by side: event discovery, swipe and map",
+  },
   media: {
     eyebrow: "Studio output",
     title: "Cinematic & reels.",
@@ -342,12 +348,14 @@ export const en = {
     tabReels: "Reels",
     filterAll: "All",
     categories: {
-      ads: "Ads", storytelling: "Storytelling", promos: "Promos", avatar: "Avatar",
+      ads: "Ads", storytelling: "Storytelling", promos: "Company Promos", venuePromos: "Venue Promos", avatar: "Avatars",
       videoEdits: "Video Edits", eventArtwork: "Event Artwork", viral: "Viral", shoots: "Shoots", musicVideo: "Music Video",
     },
     showMore: "Show more",
     showLess: "Show less",
     titles: {
+      "m-verajordan": "Vera Tulum — Jordan John",
+      "m-veraandor": "Vera Tulum — Andor Gabriel",
       "m-clientad": "Client Ad",
       "m-clientad2": "Client Ad II",
       "m-cinead1": "Cinematic Ad I",
@@ -826,6 +834,12 @@ export const ar: Translations = {
     followAria: "فتح حساب {name} على إنستغرام (يفتح في نافذة جديدة)",
     comingSoon: "قريبًا",
   },
+  appsWork: {
+    eyebrow: "تطبيقات",
+    title: "arOund",
+    subtitle: "اكتشف · اسحب · الخريطة",
+    imageAlt: "ثلاث شاشات لتطبيق arOund جنبًا إلى جنب: اكتشاف الفعاليات والسحب والخريطة",
+  },
   media: {
     eyebrow: "إنتاج الاستوديو",
     title: "سينمائي وريلز.",
@@ -834,12 +848,14 @@ export const ar: Translations = {
     tabReels: "ريلز",
     filterAll: "الكل",
     categories: {
-      ads: "إعلانات", storytelling: "سرد قصصي", promos: "ترويجي", avatar: "أفاتار",
+      ads: "إعلانات", storytelling: "سرد قصصي", promos: "ترويج الشركات", venuePromos: "ترويج الأماكن", avatar: "أفاتار",
       videoEdits: "مونتاج فيديو", eventArtwork: "تصاميم فعاليات", viral: "فيرال", shoots: "تصوير", musicVideo: "فيديو موسيقي",
     },
     showMore: "عرض المزيد",
     showLess: "عرض أقل",
     titles: {
+      "m-verajordan": "Vera Tulum — Jordan John",
+      "m-veraandor": "Vera Tulum — Andor Gabriel",
       "m-clientad": "إعلان عميل",
       "m-clientad2": "إعلان عميل ثاني",
       "m-cinead1": "إعلان سينمائي الأول",
