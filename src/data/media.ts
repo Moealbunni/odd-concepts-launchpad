@@ -100,7 +100,7 @@ export const mediaItems: MediaItem[] = [
   { id: "m-spotad", title: "Cinematic Ad III", ratio: 1920 / 1080, category: "ads", videoUrl: vSpotAd.url, posterUrl: pSpotAd.url },
   { id: "m-musicvideo", title: "Music Video", ratio: 1440 / 1080, category: "musicVideo", videoUrl: vMusicVideo.url, posterUrl: pMusicVideo.url },
   { id: "m-room44", title: "Venue Promo", ratio: 1620 / 1080, category: "venuePromos", videoUrl: room44Video.url, posterUrl: room44Poster.url },
-  { id: "m-amer", title: "Company Mascot & Storyline", ratio: 1620 / 1080, category: "storytelling", videoUrl: amerrVideo.url, posterUrl: amerrPoster.url },
+  { id: "m-amer", title: "Company Mascot & Storyline", ratio: 1620 / 1080, category: "promos", videoUrl: amerrVideo.url, posterUrl: amerrPoster.url },
   { id: "m-viral", title: "Viral Video Ideas", ratio: 1914 / 1080, category: "viral", videoUrl: vViral.url, posterUrl: pViral.url },
   { id: "m-winter", title: "Viral Video", ratio: 1440 / 1080, category: "viral", videoUrl: vWinter.url, posterUrl: pWinter.url },
   { id: "m-4429", title: "Cinematic Realism — Story Telling", ratio: 1936 / 1080, category: "storytelling", videoUrl: v4429.url, posterUrl: p4429.url },
