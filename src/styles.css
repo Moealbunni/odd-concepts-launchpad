@@ -102,6 +102,7 @@
   --gradient-page: linear-gradient(120deg, hsl(var(--background)) 12%, oklch(0.17 0.015 265) 50%, oklch(0.16 0.012 300) 80%, hsl(var(--background)) 100%);
   --gradient-card: linear-gradient(135deg, hsl(var(--surface-elevated)), hsl(var(--card)) 75%);
   --gradient-showcase: linear-gradient(125deg, oklch(0.24 0.024 265), oklch(0.2 0.016 300) 65%, hsl(var(--card)) 100%);
+  --gradient-website-link: linear-gradient(115deg, oklch(0.215 0.009 265), hsl(var(--card)) 80%);
   --shadow-card: 0 10px 40px -15px hsl(var(--brand-primary) / 0.2);
   --shadow-button: 0 10px 30px -10px hsl(var(--brand-primary) / 0.6);
   --shadow-button-hover: 0 16px 40px -10px hsl(var(--brand-accent) / 0.55);
@@ -228,6 +229,10 @@
 
 .showcase-card {
   background-image: var(--gradient-showcase);
+}
+
+.website-link-card {
+  background-image: var(--gradient-website-link);
 }
 
 .brand-button-primary {
