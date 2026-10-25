@@ -33,3 +33,6 @@
 - [x] Verify no duplicate links and no overlap with the floating Oddy button on mobile and desktop.
 
 - [x] Publish the site at oddconceptsdigital.com and verify the live page: footer buttons placement, mobile fit on all routes, new event videos in both languages, Apps image.
+
+- [x] Add both uploaded music promos to Cinematic as “Music Promos” with their own category filter.
+- [x] Verify English/Arabic layout for the new section on mobile and desktop, then publish and verify the live page.

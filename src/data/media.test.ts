@@ -26,6 +26,17 @@ describe("Work media organization", () => {
     assert.equal(item?.category, "promos");
     assert.equal(getGroup(item!), "cinematic");
   });
+  test("both music promos are landscape cinematic pieces in their own section", () => {
+    for (const id of ["m-musicpromo1", "m-musicpromo2"]) {
+      const item = mediaItems.find((media) => media.id === id);
+      if (!item) throw new Error(`Missing ${id}`);
+      assert.equal(item.category, "musicPromo");
+      assert.equal(item.ratio, 1920 / 1080);
+      assert.equal(getGroup(item), "cinematic");
+    }
+    const section = getMediaSections("cinematic").find((entry) => entry.category === "musicPromo");
+    assert.deepEqual(section?.items.map((item) => item.id), ["m-musicpromo1", "m-musicpromo2"]);
+  });
   test("every production appears exactly once in its format's sections", () => {
     const grouped = ["cinematic", "reels"] as const;
     const ids = grouped.flatMap((group) => getMediaSections(group).flatMap((section) => section.items.map((item) => item.id)));
