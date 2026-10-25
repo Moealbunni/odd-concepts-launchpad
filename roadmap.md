@@ -1,5 +1,10 @@
 # Roadmap
 
+- [ ] Add both Vera Tulum videos to Event Artwork in Reels.
+- [ ] Remove the phone image's outer background and add an Apps section to Work.
+- [ ] Group Cinematic and Reels by matching categories with compact browsing.
+- [ ] Verify category organization, media controls, and English/Arabic layouts.
+
 - [x] Add four uploaded Reels in the requested order and names.
 - [x] Organize Studio Output with category filters and compact “Show more” controls.
 - [x] Verify English/Arabic presentation on mobile and desktop.
