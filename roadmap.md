@@ -31,3 +31,5 @@
 - [x] Verify English/Arabic footer layout on mobile and desktop.
 - [x] Remove the duplicate Instagram link and keep WhatsApp/Instagram buttons in the main footer Contact column.
 - [x] Verify no duplicate links and no overlap with the floating Oddy button on mobile and desktop.
+
+- [x] Publish the site at oddconceptsdigital.com and verify the live page: footer buttons placement, mobile fit on all routes, new event videos in both languages, Apps image.
