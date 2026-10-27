@@ -100,16 +100,15 @@ export async function handleOddyChat(request: Request): Promise<Response> {
     },
   });
 
-  return withLovableAiGatewayRunIdHeader(
-    result.toUIMessageStreamResponse({
-      originalMessages: messages,
-      onError: (e) => {
-        const status = (e as { statusCode?: number })?.statusCode;
-        if (status === 402) return "Oddy is temporarily unavailable. Please reach us on WhatsApp.";
-        if (status === 429) return "Oddy is busy right now. Please try again in a moment.";
-        return "Oddy couldn't reply just now.";
-      },
-    }),
-    runIdFetch,
-  );
+  const response = result.toUIMessageStreamResponse({
+    originalMessages: messages,
+    onError: (e) => {
+      const status = (e as { statusCode?: number })?.statusCode;
+      if (status === 402) return "Oddy is temporarily unavailable. Please reach us on WhatsApp.";
+      if (status === 429) return "Oddy is busy right now. Please try again in a moment.";
+      return "Oddy couldn't reply just now.";
+    },
+  });
+  // The run-id wrapper only applies to Lovable AI; on OpenAI it would wait forever.
+  return openaiKey ? response : withLovableAiGatewayRunIdHeader(response, runIdFetch);
 }
