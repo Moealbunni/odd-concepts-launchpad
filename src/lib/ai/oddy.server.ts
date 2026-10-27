@@ -9,6 +9,7 @@ import {
 } from "./run-id.server";
 
 const MODEL = "openai/gpt-6-astra";
+const OPENAI_MODEL = "gpt-6-astra";
 
 function buildInstructions() {
   const knowledge = {
@@ -58,8 +59,10 @@ Stay on topic: the studio, its services, digital growth advice and how to work w
 }
 
 export async function handleOddyChat(request: Request): Promise<Response> {
+  // Prefer the studio's own OpenAI account; fall back to Lovable AI until it's added.
+  const openaiKey = process.env.OPENAI_API_KEY;
   const apiKey = process.env.LOVABLE_API_KEY;
-  if (!apiKey) return Response.json({ error: "AI is not configured." }, { status: 500 });
+  if (!openaiKey && !apiKey) return Response.json({ error: "AI is not configured." }, { status: 500 });
 
   let messages: UIMessage[];
   try {
@@ -71,15 +74,17 @@ export async function handleOddyChat(request: Request): Promise<Response> {
   }
 
   const runIdFetch = createLovableAiGatewayRunIdFetch(getLovableAiGatewayRunId(request));
-  const provider = createOpenAI({
-    baseURL: "https://ai.gateway.lovable.dev/v1",
-    apiKey,
-    headers: { "Lovable-API-Key": apiKey, "X-Lovable-AIG-SDK": "vercel-ai-sdk" },
-    fetch: runIdFetch.fetch,
-  });
+  const provider = openaiKey
+    ? createOpenAI({ apiKey: openaiKey })
+    : createOpenAI({
+        baseURL: "https://ai.gateway.lovable.dev/v1",
+        apiKey,
+        headers: { "Lovable-API-Key": apiKey!, "X-Lovable-AIG-SDK": "vercel-ai-sdk" },
+        fetch: runIdFetch.fetch,
+      });
 
   const result = streamText({
-    model: provider.responses(MODEL),
+    model: provider.responses(openaiKey ? OPENAI_MODEL : MODEL),
     system: buildInstructions(),
     messages: await convertToModelMessages(messages),
     abortSignal: request.signal,
