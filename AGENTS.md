@@ -15,3 +15,4 @@
 - Keep Studio Output media, category ordering and grouping in one typed dataset with format derived from aspect ratio; render compact expandable category sections through the shared player so matching work stays together without duplicated galleries.
 - Keep Apps work in a dedicated bilingual section using imported phone mockups, separate from website links and automation capabilities so supplied app imagery is not presented as an invented live launch.
 - The Oddy assistant builds its knowledge from the bilingual translations dictionary and siteConfig at request time, so website copy changes automatically reach its answers.
+- Oddy calls OpenAI directly with OPENAI_API_KEY when set (falls back to Lovable AI Gateway); the run-id header wrapper is Lovable-only because it blocks until a gateway run id arrives.
