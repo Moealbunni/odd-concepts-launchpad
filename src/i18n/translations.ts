@@ -9,7 +9,19 @@
  * translated.
  */
 
+/** Dedicated service pages — kept as a literal so <Link to=...> stays type-safe. */
+export type ServiceLink = "/services/ai-outreach";
+
+export interface ServiceItem {
+  name: string;
+  line: string;
+  detail: string;
+  /** Set when the service has its own page. */
+  link?: ServiceLink;
+}
+
 export const en = {
+
   nav: {
     home: "Home",
     services: "Services",
@@ -112,6 +124,8 @@ export const en = {
     seeAll: "See all services",
     expandMore: "Expand for more",
     showLess: "Show less",
+    learnMore: "Learn more",
+
     items: [
       {
         name: "Premium Websites",
@@ -169,6 +183,13 @@ export const en = {
         detail: "We build n8n workflows that capture enquiries from forms, ads and messaging, ask relevant qualifying questions and score leads against your criteria. Qualified leads go into your CRM with their context, assigned follow-ups and booking steps, while your team reviews exceptions.",
       },
       {
+        name: "AI Outreach Autopilot",
+        line: "We find your ideal customers, contact them for you, and handle the follow-up, so new enquiries keep arriving without you chasing.",
+        detail: "We build a verified list of the customers who actually fit your business, write messages in your brand's voice, send them from your own domain, then read and sort every reply — so you only step in when someone is ready to talk.",
+        link: "/services/ai-outreach",
+      },
+
+      {
         name: "Invoice & Document Processing",
         line: "Less manual entry. Clearer approvals. Documents where they belong.",
         detail: "We connect your inbox, uploads and business tools with n8n to extract invoice and document data, check required fields and flag duplicates or uncertain entries. Records are routed for approval, synced to your accounting or CRM tools and filed with a traceable history — keeping your team in control.",
@@ -188,9 +209,56 @@ export const en = {
         line: "Clear dashboards that show what’s actually driving growth.",
         detail: "We connect your ads, website, sales and CRM data into one dashboard, so you see what’s working and where to spend next.",
       },
+    ] as ServiceItem[],
+  },
+  aiOutreach: {
+    eyebrow: "AI Outreach Autopilot",
+    title: "New enquiries, ",
+    titleGradient: "without the chase.",
+    subtitle:
+      "We find your ideal customers, contact them for you, and handle the follow-up — so new enquiries keep arriving without you chasing anyone.",
+    backToServices: "Back to services",
+    stepsEyebrow: "How it works",
+    stepsTitle: "Four steps. Then it runs.",
+    steps: [
+      {
+        title: "We define your ideal customer",
+        detail: "We map the businesses, roles and areas that actually buy from you, then build a clean, verified list — no scraped dumps, no blasts to strangers.",
+      },
+      {
+        title: "We write and send the outreach",
+        detail: "Personalised messages in your brand's voice, sent from your own domain across email, WhatsApp or LinkedIn, at a pace that protects your sender reputation.",
+      },
+      {
+        title: "We handle the follow-up",
+        detail: "Every reply is read and sorted: questions answered, interest booked in, and a polite nudge for anyone who hasn't replied. You only see the ones worth your time.",
+      },
+      {
+        title: "You take it from there",
+        detail: "Qualified enquiries land in your inbox or CRM with the full context, so you walk into a warm conversation instead of a cold call.",
+      },
+    ],
+    includedEyebrow: "What's included",
+    includedTitle: "Everything, handled.",
+    included: [
+      "Ideal-customer list building and verification",
+      "Message copy in your brand voice — English and Arabic",
+      "Sending from your own domain and numbers",
+      "Reply handling, sorting and booking",
+      "Follow-up sequences with clear stop rules",
+      "A weekly summary: sent, replied, booked",
+    ],
+    guardEyebrow: "Good to know",
+    guardTitle: "No spam. No promises we can't keep.",
+    guards: [
+      "You own the lists and the accounts — everything we build stays yours.",
+      "Nothing is sent until you approve the list and the copy.",
+      "We send at human volumes from verified domains, and opt-outs are respected immediately.",
+      "Results depend on your offer, the list and the market — we won't promise you a number.",
     ],
   },
   industries: {
+
     eyebrow: "Who we build for",
     title: "We speak your industry — not “business in general”.",
     subtitle:
@@ -656,6 +724,8 @@ export const ar: Translations = {
     seeAll: "عرض جميع الخدمات",
     expandMore: "اضغط للمزيد",
     showLess: "عرض أقل",
+    learnMore: "اعرف المزيد",
+
     items: [
       {
         name: "مواقع إلكترونية متميزة",
@@ -713,6 +783,13 @@ export const ar: Translations = {
         detail: "نبني سير عمل عبر n8n يجمع الاستفسارات من النماذج والإعلانات والرسائل، ويطرح أسئلة التأهيل المناسبة ويقيّم العملاء وفق معاييركم. تنتقل الفرص المؤهلة إلى نظام إدارة العملاء مع تفاصيلها وخطوات المتابعة والحجز، وتبقى الحالات الاستثنائية لمراجعة فريقكم.",
       },
       {
+        name: "أتمتة التواصل الخارجي",
+        line: "نبحث عن عملائكم المثاليين، ونتواصل معهم نيابة عنكم، ونتابع معهم — فتصلكم الاستفسارات دون أن تطاردوا أحدًا.",
+        detail: "نبني قائمة مدقّقة بالعملاء المناسبين لأعمالكم، ونكتب الرسائل بأسلوب علامتكم، ونرسلها من نطاقكم، ثم نقرأ كل ردّ ونصنّفه — فلا تتدخلون إلا عندما يكون أحدهم جاهزًا للحديث.",
+        link: "/services/ai-outreach",
+      },
+
+      {
         name: "معالجة الفواتير والمستندات",
         line: "إدخال يدوي أقل، وموافقات أوضح، ومستندات في مكانها الصحيح.",
         detail: "نربط البريد والملفات المرفوعة وأدوات أعمالكم عبر n8n لاستخراج بيانات الفواتير والمستندات، والتحقق من الحقول المطلوبة وتنبيهكم إلى التكرار أو البيانات غير المؤكدة. نوجّه السجلات للموافقة، ونزامنها مع أدوات المحاسبة أو إدارة العملاء، ونؤرشفها بسجل قابل للتتبع — مع إبقاء القرار بيد فريقكم.",
@@ -732,9 +809,56 @@ export const ar: Translations = {
         line: "لوحات بيانات واضحة تُظهر ما يقود النمو فعليًا.",
         detail: "نربط بيانات الإعلانات والموقع والمبيعات وإدارة العملاء في لوحة واحدة، لتعرفوا ما الذي ينجح وأين تستثمرون بعدها.",
       },
+    ] as ServiceItem[],
+  },
+  aiOutreach: {
+    eyebrow: "أتمتة التواصل الخارجي",
+    title: "استفسارات جديدة، ",
+    titleGradient: "دون أن تطارد أحدًا.",
+    subtitle:
+      "نبحث عن عملائكم المثاليين، ونتواصل معهم نيابة عنكم، ونتابع معهم — فتستمر الاستفسارات بالوصول دون ملاحقة.",
+    backToServices: "العودة إلى الخدمات",
+    stepsEyebrow: "كيف تعمل",
+    stepsTitle: "أربع خطوات، ثم تعمل تلقائيًا.",
+    steps: [
+      {
+        title: "نحدّد العميل المثالي",
+        detail: "نرسم خريطة للأعمال والمناصب والمناطق التي تشتري منكم فعليًا، ثم نبني قائمة نظيفة ومدقّقة — بلا قوائم مسلوقة ولا رسائل عشوائية.",
+      },
+      {
+        title: "نكتب الرسائل ونرسلها",
+        detail: "رسائل مخصصة بأسلوب علامتكم، تُرسل من نطاقكم عبر البريد أو واتساب أو لينكدإن، وبوتيرة تحفظ سمعة بريدكم.",
+      },
+      {
+        title: "نتولّى المتابعة",
+        detail: "نقرأ كل ردّ ونصنّفه: نجيب عن الأسئلة، ونحجز المهتمين، ونرسل تذكيرًا مهذبًا لمن لم يرد. أنتم ترون فقط ما يستحق وقتكم.",
+      },
+      {
+        title: "ويبدأ دوركم",
+        detail: "تصلكم الفرص المؤهلة إلى بريدكم أو نظام إدارة العملاء مع تفاصيلها كاملة، فتدخلون في محادثة دافئة بدل اتصال بارد.",
+      },
+    ],
+    includedEyebrow: "ما الذي يشمله",
+    includedTitle: "كل شيء، متولّى بالكامل.",
+    included: [
+      "بناء قوائم العملاء المناسبين وتدقيقها",
+      "كتابة الرسائل بأسلوب علامتكم — بالعربية والإنجليزية",
+      "الإرسال من نطاقكم وأرقامكم",
+      "الرد على الرسائل وتصنيفها وحجز المهتمين",
+      "سلاسل متابعة مع قواعد إيقاف واضحة",
+      "ملخص أسبوعي: الرسائل المرسلة، الردود، والحجوزات",
+    ],
+    guardEyebrow: "معلومات مهمة",
+    guardTitle: "لا رسائل مزعجة، ولا وعود لا نستطيع الوفاء بها.",
+    guards: [
+      "القوائم والحسابات ملككم — كل ما نبنيه يبقى لكم.",
+      "لا تُرسل أي رسالة قبل أن توافقوا على القائمة والنص.",
+      "نرسل بوتيرة بشرية من نطاقات موثّقة، ويؤخذ بالاعتراض فورًا.",
+      "النتائج تعتمد على عرضكم وقائمة العملاء والسوق — لا نعدكم برقم محدد.",
     ],
   },
   industries: {
+
     eyebrow: "لمن نعمل",
     title: "نتحدث لغة قطاعكم — لا «أعمال بشكل عام».",
     subtitle:

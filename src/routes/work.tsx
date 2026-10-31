@@ -52,10 +52,11 @@ function WorkPage() {
         />
       </Section>
       <ClientSites />
+      <AutomationWork />
       <InstagramProfiles />
       <AppsWork />
-      <AutomationWork />
       <MediaShowcase />
+
       <FinalCta />
     </>
   );

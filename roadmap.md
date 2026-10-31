@@ -3,7 +3,7 @@
 - [x] Add bilingual customer support, lead qualification and invoice/document automation services without prices.
 - [x] Refresh service buttons without changing their size or wording.
 - [x] Verify all 15 services and click-only buttons in English/Arabic with no sideways overflow.
-- [ ] Publish the refreshed services and buttons; waiting for the user's button review.
+- [x] Publish the refreshed services and buttons.
 
 - [x] Add both Vera Tulum videos to Event Artwork in Reels.
 - [x] Remove the phone image's outer background and add an Apps section to Work.
@@ -44,3 +44,8 @@
 
 - [x] Refine the Websites cards: quieter backgrounds, smaller arrow controls, no visible addresses.
 - [x] Verify English/Arabic layout on mobile and desktop, then publish and verify the live page.
+
+- [x] Add "AI Outreach Autopilot" service card plus its own page at /services/ai-outreach in English and Arabic.
+- [x] Move the LLM & business automation section directly under Websites on Work.
+- [x] Verify the card, the new page and the Work order in English/Arabic on desktop and phone.
+
