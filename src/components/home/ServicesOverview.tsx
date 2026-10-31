@@ -30,11 +30,12 @@ function ServiceCard({ name, line, detail, expanded, onToggle, expandLabel, coll
           </div>
           <Button
             type="button"
-            variant="ghost"
+            variant="service"
             size="sm"
             aria-expanded={expanded}
+            data-state={expanded ? "open" : "closed"}
             onClick={onToggle}
-            className="mt-3 -ms-3 text-muted-foreground hover:text-foreground"
+            className="mt-3 -ms-3"
           >
             {expanded ? collapseLabel : expandLabel}
             {expanded ? <ChevronUp aria-hidden="true" /> : <ChevronDown aria-hidden="true" />}

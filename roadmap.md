@@ -1,5 +1,10 @@
 # Roadmap
 
+- [x] Add bilingual customer support, lead qualification and invoice/document automation services without prices.
+- [x] Refresh service buttons without changing their size or wording.
+- [x] Verify all 15 services and click-only buttons in English/Arabic with no sideways overflow.
+- [ ] Publish the refreshed services and buttons; waiting for the user's button review.
+
 - [x] Add both Vera Tulum videos to Event Artwork in Reels.
 - [x] Remove the phone image's outer background and add an Apps section to Work.
 - [x] Group Cinematic and Reels by matching categories with compact browsing.

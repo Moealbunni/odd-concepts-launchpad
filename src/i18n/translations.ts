@@ -159,6 +159,21 @@ export const en = {
         detail: "We automate WhatsApp and Instagram replies, add an AI receptionist that books and qualifies leads 24/7, and connect your CRM and follow-ups so nothing slips.",
       },
       {
+        name: "Customer Support Chatbots",
+        line: "Helpful, on-brand answers with a smooth handover to your team.",
+        detail: "We build support chatbots around your FAQs, policies and business knowledge, connecting your website, WhatsApp or Instagram through n8n workflows. They answer routine questions, collect context and route complex requests to the right person — with clear limits on what the AI can handle.",
+      },
+      {
+        name: "Lead Qualification Workflows",
+        line: "Turn incoming enquiries into organised, sales-ready conversations.",
+        detail: "We build n8n workflows that capture enquiries from forms, ads and messaging, ask relevant qualifying questions and score leads against your criteria. Qualified leads go into your CRM with their context, assigned follow-ups and booking steps, while your team reviews exceptions.",
+      },
+      {
+        name: "Invoice & Document Processing",
+        line: "Less manual entry. Clearer approvals. Documents where they belong.",
+        detail: "We connect your inbox, uploads and business tools with n8n to extract invoice and document data, check required fields and flag duplicates or uncertain entries. Records are routed for approval, synced to your accounting or CRM tools and filed with a traceable history — keeping your team in control.",
+      },
+      {
         name: "Apps",
         line: "Custom mobile and web apps that extend your reach.",
         detail: "We design and build iOS, Android and web apps — bookings, loyalty, ordering or member portals — tailored to how your customers use you.",
@@ -684,6 +699,21 @@ export const ar: Translations = {
         name: "أتمتة الأعمال",
         line: "واتساب وإنستغرام وموظف استقبال ذكي وإدارة العملاء — كلها تعمل تلقائيًا.",
         detail: "نؤتمت الردود على واتساب وإنستغرام، ونضيف موظف استقبال ذكيًا يحجز ويصنّف العملاء على مدار الساعة، ونربط نظام العملاء والمتابعات حتى لا يضيع شيء.",
+      },
+      {
+        name: "روبوتات محادثة لخدمة العملاء",
+        line: "إجابات مفيدة بأسلوب علامتكم، مع تحويل سلس إلى فريقكم.",
+        detail: "نبني روبوتات دعم تعتمد على أسئلتكم الشائعة وسياساتكم ومعلومات أعمالكم، ونربط الموقع وواتساب أو إنستغرام بسير عمل عبر n8n. تجيب عن الأسئلة المتكررة، وتجمع تفاصيل الطلب، وتحول الحالات المعقدة إلى الشخص المناسب — مع حدود واضحة لما يتولاه الذكاء الاصطناعي.",
+      },
+      {
+        name: "سير عمل تأهيل العملاء المحتملين",
+        line: "حوّلوا الاستفسارات الواردة إلى فرص منظّمة وجاهزة لفريق المبيعات.",
+        detail: "نبني سير عمل عبر n8n يجمع الاستفسارات من النماذج والإعلانات والرسائل، ويطرح أسئلة التأهيل المناسبة ويقيّم العملاء وفق معاييركم. تنتقل الفرص المؤهلة إلى نظام إدارة العملاء مع تفاصيلها وخطوات المتابعة والحجز، وتبقى الحالات الاستثنائية لمراجعة فريقكم.",
+      },
+      {
+        name: "معالجة الفواتير والمستندات",
+        line: "إدخال يدوي أقل، وموافقات أوضح، ومستندات في مكانها الصحيح.",
+        detail: "نربط البريد والملفات المرفوعة وأدوات أعمالكم عبر n8n لاستخراج بيانات الفواتير والمستندات، والتحقق من الحقول المطلوبة وتنبيهكم إلى التكرار أو البيانات غير المؤكدة. نوجّه السجلات للموافقة، ونزامنها مع أدوات المحاسبة أو إدارة العملاء، ونؤرشفها بسجل قابل للتتبع — مع إبقاء القرار بيد فريقكم.",
       },
       {
         name: "التطبيقات",

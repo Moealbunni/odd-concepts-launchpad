@@ -106,6 +106,10 @@
   --shadow-card: 0 10px 40px -15px hsl(var(--brand-primary) / 0.2);
   --shadow-button: 0 10px 30px -10px hsl(var(--brand-primary) / 0.6);
   --shadow-button-hover: 0 16px 40px -10px hsl(var(--brand-accent) / 0.55);
+  --gradient-service-control: linear-gradient(120deg, oklch(0.25 0.035 260 / 0.65), oklch(0.21 0.02 300 / 0.45));
+  --service-control-border: oklch(0.45 0.045 265 / 0.7);
+  --service-control-border-active: oklch(0.63 0.105 270 / 0.85);
+  --shadow-service-control: inset 0 1px 0 oklch(0.8 0.03 265 / 0.08), 0 2px 8px oklch(0.08 0.01 265 / 0.2);
 
   --chart-1: 217 91% 60%;
   --chart-2: 272 91% 65%;
@@ -241,6 +245,18 @@
 
 .brand-button-primary:hover {
   box-shadow: var(--shadow-button-hover);
+}
+
+.service-detail-button {
+  background-image: var(--gradient-service-control);
+  border-color: var(--service-control-border);
+  box-shadow: var(--shadow-service-control);
+}
+
+.service-detail-button:hover,
+.service-detail-button[data-state="open"] {
+  border-color: var(--service-control-border-active);
+  color: var(--highlight);
 }
 
 /* Contained, premium image hover zoom (used by inline photo placements). */
