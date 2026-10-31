@@ -184,8 +184,8 @@ export const en = {
       },
       {
         name: "AI Outreach Autopilot",
-        line: "We find your ideal customers, contact them for you, and handle the follow-up, so new enquiries keep arriving without you chasing.",
-        detail: "We build a verified list of the customers who actually fit your business, write messages in your brand's voice, send them from your own domain, then read and sort every reply — so you only step in when someone is ready to talk.",
+        line: "Find ideal customers. Start conversations. Automate follow-ups.",
+        detail: "We build targeted customer lists, write outreach in your brand’s voice and automate follow-ups. Replies are organised so your team can focus on interested leads — with your approval and clear sending limits.",
         link: "/services/ai-outreach",
       },
 
@@ -784,8 +784,8 @@ export const ar: Translations = {
       },
       {
         name: "أتمتة التواصل الخارجي",
-        line: "نبحث عن عملائكم المثاليين، ونتواصل معهم نيابة عنكم، ونتابع معهم — فتصلكم الاستفسارات دون أن تطاردوا أحدًا.",
-        detail: "نبني قائمة مدقّقة بالعملاء المناسبين لأعمالكم، ونكتب الرسائل بأسلوب علامتكم، ونرسلها من نطاقكم، ثم نقرأ كل ردّ ونصنّفه — فلا تتدخلون إلا عندما يكون أحدهم جاهزًا للحديث.",
+        line: "نجد العملاء المناسبين، ونبدأ التواصل، ونؤتمت المتابعة.",
+        detail: "نبني قوائم عملاء مستهدفة، ونكتب رسائل بأسلوب علامتكم، ونؤتمت المتابعة. ننظّم الردود ليركّز فريقكم على العملاء المهتمين — بموافقتكم وضمن حدود إرسال واضحة.",
         link: "/services/ai-outreach",
       },
 

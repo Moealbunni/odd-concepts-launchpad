@@ -10,7 +10,7 @@
 <!-- LOVABLE:END -->
 
 - Keep shared page, card, and button gradient/shadow treatments in global semantic CSS tokens; shared primitives consume them so colour refreshes remain consistent across all routes.
-- Service detail controls use the shared Button service variant and global tokens, so their styling stays consistent on the homepage and Services page without changing click-only expansion.
+- All service cards use the same click-only expand/collapse control and hide details initially, including services with dedicated pages, so one card cannot stretch a row with permanently visible details.
 - Render decorative background media once in SiteLayout at its natural aspect ratio with document-scrolling, four-edge feathered masking, seamless CSS linework and globally tokenized intensity, so every route stays sharp and continuous without a visible image rectangle or blocked interaction.
 - Keep the Work automation capability section in a dedicated component with bilingual copy in the existing translation dictionary, separate from client proof so capabilities are not mistaken for shipped case studies.
 - Keep Studio Output media, category ordering and grouping in one typed dataset with format derived from aspect ratio; render compact expandable category sections through the shared player so matching work stays together without duplicated galleries.
