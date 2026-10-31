@@ -23,6 +23,11 @@ export function ClientSites() {
         title={<span id="client-sites-heading">{t.clientSites.title}</span>}
         subtitle={t.clientSites.subtitle}
       />
+      <Reveal delay={160}>
+        <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+          {t.clientSites.detail}
+        </p>
+      </Reveal>
 
       <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {clients.map((c, i) => (
