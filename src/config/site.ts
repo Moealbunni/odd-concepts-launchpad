@@ -7,7 +7,7 @@
 export const siteConfig = {
   name: "Odd Concepts Digital",
   shortName: "Odd Concepts",
-  email: "oddconcepts.ae@gmail.com",
+  email: "oddy@oddconceptsdigital.com",
   whatsappDisplay: "+971 56 480 8748",
   phoneUrl: "tel:+971564808748",
   instagramUrl: "https://www.instagram.com/oddconceptsdigital/",

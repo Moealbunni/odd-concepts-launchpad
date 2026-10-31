@@ -24,7 +24,7 @@ const schema = z.object({
   needs: z.string().trim().min(5).max(2000),
 });
 
-const OWNER_EMAIL = "oddconcepts.ae@gmail.com";
+const OWNER_EMAIL = "oddy@oddconceptsdigital.com";
 
 function escapeHtml(input: string) {
   return input
