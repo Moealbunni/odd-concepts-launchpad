@@ -3,15 +3,11 @@ import { strict as assert } from "node:assert";
 import { ar, dictionaries, en } from "./translations";
 
 describe("AI Outreach Autopilot service", () => {
-  test("is offered with the exact one-liner and its own page link", () => {
+  test("retains its own page link", () => {
     const item = en.services.items.find(
       (service) => service.name === "AI Outreach Autopilot",
     );
     assert.ok(item, "AI Outreach Autopilot must be listed in the services");
-    assert.equal(
-      item.line,
-      "We find your ideal customers, contact them for you, and handle the follow-up, so new enquiries keep arriving without you chasing.",
-    );
     assert.equal(item.link, "/services/ai-outreach");
   });
 

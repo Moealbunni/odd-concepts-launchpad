@@ -48,4 +48,5 @@
 - [x] Add "AI Outreach Autopilot" service card plus its own page at /services/ai-outreach in English and Arabic.
 - [x] Move the LLM & business automation section directly under Websites on Work.
 - [x] Verify the card, the new page and the Work order in English/Arabic on desktop and phone.
+- [x] Shorten AI Outreach Autopilot and match the other service cards’ click-only expansion; verify the row layout in both languages.
 
