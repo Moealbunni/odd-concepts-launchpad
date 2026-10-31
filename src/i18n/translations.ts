@@ -338,6 +338,8 @@ export const en = {
     eyebrow: "Live client work",
     title: "Sites we’ve shipped.",
     subtitle: "Real client websites, live and in use today.",
+    detail:
+      "These are not normal websites. Every site we build runs on a custom front-end, a connected back-end, an AI website assistant that talks to your visitors and generates leads — so the website itself brings in business.",
     /** `{name}` is replaced with the (untranslated) client name. */
     visitAria: "Visit {name} website (opens in new tab)",
   },
@@ -858,6 +860,8 @@ export const ar: Translations = {
     eyebrow: "أعمال عملاء حقيقية",
     title: "مواقع أطلقناها بالفعل.",
     subtitle: "مواقع عملاء حقيقية، تعمل الآن.",
+    detail:
+      "هذه ليست مواقع عادية. كل موقع نبنيه يعمل بواجهة مخصصة، وربط خلفي كامل، ومساعد ذكي مدمج في الموقع يتحدث مع زوّارك ويجمع العملاء المحتملين — فيجلب الموقع نفسه الأعمال.",
     visitAria: "زيارة موقع {name} (يفتح في نافذة جديدة)",
   },
   instagram: {
