@@ -44,11 +44,6 @@ export function FinalCta() {
                   {t.site.whatsappCta}
                 </a>
               </BrandButton>
-              <BrandButton asChild size="lg" variant="ghost" className="w-full sm:w-auto">
-                <a href={siteConfig.phoneUrl}>
-                  {t.footer.call} <span dir="ltr">{siteConfig.whatsappDisplay}</span>
-                </a>
-              </BrandButton>
             </div>
           </div>
         </div>

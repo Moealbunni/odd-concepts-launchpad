@@ -26,8 +26,8 @@ export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-border bg-background">
       <Container className="py-16 pb-28 md:pb-24">
-        <div className="grid gap-12 md:grid-cols-4">
-          <div className="md:col-span-1">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="min-w-0">
             <Wordmark className="text-base" markClassName="h-12" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {t.site.positioning}
@@ -47,7 +47,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="transition-colors hover:text-foreground"
+                  className="break-all transition-colors hover:text-foreground"
                   dir="ltr"
                 >
                   {siteConfig.email}
@@ -55,13 +55,13 @@ export function SiteFooter() {
               </li>
             </ul>
             <div className="mt-6 flex flex-col gap-3">
-              <BrandButton asChild variant="secondary" size="md" className="w-full">
+              <BrandButton asChild variant="secondary" size="md" className="h-auto min-h-11 w-full whitespace-normal py-2.5 text-center">
                 <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer">
                   <WhatsAppGlyph className="size-4 shrink-0" />
                   {t.footer.whatsappButton}
                 </a>
               </BrandButton>
-              <BrandButton asChild variant="secondary" size="md" className="w-full">
+              <BrandButton asChild variant="secondary" size="md" className="h-auto min-h-11 w-full whitespace-normal py-2.5 text-center">
                 <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer">
                   <Instagram className="size-4 shrink-0" aria-hidden="true" />
                   {t.footer.instagramButton}
@@ -92,7 +92,7 @@ export function SiteFooter() {
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground">
               {t.footer.readyToGrow}
             </h3>
-            <BrandButton asChild>
+            <BrandButton asChild className="h-auto min-h-11 w-full whitespace-normal py-2.5 text-center">
               <Link to={siteConfig.primaryCta.href}>{t.site.primaryCta}</Link>
             </BrandButton>
             <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
