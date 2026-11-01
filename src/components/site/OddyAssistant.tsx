@@ -19,6 +19,7 @@ import {
 import { Shimmer } from "@/components/ai-elements/shimmer";
 import oddyAvatar from "@/assets/oddy-avatar.png";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { Button } from "@/components/ui/button";
 
 const STORAGE_KEY = "ocd-oddy";
 
@@ -104,19 +105,19 @@ export function OddyAssistant() {
   return (
     <>
       {!open && (
-        <button
+        <Button
           type="button"
           onClick={() => setOpen(true)}
           aria-label={t.oddy.open}
-          className="gradient-bg brand-button-primary fixed z-40 flex items-center gap-3 rounded-full py-1.5 pe-5 ps-1.5 text-primary-foreground ring-2 ring-highlight-border ring-offset-2 ring-offset-background transition-transform hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
+          className="gradient-bg brand-button-primary fixed z-40 size-14 gap-0 rounded-full p-1 text-primary-foreground ring-2 ring-highlight-border ring-offset-2 ring-offset-background transition-transform hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 sm:h-auto sm:w-auto sm:gap-3 sm:py-1.5 sm:pe-5 sm:ps-1.5"
           style={{ insetInlineEnd: "max(1rem, env(safe-area-inset-right))", bottom: "max(1rem, env(safe-area-inset-bottom))" }}
         >
-          <img src={oddyAvatar} alt="" width={48} height={48} className="size-12 drop-shadow-lg" />
-          <span className="flex flex-col items-start leading-tight">
+          <img src={oddyAvatar} alt="" width={48} height={48} className="size-12 shrink-0 drop-shadow-lg" />
+          <span className="hidden flex-col items-start leading-tight sm:flex">
             <span className="text-sm font-semibold">{t.oddy.open}</span>
             <span className="text-xs font-normal opacity-80">{t.oddy.role}</span>
           </span>
-        </button>
+        </Button>
       )}
 
       {open && (

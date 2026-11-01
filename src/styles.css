@@ -138,7 +138,7 @@
   html {
     color-scheme: dark;
     scroll-behavior: smooth;
-    scroll-padding-top: 4rem;
+    scroll-padding-top: 5rem;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -185,6 +185,10 @@
     background: hsl(var(--accent) / 0.35);
     color: hsl(var(--foreground));
   }
+}
+
+@media (min-width: 1280px) {
+  html { scroll-padding-top: 6rem; }
 }
 
 @utility gradient-text {

@@ -34,7 +34,7 @@ export function SiteFooter() {
             </p>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground">
               {t.footer.contact}
             </h3>
@@ -58,19 +58,19 @@ export function SiteFooter() {
               <BrandButton asChild variant="secondary" size="md" className="h-auto min-h-11 w-full whitespace-normal py-2.5 text-center">
                 <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer">
                   <WhatsAppGlyph className="size-4 shrink-0" />
-                  {t.footer.whatsappButton}
+                  <span className="min-w-0">{t.footer.whatsappButton}</span>
                 </a>
               </BrandButton>
               <BrandButton asChild variant="secondary" size="md" className="h-auto min-h-11 w-full whitespace-normal py-2.5 text-center">
                 <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer">
                   <Instagram className="size-4 shrink-0" aria-hidden="true" />
-                  {t.footer.instagramButton}
+                  <span className="min-w-0">{t.footer.instagramButton}</span>
                 </a>
               </BrandButton>
             </div>
           </div>
 
-          <div>
+          <div className="min-w-0">
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground">
               {t.footer.explore}
             </h3>
@@ -88,7 +88,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex min-w-0 flex-col gap-4">
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground">
               {t.footer.readyToGrow}
             </h3>
