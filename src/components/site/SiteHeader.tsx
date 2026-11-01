@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import { BrandButton } from "@/components/primitives/BrandButton";
+import { Button } from "@/components/ui/button";
 import { useT } from "@/i18n/LanguageContext";
 import { Wordmark } from "./Wordmark";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -42,15 +43,15 @@ export function SiteHeader() {
         scrolled ? "border-b border-border" : "border-b border-transparent",
       )}
     >
-      <div className="mx-auto flex h-24 w-full max-w-6xl items-center justify-between px-6 py-3">
+      <div className="mx-auto grid h-20 w-full max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-6 xl:flex xl:h-24 xl:justify-between">
         <Wordmark
-          className="text-base md:text-lg"
-          markClassName="h-16"
+          className="min-w-0 xl:shrink-0"
+          markClassName="h-auto max-h-12 w-full max-w-[190px] xl:h-16 xl:max-h-16 xl:w-auto xl:max-w-none"
         />
 
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-8 md:flex"
+          className="hidden shrink-0 items-center gap-6 xl:flex"
         >
           {mainNav.map((item) => (
             <Link
@@ -64,7 +65,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:ms-8 md:flex">
+        <div className="hidden shrink-0 items-center gap-3 xl:ms-8 xl:flex">
           <LanguageSwitcher />
           <BrandButton asChild variant="secondary" size="sm">
             <a
@@ -80,18 +81,20 @@ export function SiteHeader() {
           </BrandButton>
         </div>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex shrink-0 items-center gap-2 xl:hidden">
           <LanguageSwitcher />
-          <button
+          <Button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border text-foreground"
+            variant="outline"
+            size="icon"
+            className="h-11 w-11 shrink-0 rounded-lg"
             aria-label={open ? t.site.closeMenu : t.site.openMenu}
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -99,8 +102,8 @@ export function SiteHeader() {
       <div
         id="mobile-nav"
         className={cn(
-          "md:hidden overflow-hidden border-b border-border bg-background/95 backdrop-blur-md transition-all duration-200 ease-out",
-          open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0",
+          "xl:hidden border-border bg-background/95 backdrop-blur-md",
+          open ? "max-h-[calc(100dvh-5rem)] overflow-y-auto border-b" : "hidden",
         )}
       >
         <nav aria-label="Mobile" className="flex flex-col gap-1 px-6 py-6">

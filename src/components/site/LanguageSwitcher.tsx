@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/i18n/LanguageContext";
 import type { Lang } from "@/i18n/translations";
+import { Button } from "@/components/ui/button";
 
 const options: { value: Lang; label: string }[] = [
   { value: "en", label: "EN" },
@@ -18,27 +19,28 @@ export function LanguageSwitcher({ className }: { className?: string }) {
       role="group"
       aria-label={t.site.languageLabel}
       className={cn(
-        "inline-flex items-center gap-0.5 rounded-full border border-border bg-white/[0.03] p-0.5",
+        "inline-flex shrink-0 items-center gap-0.5 rounded-full border border-border bg-muted/30 p-0.5",
         className,
       )}
     >
       {options.map((o) => {
         const active = lang === o.value;
         return (
-          <button
+          <Button
+            variant="ghost"
             key={o.value}
             type="button"
             onClick={() => setLang(o.value)}
             aria-pressed={active}
             className={cn(
-              "flex min-h-10 min-w-11 items-center justify-center rounded-full px-3 text-xs font-semibold tracking-wide transition-colors duration-200 md:min-h-0 md:min-w-0 md:px-2.5 md:py-1",
+              "h-10 min-w-10 rounded-full px-2.5 text-xs font-semibold transition-colors duration-200 xl:h-8",
               active
-                ? "bg-white/10 text-foreground"
+                ? "bg-muted text-foreground"
                 : "text-muted-foreground hover:text-foreground",
             )}
           >
             {o.label}
-          </button>
+          </Button>
         );
       })}
     </div>
