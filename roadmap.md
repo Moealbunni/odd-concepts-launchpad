@@ -1,7 +1,8 @@
 # Roadmap
 
-- [ ] Fix shared mobile header, floating Oddy control, button fit and homepage spacing.
-- [ ] Verify all pages in English/Arabic on phones and tablets, then publish.
+- [x] Fix shared mobile header, floating Oddy control, button fit and homepage spacing.
+- [x] Verify all pages in English/Arabic on phones and tablets; 128 layout combinations and service/menu/chat controls passed.
+- [x] Request publication of the verified mobile fixes.
 
 - [x] Add bilingual customer support, lead qualification and invoice/document automation services without prices.
 - [x] Refresh service buttons without changing their size or wording.
