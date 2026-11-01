@@ -95,21 +95,21 @@ function HomePage() {
               </BrandButton>
             </div>
 
-            <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
-              <span>{t.hero.or}</span>
+            <p className="mt-3 w-full text-center text-sm leading-relaxed text-muted-foreground sm:text-start">
+              <span>{t.hero.or}{" "}</span>
               <a
                 href={siteConfig.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline-offset-4 hover:text-foreground hover:underline"
+                className="font-medium text-highlight underline decoration-highlight-border underline-offset-4 hover:text-foreground"
               >
                 {t.hero.whatsappInline}
               </a>
-            </div>
+            </p>
           </Reveal>
 
-          <Reveal delay={420} className="mt-10">
-            <p className="font-mono text-xs tracking-[0.12em] text-muted-foreground/60">
+          <Reveal delay={420} className="mt-6 w-full max-w-[55ch]">
+            <p className="text-center text-xs leading-relaxed text-muted-foreground sm:text-start">
               {t.hero.reassurance}
             </p>
           </Reveal>
