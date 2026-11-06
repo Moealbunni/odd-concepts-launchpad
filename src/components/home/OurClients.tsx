@@ -14,6 +14,20 @@ const clients = [
   "Ekoko",
 ];
 
+/** Words never used for a monogram. */
+const ARTICLES = new Set(["the", "a", "an", "al", "el"]);
+
+/** Up to two initials, e.g. "The Spot Network" -> "SN", "Room 44" -> "R4". */
+function monogram(name: string) {
+  const words = name
+    .split(/\s+/)
+    .filter((word) => /[A-Za-z0-9]/.test(word) && !ARTICLES.has(word.toLowerCase()));
+
+  if (words.length === 0) return name.slice(0, 1).toUpperCase();
+  if (words.length === 1) return words[0].slice(0, 1).toUpperCase();
+  return (words[0][0] + words[1][0]).toUpperCase();
+}
+
 export function OurClients() {
   const t = useT();
   return (
@@ -30,32 +44,60 @@ export function OurClients() {
         subtitle={t.ourClients.subtitle}
       />
 
-      <Reveal delay={120} className="mt-14">
-        <ul className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-          {clients.map((name, i) => (
-            <li
-              key={name}
-              className="group bg-background/70 px-6 py-8 transition-colors duration-200 hover:bg-highlight-soft md:px-7 md:py-10"
-            >
-              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground/70">
+      <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+        {clients.map((name, i) => (
+          <Reveal
+            as="li"
+            key={name}
+            delay={i * 70}
+            className="client-card flex min-h-[10rem] flex-col justify-between rounded-3xl p-7 sm:min-h-[11.5rem] md:p-8 lg:min-h-[13rem]"
+          >
+            <div className="flex items-start justify-between gap-4">
+              <span
+                aria-hidden="true"
+                className="client-monogram inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-base font-semibold tracking-wide text-primary-foreground"
+              >
+                {monogram(name)}
+              </span>
+              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-3 text-lg font-semibold leading-snug text-foreground transition-colors group-hover:text-highlight md:text-xl">
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-2xl font-semibold leading-snug text-foreground md:text-[1.75rem]">
                 <span dir="ltr">{name}</span>
               </h3>
-            </li>
-          ))}
+              <span
+                aria-hidden="true"
+                className="client-rule mt-4 block"
+              />
+            </div>
+          </Reveal>
+        ))}
 
-          <li className="flex flex-col justify-center bg-background/70 px-6 py-8 md:px-7 md:py-10">
-            <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-highlight">
+        <Reveal
+          as="li"
+          delay={clients.length * 70}
+          className="client-card client-card-accent flex min-h-[10rem] flex-col justify-between rounded-3xl p-7 sm:min-h-[11.5rem] md:p-8 lg:min-h-[13rem]"
+        >
+          <div className="flex items-start justify-between gap-4">
+            <span
+              aria-hidden="true"
+              className="client-monogram inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-base font-semibold tracking-wide text-primary-foreground"
+            >
               ++
             </span>
-            <p className="mt-3 text-lg font-semibold leading-snug text-foreground md:text-xl">
+          </div>
+
+          <div className="mt-8">
+            <h3 className="gradient-text-bright text-2xl font-semibold leading-snug md:text-[1.75rem]">
               {t.ourClients.andMore}
-            </p>
-          </li>
-        </ul>
-      </Reveal>
+            </h3>
+            <span aria-hidden="true" className="client-rule mt-4 block" />
+          </div>
+        </Reveal>
+      </ul>
     </Section>
   );
 }

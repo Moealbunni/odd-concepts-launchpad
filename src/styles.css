@@ -102,6 +102,12 @@
   --gradient-page: linear-gradient(120deg, hsl(var(--background)) 12%, oklch(0.17 0.015 265) 50%, oklch(0.16 0.012 300) 80%, hsl(var(--background)) 100%);
   --gradient-card: linear-gradient(135deg, hsl(var(--surface-elevated)), hsl(var(--card)) 75%);
   --gradient-showcase: linear-gradient(125deg, oklch(0.24 0.024 265), oklch(0.2 0.016 300) 65%, hsl(var(--card)) 100%);
+  --gradient-client-card: linear-gradient(155deg, oklch(0.215 0.03 268), oklch(0.145 0.014 295) 72%);
+  --gradient-client-card-accent: linear-gradient(155deg, oklch(0.28 0.06 268), oklch(0.2 0.055 300) 78%);
+  --client-card-border: oklch(0.31 0.03 272);
+  --client-card-border-accent: oklch(0.52 0.1 272 / 0.85);
+  --shadow-client-card: 0 18px 50px -28px hsl(var(--brand-primary) / 0.45);
+  --shadow-client-card-hover: 0 30px 70px -28px hsl(var(--brand-accent) / 0.5);
   --gradient-website-link: linear-gradient(115deg, oklch(0.215 0.009 265), hsl(var(--card)) 80%);
   --shadow-card: 0 10px 40px -15px hsl(var(--brand-primary) / 0.2);
   --shadow-button: 0 10px 30px -10px hsl(var(--brand-primary) / 0.6);
@@ -127,6 +133,7 @@
   --sidebar-ring: 217 91% 60%;
 
   --gradient-brand: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-accent)));
+  --gradient-brand-bright: linear-gradient(135deg, oklch(0.79 0.11 250), oklch(0.81 0.12 300));
   --background-art-opacity: 0.65;
   --background-art-mobile-opacity: 0.45;
   --background-line-blue: hsl(var(--brand-primary) / 0.065);
@@ -202,6 +209,14 @@
   background-image: var(--gradient-brand);
 }
 
+/* Higher-contrast brand gradient for text sitting on coloured surfaces. */
+@utility gradient-text-bright {
+  background-image: var(--gradient-brand-bright);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .site-surface {
   background-image: var(--gradient-page);
   background-attachment: scroll;
@@ -241,6 +256,83 @@
 
 .website-link-card {
   background-image: var(--gradient-website-link);
+}
+
+/* Client cards — standalone surfaces with a soft glow, not a table grid. */
+.client-card {
+  position: relative;
+  overflow: hidden;
+  background-image: var(--gradient-client-card);
+  border: 1px solid var(--client-card-border);
+  box-shadow: var(--shadow-client-card);
+  transition:
+    transform 300ms ease-out,
+    border-color 300ms ease-out,
+    box-shadow 300ms ease-out;
+}
+
+.client-card::after {
+  content: "";
+  position: absolute;
+  top: -55%;
+  inset-inline-end: -25%;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    hsl(var(--brand-primary) / 0.28),
+    transparent 68%
+  );
+  opacity: 0;
+  transition: opacity 400ms ease-out;
+  pointer-events: none;
+}
+
+.client-card:hover,
+.client-card:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--highlight-border);
+  box-shadow: var(--shadow-client-card-hover);
+}
+
+.client-card:hover::after,
+.client-card:focus-within::after {
+  opacity: 1;
+}
+
+.client-card-accent {
+  background-image: var(--gradient-client-card-accent);
+  border-color: var(--client-card-border-accent);
+}
+
+.client-monogram {
+  background-image: var(--gradient-brand);
+  box-shadow: 0 10px 26px -12px hsl(var(--brand-primary) / 0.75);
+}
+
+/* Hairline under the client name — grows on hover, direction-safe. */
+.client-rule {
+  width: 2.5rem;
+  height: 1px;
+  background-image: linear-gradient(
+    to right in oklch,
+    var(--highlight),
+    hsl(var(--brand-accent))
+  );
+  transition: width 320ms ease-out;
+}
+
+.client-card:hover .client-rule,
+.client-card:focus-within .client-rule {
+  width: 6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-card:hover,
+  .client-card:focus-within {
+    transform: none;
+  }
 }
 
 .brand-button-primary {
