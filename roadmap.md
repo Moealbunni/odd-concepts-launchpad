@@ -54,3 +54,6 @@
 - [x] Verify the card, the new page and the Work order in English/Arabic on desktop and phone.
 - [x] Shorten AI Outreach Autopilot and match the other service cards’ click-only expansion; verify the row layout in both languages.
 
+
+- [x] Add ten uploaded clips to a bilingual Viral Marketing Hooks category under Work → Reels.
+- [x] Verify category expansion, all ten previews and playback on mobile and desktop.
