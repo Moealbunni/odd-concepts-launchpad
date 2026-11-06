@@ -6,6 +6,7 @@ import { InstagramProfiles } from "@/components/home/InstagramProfiles";
 import { AutomationWork } from "@/components/home/AutomationWork";
 import { MediaShowcase } from "@/components/home/MediaShowcase";
 import { AppsWork } from "@/components/home/AppsWork";
+import { OurClients } from "@/components/home/OurClients";
 import { FinalCta } from "@/components/home/FinalCta";
 import { useT } from "@/i18n/LanguageContext";
 
@@ -56,6 +57,8 @@ function WorkPage() {
       <InstagramProfiles />
       <AppsWork />
       <MediaShowcase />
+
+      <OurClients />
 
       <FinalCta />
     </>
