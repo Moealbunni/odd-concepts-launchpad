@@ -59,7 +59,7 @@ export function OurClients() {
               >
                 {monogram(name)}
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground/70">
+              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
                 {String(i + 1).padStart(2, "0")}
               </span>
             </div>
