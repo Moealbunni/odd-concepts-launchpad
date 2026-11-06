@@ -70,7 +70,7 @@ export function OurClients() {
               </h3>
               <span
                 aria-hidden="true"
-                className="mt-4 block h-px w-10 origin-left bg-gradient-to-r from-primary to-accent transition-transform duration-300 ease-out group-hover:scale-x-[2.4] motion-safe:[.client-card:hover_&]:scale-x-[2.4]"
+                className="client-rule mt-4 block"
               />
             </div>
           </Reveal>
@@ -94,10 +94,7 @@ export function OurClients() {
             <h3 className="gradient-text text-2xl font-semibold leading-snug md:text-[1.75rem]">
               {t.ourClients.andMore}
             </h3>
-            <span
-              aria-hidden="true"
-              className="mt-4 block h-px w-10 bg-gradient-to-r from-primary to-accent"
-            />
+            <span aria-hidden="true" className="client-rule mt-4 block" />
           </div>
         </Reveal>
       </ul>
