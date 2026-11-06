@@ -372,6 +372,15 @@ export const en = {
       },
     ],
   },
+  ourClients: {
+    eyebrow: "Clients",
+    title: "Our ",
+    titleGradient: "clients",
+    titleAfter: ".",
+    subtitle:
+      "Businesses we build for, run and grow — in the UAE and beyond.",
+    andMore: "And many more",
+  },
   finalCta: {
     heading: "Ready to stop guessing and start ",
     headingGradient: "growing?",
@@ -960,6 +969,14 @@ export const ar: Translations = {
         a: "نبني وندير نظامًا واحدًا متكاملاً، لا قائمة خدمات منفصلة. ونستخدم الذكاء الاصطناعي كمسرّع خلف الكواليس — لا كميزة لامعة نبيعها لكم.",
       },
     ],
+  },
+  ourClients: {
+    eyebrow: "عملاؤنا",
+    title: "عملاؤنا ",
+    titleGradient: "وشركاؤنا",
+    titleAfter: ".",
+    subtitle: "نشاطات نبنيها ونديرها ونعمل على تنميتها — في الإمارات وخارجها.",
+    andMore: "وغيرهم الكثير",
   },
   finalCta: {
     heading: "جاهزون للتوقف عن التخمين والبدء في ",
