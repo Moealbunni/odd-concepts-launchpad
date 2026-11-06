@@ -435,7 +435,7 @@ export const en = {
     categories: {
       ads: "Ads", storytelling: "Storytelling", promos: "Company Promos", venuePromos: "Venue Promos", avatar: "Avatars",
       videoEdits: "Video Edits", eventArtwork: "Event Artwork", viral: "Viral", shoots: "Shoots", musicVideo: "Music Video",
-      musicPromo: "Music Promos", viralHooks: "Viral Marketing Hooks",
+      musicPromo: "Music Promos", viralHooks: "Viral Marketing Hooks", motionGraphics: "Motion Graphics",
     },
     showMore: "Show more",
     showLess: "Show less",
@@ -450,6 +450,7 @@ export const en = {
       "m-hook08": "Websites — Viral Hook",
       "m-hook09": "Branding III — Viral Hook",
       "m-hook10": "Automation — Viral Hook",
+      "m-motiongraphics": "Motion Graphics",
 
       "m-verajordan": "Vera Tulum — Jordan John",
       "m-veraandor": "Vera Tulum — Andor Gabriel",
@@ -1022,7 +1023,7 @@ export const ar: Translations = {
     categories: {
       ads: "إعلانات", storytelling: "سرد قصصي", promos: "ترويج الشركات", venuePromos: "ترويج الأماكن", avatar: "أفاتار",
       videoEdits: "مونتاج فيديو", eventArtwork: "تصاميم فعاليات", viral: "فيرال", shoots: "تصوير", musicVideo: "فيديو موسيقي",
-      musicPromo: "بروموهات موسيقية", viralHooks: "هوكات تسويقية فيرال",
+      musicPromo: "بروموهات موسيقية", viralHooks: "هوكات تسويقية فيرال", motionGraphics: "موشن جرافيكس",
     },
     showMore: "عرض المزيد",
     showLess: "عرض أقل",
@@ -1037,6 +1038,7 @@ export const ar: Translations = {
       "m-hook08": "المواقع الإلكترونية — هوك فيرال",
       "m-hook09": "الهوية البصرية الثالث — هوك فيرال",
       "m-hook10": "الأتمتة — هوك فيرال",
+      "m-motiongraphics": "موشن جرافيكس",
 
       "m-verajordan": "Vera Tulum — Jordan John",
       "m-veraandor": "Vera Tulum — Andor Gabriel",
