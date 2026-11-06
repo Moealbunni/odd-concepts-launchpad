@@ -91,7 +91,7 @@ export function OurClients() {
           </div>
 
           <div className="mt-8">
-            <h3 className="gradient-text text-2xl font-semibold leading-snug md:text-[1.75rem]">
+            <h3 className="gradient-text-bright text-2xl font-semibold leading-snug md:text-[1.75rem]">
               {t.ourClients.andMore}
             </h3>
             <span aria-hidden="true" className="client-rule mt-4 block" />
