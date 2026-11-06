@@ -57,3 +57,6 @@
 
 - [x] Add ten uploaded clips to a bilingual Viral Marketing Hooks category under Work → Reels.
 - [x] Verify category expansion, all ten previews and playback on mobile and desktop.
+
+- [x] Restyle Our Clients as elevated gradient cards with monogram badges, hover glow and accent rules.
+- [x] Verify English/Arabic card layout on desktop and phone with no overflow.
