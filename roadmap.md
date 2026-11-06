@@ -56,4 +56,4 @@
 
 
 - [x] Add ten uploaded clips to a bilingual Viral Marketing Hooks category under Work → Reels.
-- [ ] Verify category expansion, all ten previews and playback on mobile and desktop.
+- [x] Verify category expansion, all ten previews and playback on mobile and desktop.
