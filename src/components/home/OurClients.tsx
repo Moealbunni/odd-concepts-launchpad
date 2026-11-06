@@ -44,57 +44,54 @@ export function OurClients() {
         subtitle={t.ourClients.subtitle}
       />
 
-      <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+      <ul className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:gap-5">
         {clients.map((name, i) => (
           <Reveal
             as="li"
             key={name}
-            delay={i * 70}
-            className="client-card flex min-h-[10rem] flex-col justify-between rounded-3xl p-7 sm:min-h-[11.5rem] md:p-8 lg:min-h-[13rem]"
+            delay={i * 50}
+            className="client-card flex flex-col justify-between gap-5 rounded-2xl p-4 md:p-5"
           >
-            <div className="flex items-start justify-between gap-4">
+            <div className="flex items-start justify-between gap-2">
               <span
                 aria-hidden="true"
-                className="client-monogram inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-base font-semibold tracking-wide text-primary-foreground"
+                className="client-monogram inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[11px] font-semibold tracking-wide text-primary-foreground"
               >
                 {monogram(name)}
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+              <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-muted-foreground">
                 {String(i + 1).padStart(2, "0")}
               </span>
             </div>
 
-            <div className="mt-8">
-              <h3 className="text-2xl font-semibold leading-snug text-foreground md:text-[1.75rem]">
+            <div>
+              <h3 className="text-sm font-semibold leading-snug text-foreground sm:text-base lg:text-lg">
                 <span dir="ltr">{name}</span>
               </h3>
-              <span
-                aria-hidden="true"
-                className="client-rule mt-4 block"
-              />
+              <span aria-hidden="true" className="client-rule mt-2.5 block" />
             </div>
           </Reveal>
         ))}
 
         <Reveal
           as="li"
-          delay={clients.length * 70}
-          className="client-card client-card-accent flex min-h-[10rem] flex-col justify-between rounded-3xl p-7 sm:min-h-[11.5rem] md:p-8 lg:min-h-[13rem]"
+          delay={clients.length * 50}
+          className="client-card client-card-accent flex flex-col justify-between gap-5 rounded-2xl p-4 md:p-5"
         >
-          <div className="flex items-start justify-between gap-4">
+          <div className="flex items-start justify-between gap-2">
             <span
               aria-hidden="true"
-              className="client-monogram inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-base font-semibold tracking-wide text-primary-foreground"
+              className="client-monogram inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[11px] font-semibold tracking-wide text-primary-foreground"
             >
               ++
             </span>
           </div>
 
-          <div className="mt-8">
-            <h3 className="gradient-text-bright text-2xl font-semibold leading-snug md:text-[1.75rem]">
+          <div>
+            <h3 className="gradient-text-bright text-sm font-semibold leading-snug sm:text-base lg:text-lg">
               {t.ourClients.andMore}
             </h3>
-            <span aria-hidden="true" className="client-rule mt-4 block" />
+            <span aria-hidden="true" className="client-rule mt-2.5 block" />
           </div>
         </Reveal>
       </ul>
