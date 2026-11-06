@@ -417,7 +417,6 @@ export const en = {
     subtitle: "Live Instagram accounts we build, run and grow for our clients.",
     /** `{name}` is replaced with the (untranslated) account name. */
     followAria: "Open {name} on Instagram (opens in new tab)",
-    comingSoon: "Coming soon",
   },
   appsWork: {
     eyebrow: "Apps",
@@ -1005,7 +1004,6 @@ export const ar: Translations = {
     title: "حسابات نديرها.",
     subtitle: "حسابات إنستغرام حقيقية نبنيها ونديرها ونعمل على تنميتها لعملائنا.",
     followAria: "فتح حساب {name} على إنستغرام (يفتح في نافذة جديدة)",
-    comingSoon: "قريبًا",
   },
   appsWork: {
     eyebrow: "تطبيقات",

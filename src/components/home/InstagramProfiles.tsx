@@ -11,31 +11,26 @@ const accounts = [
     name: "Room 44",
     handle: "@room44dubai",
     url: "https://www.instagram.com/room44dubai/",
-    comingSoon: false,
   },
   {
     name: "The Spot Network",
     handle: "@thespotnetwrk",
     url: "https://www.instagram.com/thespotnetwrk/",
-    comingSoon: false,
   },
   {
     name: "Amer Central AC",
     handle: "@amercentralac",
     url: "https://www.instagram.com/amercentralac/",
-    comingSoon: false,
   },
   {
     name: "VenYa",
     handle: "@venya.dom",
     url: "https://www.instagram.com/venya.dom/",
-    comingSoon: true,
   },
   {
     name: "Soul Brunch PC",
     handle: "@soulbrunchpuntacana",
     url: "https://www.instagram.com/soulbrunchpuntacana/",
-    comingSoon: true,
   },
 ];
 
@@ -62,11 +57,6 @@ export function InstagramProfiles() {
               <Card className="showcase-card flex h-full min-h-40 flex-col items-start justify-between gap-6 p-6">
                 <div className="flex w-full items-center justify-between gap-2">
                   <Instagram className="size-6 shrink-0 text-highlight" aria-hidden="true" />
-                  {a.comingSoon && (
-                    <span className="whitespace-nowrap rounded-full border border-highlight-border bg-highlight-soft px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] text-highlight">
-                      {t.instagram.comingSoon}
-                    </span>
-                  )}
                 </div>
                 <div className="min-w-0">
                   <h3
