@@ -313,7 +313,7 @@
 
 /* Hairline under the client name — grows on hover, direction-safe. */
 .client-rule {
-  width: 2.5rem;
+  width: 1.5rem;
   height: 1px;
   background-image: linear-gradient(
     to right in oklch,
@@ -325,7 +325,7 @@
 
 .client-card:hover .client-rule,
 .client-card:focus-within .client-rule {
-  width: 6rem;
+  width: 3.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
