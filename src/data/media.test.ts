@@ -14,7 +14,7 @@ describe("Work media organization", () => {
   });
   test("matching reel categories stay together in the requested order", () => {
     assert.deepEqual(getMediaSections("reels").map((section) => section.category), [
-      "promos", "venuePromos", "eventArtwork", "viralHooks", "viral", "shoots", "avatar", "videoEdits",
+      "promos", "venuePromos", "eventArtwork", "viralHooks", "viral", "shoots", "avatar", "videoEdits", "motionGraphics",
     ]);
   });
   test("company and venue promos are separate", () => {
@@ -44,6 +44,11 @@ describe("Work media organization", () => {
       assert.equal(item.ratio, 720 / 1280);
       assert.equal(getGroup(item), "reels");
     }
+  });
+  test("the uploaded motion graphics video belongs to its own Reels section", () => {
+    const section = getMediaSections("reels").find((entry) => entry.category === "motionGraphics");
+    assert.deepEqual(section?.items.map((item) => item.id), ["m-motiongraphics"]);
+    assert.equal(section?.items[0]?.ratio, 720 / 1280);
   });
   test("every production appears exactly once in its format's sections", () => {
     const grouped = ["cinematic", "reels"] as const;

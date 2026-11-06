@@ -1,3 +1,5 @@
+import motionVideo from "@/assets/media/studio_motion_graphics.mp4.asset.json";
+import motionPoster from "@/assets/media/studio_motion_graphics.jpg.asset.json";
 import vHook01 from "@/assets/media/viral_hook_01.mp4.asset.json";
 import pHook01 from "@/assets/media/viral_hook_01.jpg.asset.json";
 import vHook02 from "@/assets/media/viral_hook_02.mp4.asset.json";
@@ -104,7 +106,7 @@ import vMusicPromo2 from "@/assets/media/music_promo_2.mp4.asset.json";
 import pMusicPromo2 from "@/assets/media/music_promo_2.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
-export type MediaCategory = "ads" | "storytelling" | "promos" | "venuePromos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots" | "musicVideo" | "musicPromo" | "viralHooks";
+export type MediaCategory = "ads" | "storytelling" | "promos" | "venuePromos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots" | "musicVideo" | "musicPromo" | "viralHooks" | "motionGraphics";
 
 export type MediaItem = {
   id: string;
@@ -117,6 +119,7 @@ export type MediaItem = {
 
 /** Single source of truth. Group membership is derived from `ratio`, never hardcoded. */
 export const mediaItems: MediaItem[] = [
+  { id: "m-motiongraphics", title: "Motion Graphics", ratio: 720 / 1280, category: "motionGraphics", videoUrl: motionVideo.url, posterUrl: motionPoster.url },
   { id: "m-hook01", title: "Apps — Viral Hook", ratio: 720 / 1280, category: "viralHooks", videoUrl: vHook01.url, posterUrl: pHook01.url },
   { id: "m-hook02", title: "AI Videos — Viral Hook", ratio: 720 / 1280, category: "viralHooks", videoUrl: vHook02.url, posterUrl: pHook02.url },
   { id: "m-hook03", title: "UGC — Viral Hook", ratio: 720 / 1280, category: "viralHooks", videoUrl: vHook03.url, posterUrl: pHook03.url },
@@ -178,7 +181,7 @@ export function getGroup(item: MediaItem): MediaGroup {
 
 export const categoryOrder: Record<MediaGroup, MediaCategory[]> = {
   cinematic: ["ads", "storytelling", "promos", "venuePromos", "viral", "shoots", "musicVideo", "musicPromo"],
-  reels: ["promos", "venuePromos", "eventArtwork", "viralHooks", "viral", "shoots", "avatar", "videoEdits"],
+  reels: ["promos", "venuePromos", "eventArtwork", "viralHooks", "viral", "shoots", "avatar", "videoEdits", "motionGraphics"],
 };
 
 export function getMediaSections(group: MediaGroup) {
