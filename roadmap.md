@@ -60,3 +60,5 @@
 
 - [x] Restyle Our Clients as elevated gradient cards with monogram badges, hover glow and accent rules.
 - [x] Verify English/Arabic card layout on desktop and phone with no overflow.
+
+- [x] Shrink client cards to two rows of four (desktop) with compact monogram, name and accent line.
