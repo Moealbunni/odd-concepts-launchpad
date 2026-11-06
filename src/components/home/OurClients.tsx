@@ -40,20 +40,17 @@ export function OurClients() {
               <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground/70">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3
-                className="mt-3 text-lg font-semibold leading-snug text-foreground transition-colors group-hover:text-highlight md:text-xl"
-                dir="ltr"
-              >
-                {name}
+              <h3 className="mt-3 text-lg font-semibold leading-snug text-foreground transition-colors group-hover:text-highlight md:text-xl">
+                <span dir="ltr">{name}</span>
               </h3>
             </li>
           ))}
 
-          <li className="flex flex-col justify-center bg-background/40 px-6 py-8 md:px-7 md:py-10">
-            <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground/70">
+          <li className="flex flex-col justify-center bg-background/70 px-6 py-8 md:px-7 md:py-10">
+            <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-highlight">
               ++
             </span>
-            <p className="mt-3 text-lg font-semibold leading-snug text-highlight md:text-xl">
+            <p className="mt-3 text-lg font-semibold leading-snug text-foreground md:text-xl">
               {t.ourClients.andMore}
             </p>
           </li>
