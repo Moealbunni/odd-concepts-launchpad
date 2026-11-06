@@ -133,6 +133,7 @@
   --sidebar-ring: 217 91% 60%;
 
   --gradient-brand: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-accent)));
+  --gradient-brand-bright: linear-gradient(135deg, oklch(0.79 0.11 250), oklch(0.81 0.12 300));
   --background-art-opacity: 0.65;
   --background-art-mobile-opacity: 0.45;
   --background-line-blue: hsl(var(--brand-primary) / 0.065);
@@ -206,6 +207,14 @@
 
 @utility gradient-bg {
   background-image: var(--gradient-brand);
+}
+
+/* Higher-contrast brand gradient for text sitting on coloured surfaces. */
+@utility gradient-text-bright {
+  background-image: var(--gradient-brand-bright);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .site-surface {
