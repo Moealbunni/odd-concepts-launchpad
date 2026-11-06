@@ -302,6 +302,23 @@
   box-shadow: 0 10px 26px -12px hsl(var(--brand-primary) / 0.75);
 }
 
+/* Hairline under the client name — grows on hover, direction-safe. */
+.client-rule {
+  width: 2.5rem;
+  height: 1px;
+  background-image: linear-gradient(
+    to right in oklch,
+    var(--highlight),
+    hsl(var(--brand-accent))
+  );
+  transition: width 320ms ease-out;
+}
+
+.client-card:hover .client-rule,
+.client-card:focus-within .client-rule {
+  width: 6rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .client-card:hover,
   .client-card:focus-within {
