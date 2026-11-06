@@ -1,3 +1,23 @@
+import vHook01 from "@/assets/media/viral_hook_01.mp4.asset.json";
+import pHook01 from "@/assets/media/viral_hook_01.jpg.asset.json";
+import vHook02 from "@/assets/media/viral_hook_02.mp4.asset.json";
+import pHook02 from "@/assets/media/viral_hook_02.jpg.asset.json";
+import vHook03 from "@/assets/media/viral_hook_03.mp4.asset.json";
+import pHook03 from "@/assets/media/viral_hook_03.jpg.asset.json";
+import vHook04 from "@/assets/media/viral_hook_04.mp4.asset.json";
+import pHook04 from "@/assets/media/viral_hook_04.jpg.asset.json";
+import vHook05 from "@/assets/media/viral_hook_05.mp4.asset.json";
+import pHook05 from "@/assets/media/viral_hook_05.jpg.asset.json";
+import vHook06 from "@/assets/media/viral_hook_06.mp4.asset.json";
+import pHook06 from "@/assets/media/viral_hook_06.jpg.asset.json";
+import vHook07 from "@/assets/media/viral_hook_07.mp4.asset.json";
+import pHook07 from "@/assets/media/viral_hook_07.jpg.asset.json";
+import vHook08 from "@/assets/media/viral_hook_08.mp4.asset.json";
+import pHook08 from "@/assets/media/viral_hook_08.jpg.asset.json";
+import vHook09 from "@/assets/media/viral_hook_09.mp4.asset.json";
+import pHook09 from "@/assets/media/viral_hook_09.jpg.asset.json";
+import vHook10 from "@/assets/media/viral_hook_10.mp4.asset.json";
+import pHook10 from "@/assets/media/viral_hook_10.jpg.asset.json";
 import amerrVideo from "@/assets/media/amerr_final.mp4.asset.json";
 import amerrPoster from "@/assets/media/amerr_final.jpg.asset.json";
 import room44Video from "@/assets/media/room_44_promo.mp4.asset.json";
@@ -84,7 +104,7 @@ import vMusicPromo2 from "@/assets/media/music_promo_2.mp4.asset.json";
 import pMusicPromo2 from "@/assets/media/music_promo_2.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
-export type MediaCategory = "ads" | "storytelling" | "promos" | "venuePromos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots" | "musicVideo" | "musicPromo";
+export type MediaCategory = "ads" | "storytelling" | "promos" | "venuePromos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots" | "musicVideo" | "musicPromo" | "viralHooks";
 
 export type MediaItem = {
   id: string;
@@ -97,6 +117,17 @@ export type MediaItem = {
 
 /** Single source of truth. Group membership is derived from `ratio`, never hardcoded. */
 export const mediaItems: MediaItem[] = [
+  { id: "m-hook01", title: "Apps — Viral Hook", ratio: 720 / 1280, category: "viralHooks", videoUrl: vHook01.url, posterUrl: pHook01.url },
+  { id: "m-hook02", title: "AI Videos — Viral Hook", ratio: 720 / 1280, category: "viralHooks", videoUrl: vHook02.url, posterUrl: pHook02.url },
+  { id: "m-hook03", title: "UGC — Viral Hook", ratio: 720 / 1280, category: "viralHooks", videoUrl: vHook03.url, posterUrl: pHook03.url },
+  { id: "m-hook04", title: "Marketing — Viral Hook", ratio: 720 / 1280, category: "viralHooks", videoUrl: vHook04.url, posterUrl: pHook04.url },
+  { id: "m-hook05", title: "Social Media — Viral Hook", ratio: 720 / 1280, category: "viralHooks", videoUrl: vHook05.url, posterUrl: pHook05.url },
+  { id: "m-hook06", title: "Branding I — Viral Hook", ratio: 720 / 1280, category: "viralHooks", videoUrl: vHook06.url, posterUrl: pHook06.url },
+  { id: "m-hook07", title: "Branding II — Viral Hook", ratio: 720 / 1280, category: "viralHooks", videoUrl: vHook07.url, posterUrl: pHook07.url },
+  { id: "m-hook08", title: "Websites — Viral Hook", ratio: 720 / 1280, category: "viralHooks", videoUrl: vHook08.url, posterUrl: pHook08.url },
+  { id: "m-hook09", title: "Branding III — Viral Hook", ratio: 720 / 1280, category: "viralHooks", videoUrl: vHook09.url, posterUrl: pHook09.url },
+  { id: "m-hook10", title: "Automation — Viral Hook", ratio: 720 / 1280, category: "viralHooks", videoUrl: vHook10.url, posterUrl: pHook10.url },
+
   { id: "m-clientad", title: "Client Ad", ratio: 1936 / 1080, category: "ads", videoUrl: vClientAd.url, posterUrl: pClientAd.url },
   { id: "m-clientad2", title: "Client Ad II", ratio: 1920 / 1080, category: "ads", videoUrl: vClientAd2.url, posterUrl: pClientAd2.url },
   { id: "m-cinead1", title: "Cinematic Ad I", ratio: 1936 / 1080, category: "ads", videoUrl: vCineAd1.url, posterUrl: pCineAd1.url },
@@ -147,7 +178,7 @@ export function getGroup(item: MediaItem): MediaGroup {
 
 export const categoryOrder: Record<MediaGroup, MediaCategory[]> = {
   cinematic: ["ads", "storytelling", "promos", "venuePromos", "viral", "shoots", "musicVideo", "musicPromo"],
-  reels: ["promos", "venuePromos", "eventArtwork", "viral", "shoots", "avatar", "videoEdits"],
+  reels: ["promos", "venuePromos", "eventArtwork", "viralHooks", "viral", "shoots", "avatar", "videoEdits"],
 };
 
 export function getMediaSections(group: MediaGroup) {

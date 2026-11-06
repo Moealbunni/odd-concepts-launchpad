@@ -14,7 +14,7 @@ describe("Work media organization", () => {
   });
   test("matching reel categories stay together in the requested order", () => {
     assert.deepEqual(getMediaSections("reels").map((section) => section.category), [
-      "promos", "venuePromos", "eventArtwork", "viral", "shoots", "avatar", "videoEdits",
+      "promos", "venuePromos", "eventArtwork", "viralHooks", "viral", "shoots", "avatar", "videoEdits",
     ]);
   });
   test("company and venue promos are separate", () => {
@@ -36,6 +36,14 @@ describe("Work media organization", () => {
     }
     const section = getMediaSections("cinematic").find((entry) => entry.category === "musicPromo");
     assert.deepEqual(section?.items.map((item) => item.id), ["m-musicpromo1", "m-musicpromo2"]);
+  });
+  test("all ten uploaded viral marketing hooks belong to their own Reels section", () => {
+    const section = getMediaSections("reels").find((entry) => entry.category === "viralHooks");
+    assert.deepEqual(section?.items.map((item) => item.id), Array.from({ length: 10 }, (_, index) => `m-hook${String(index + 1).padStart(2, "0")}`));
+    for (const item of section?.items ?? []) {
+      assert.equal(item.ratio, 720 / 1280);
+      assert.equal(getGroup(item), "reels");
+    }
   });
   test("every production appears exactly once in its format's sections", () => {
     const grouped = ["cinematic", "reels"] as const;
