@@ -432,6 +432,9 @@ export const en = {
     title: "arOund",
     subtitle: "Discover · Swipe · Map",
     imageAlt: "Three arOund app screens side by side: event discovery, swipe and map",
+    ekokoTitle: "Ekoko",
+    ekokoSubtitle: "Welcome · Home · Kindness Garden",
+    ekokoImageAlt: "Three Ekoko app screens side by side: welcome screen, home screen and Kindness Garden",
   },
   media: {
     eyebrow: "Studio output",
@@ -1028,6 +1031,9 @@ export const ar: Translations = {
     title: "arOund",
     subtitle: "اكتشف · اسحب · الخريطة",
     imageAlt: "ثلاث شاشات لتطبيق arOund جنبًا إلى جنب: اكتشاف الفعاليات والسحب والخريطة",
+    ekokoTitle: "Ekoko",
+    ekokoSubtitle: "الترحيب · الرئيسية · حديقة اللطف",
+    ekokoImageAlt: "ثلاث شاشات لتطبيق Ekoko جنبًا إلى جنب: شاشة الترحيب والشاشة الرئيسية وحديقة اللطف",
   },
   media: {
     eyebrow: "إنتاج الاستوديو",
