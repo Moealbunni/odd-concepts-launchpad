@@ -26,8 +26,8 @@ describe("Work media organization", () => {
     assert.equal(item?.category, "promos");
     assert.equal(getGroup(item!), "cinematic");
   });
-  test("both music promos are landscape cinematic pieces in their own section", () => {
-    for (const id of ["m-musicpromo1", "m-musicpromo2"]) {
+  test("all three music promos are landscape cinematic pieces in their own section", () => {
+    for (const id of ["m-musicpromo1", "m-musicpromo2", "m-musicpromo3"]) {
       const item = mediaItems.find((media) => media.id === id);
       if (!item) throw new Error(`Missing ${id}`);
       assert.equal(item.category, "musicPromo");
@@ -35,7 +35,7 @@ describe("Work media organization", () => {
       assert.equal(getGroup(item), "cinematic");
     }
     const section = getMediaSections("cinematic").find((entry) => entry.category === "musicPromo");
-    assert.deepEqual(section?.items.map((item) => item.id), ["m-musicpromo1", "m-musicpromo2"]);
+    assert.deepEqual(section?.items.map((item) => item.id), ["m-musicpromo1", "m-musicpromo2", "m-musicpromo3"]);
   });
   test("all ten uploaded viral marketing hooks belong to their own Reels section", () => {
     const section = getMediaSections("reels").find((entry) => entry.category === "viralHooks");

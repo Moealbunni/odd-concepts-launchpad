@@ -502,6 +502,7 @@ export const en = {
       "m-avatar3": "Avatar III",
       "m-musicpromo1": "Music Promo I",
       "m-musicpromo2": "Music Promo II",
+      "m-musicpromo3": "Music Promo III",
     } as Record<string, string>,
   },
   aboutPage: {
@@ -1097,6 +1098,7 @@ export const ar: Translations = {
       "m-avatar3": "أفاتار الثالث",
       "m-musicpromo1": "برومو موسيقي أول",
       "m-musicpromo2": "برومو موسيقي ثاني",
+      "m-musicpromo3": "برومو موسيقي ثالث",
     },
   },
   aboutPage: {

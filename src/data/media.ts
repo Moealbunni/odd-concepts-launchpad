@@ -104,6 +104,8 @@ import vMusicPromo1 from "@/assets/media/music_promo_1.mp4.asset.json";
 import pMusicPromo1 from "@/assets/media/music_promo_1.jpg.asset.json";
 import vMusicPromo2 from "@/assets/media/music_promo_2.mp4.asset.json";
 import pMusicPromo2 from "@/assets/media/music_promo_2.jpg.asset.json";
+import vMusicPromo3 from "@/assets/media/music_promo_3.mp4.asset.json";
+import pMusicPromo3 from "@/assets/media/music_promo_3.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
 export type MediaCategory = "ads" | "storytelling" | "promos" | "venuePromos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots" | "musicVideo" | "musicPromo" | "viralHooks" | "motionGraphics";
@@ -173,6 +175,7 @@ export const mediaItems: MediaItem[] = [
   { id: "m-4378", title: "Instagram Virality — Cinematic Shoot", ratio: 1930 / 1080, category: "shoots", videoUrl: v4378.url, posterUrl: p4378.url },
   { id: "m-musicpromo1", title: "Music Promo I", ratio: 1920 / 1080, category: "musicPromo", videoUrl: vMusicPromo1.url, posterUrl: pMusicPromo1.url },
   { id: "m-musicpromo2", title: "Music Promo II", ratio: 1920 / 1080, category: "musicPromo", videoUrl: vMusicPromo2.url, posterUrl: pMusicPromo2.url },
+  { id: "m-musicpromo3", title: "Music Promo III", ratio: 1920 / 1080, category: "musicPromo", videoUrl: vMusicPromo3.url, posterUrl: pMusicPromo3.url },
 ];
 
 export function getGroup(item: MediaItem): MediaGroup {
