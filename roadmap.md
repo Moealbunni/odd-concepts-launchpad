@@ -62,3 +62,6 @@
 - [x] Verify English/Arabic card layout on desktop and phone with no overflow.
 
 - [x] Shrink client cards to two rows of four (desktop) with compact monogram, name and accent line.
+
+- [x] Add the uploaded clip to Cinematic as “Music Promo III” in the Music Promos category.
+- [x] Verify all three music promos in English/Arabic on desktop and phone with no overflow.
