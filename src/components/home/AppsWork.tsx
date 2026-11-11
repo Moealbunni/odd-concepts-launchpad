@@ -1,4 +1,5 @@
 import phones from "@/assets/around-app-phones.png";
+import ignitePhones from "@/assets/ignite-app-phones.png";
 import ekokoPhones from "@/assets/ekoko-app-phones.png";
 import { Section } from "@/components/primitives/Section";
 import { SectionHeading } from "@/components/primitives/SectionHeading";
@@ -29,6 +30,18 @@ export function AppsWork() {
           alt={t.appsWork.ekokoImageAlt}
           width={1316}
           height={886}
+          loading="lazy"
+          className="mx-auto mt-8 h-auto w-full max-w-4xl object-contain"
+        />
+      </div>
+      <div className="mt-16 border-t border-border/60 pt-12">
+        <h3 dir="ltr" className="font-display text-3xl font-semibold text-foreground md:text-4xl">{t.appsWork.igniteTitle}</h3>
+        <p className="mt-2 text-muted-foreground">{t.appsWork.igniteSubtitle}</p>
+        <img
+          src={ignitePhones}
+          alt={t.appsWork.igniteImageAlt}
+          width={1316}
+          height={870}
           loading="lazy"
           className="mx-auto mt-8 h-auto w-full max-w-4xl object-contain"
         />

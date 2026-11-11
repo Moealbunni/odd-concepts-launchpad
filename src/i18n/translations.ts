@@ -435,6 +435,9 @@ export const en = {
     ekokoTitle: "Ekoko",
     ekokoSubtitle: "Welcome · Home · Kindness Garden",
     ekokoImageAlt: "Three Ekoko app screens side by side: welcome screen, home screen and Kindness Garden",
+    igniteTitle: "Ignite",
+    igniteSubtitle: "Sign in · Admin bookings · Promoter view",
+    igniteImageAlt: "Three Ignite app screens side by side: sign in, admin bookings dashboard and promoter view",
   },
   media: {
     eyebrow: "Studio output",
@@ -1034,6 +1037,9 @@ export const ar: Translations = {
     ekokoTitle: "Ekoko",
     ekokoSubtitle: "الترحيب · الرئيسية · حديقة اللطف",
     ekokoImageAlt: "ثلاث شاشات لتطبيق Ekoko جنبًا إلى جنب: شاشة الترحيب والشاشة الرئيسية وحديقة اللطف",
+    igniteTitle: "Ignite",
+    igniteSubtitle: "تسجيل الدخول · حجوزات المدير · واجهة المروّج",
+    igniteImageAlt: "ثلاث شاشات لتطبيق Ignite جنبًا إلى جنب: تسجيل الدخول ولوحة حجوزات المدير وواجهة المروّج",
   },
   media: {
     eyebrow: "إنتاج الاستوديو",

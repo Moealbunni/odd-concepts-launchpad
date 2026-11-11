@@ -12,6 +12,7 @@ const clients = [
   "Room 44",
   "Amer Central AC",
   "Ekoko",
+  "Ignite Events",
 ];
 
 /** Words never used for a monogram. */
