@@ -65,3 +65,5 @@
 
 - [x] Add the uploaded clip to Cinematic as “Music Promo III” in the Music Promos category.
 - [x] Verify all three music promos in English/Arabic on desktop and phone with no overflow.
+- [ ] Export 9 individual app phone pictures (arOund, Ekoko, Ignite)
+- [ ] Add Ignite app (demo mode screenshots) to Work → Apps
