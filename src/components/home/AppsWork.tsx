@@ -17,8 +17,8 @@ export function AppsWork() {
       <img
         src={phones}
         alt={t.appsWork.imageAlt}
-        width={1233}
-        height={804}
+        width={1267}
+        height={802}
         loading="lazy"
         className="mx-auto mt-10 h-auto w-full max-w-4xl object-contain"
       />
