@@ -15,6 +15,8 @@ const clients = [
   "Ignite Events",
   "Space Motion",
   "Soul Brunch PC",
+  "Spock",
+  "Woohoo",
 ];
 
 /** Words never used for a monogram. */
