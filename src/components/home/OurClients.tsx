@@ -13,6 +13,7 @@ const clients = [
   "Amer Central AC",
   "Ekoko",
   "Ignite Events",
+  "Space Motion",
 ];
 
 /** Words never used for a monogram. */

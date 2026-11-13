@@ -70,3 +70,6 @@
 
 - [x] Add the uploaded clip to Cinematic as “Music Video II” in the Music Video category.
 - [x] Verify both music videos in English/Arabic on desktop and phone with no overflow.
+
+- [x] Add Space Motion to Our Clients (Gem Hospitality already listed).
+- [x] Verify the client cards in English/Arabic on desktop and phone with no overflow.
