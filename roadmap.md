@@ -73,3 +73,6 @@
 
 - [x] Add Space Motion to Our Clients (Gem Hospitality already listed).
 - [x] Verify the client cards in English/Arabic on desktop and phone with no overflow.
+
+- [x] Add Soul Brunch PC to Our Clients.
+- [x] Verify the client cards in English/Arabic on desktop and phone with no overflow.
