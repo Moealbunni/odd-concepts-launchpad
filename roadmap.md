@@ -67,3 +67,6 @@
 - [x] Verify all three music promos in English/Arabic on desktop and phone with no overflow.
 - [x] Export 9 individual app phone pictures (arOund, Ekoko, Ignite)
 - [x] Add Ignite app (demo mode screenshots) to Work → Apps
+
+- [x] Add the uploaded clip to Cinematic as “Music Video II” in the Music Video category.
+- [x] Verify both music videos in English/Arabic on desktop and phone with no overflow.

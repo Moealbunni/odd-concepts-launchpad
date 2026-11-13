@@ -96,6 +96,8 @@ import vAvatar3 from "@/assets/media/avatar_3.mp4.asset.json";
 import pAvatar3 from "@/assets/media/avatar_3.jpg.asset.json";
 import vMusicVideo from "@/assets/media/music_video.mp4.asset.json";
 import pMusicVideo from "@/assets/media/music_video.jpg.asset.json";
+import vMusicVideo2 from "@/assets/media/music_video_2.mp4.asset.json";
+import pMusicVideo2 from "@/assets/media/music_video_2.jpg.asset.json";
 import vVeraJordan from "@/assets/media/vera-jordan-john.mp4.asset.json";
 import pVeraJordan from "@/assets/media/vera-jordan-john.jpg.asset.json";
 import vVeraAndor from "@/assets/media/vera-andor-gabriel.mp4.asset.json";
@@ -139,6 +141,7 @@ export const mediaItems: MediaItem[] = [
   { id: "m-cinead2", title: "Cinematic Ad II", ratio: 1936 / 1080, category: "ads", videoUrl: vCineAd2.url, posterUrl: pCineAd2.url },
   { id: "m-spotad", title: "Cinematic Ad III", ratio: 1920 / 1080, category: "ads", videoUrl: vSpotAd.url, posterUrl: pSpotAd.url },
   { id: "m-musicvideo", title: "Music Video", ratio: 1440 / 1080, category: "musicVideo", videoUrl: vMusicVideo.url, posterUrl: pMusicVideo.url },
+  { id: "m-musicvideo2", title: "Music Video II", ratio: 1920 / 1080, category: "musicVideo", videoUrl: vMusicVideo2.url, posterUrl: pMusicVideo2.url },
   { id: "m-room44", title: "Venue Promo", ratio: 1620 / 1080, category: "venuePromos", videoUrl: room44Video.url, posterUrl: room44Poster.url },
   { id: "m-amer", title: "Company Mascot & Storyline", ratio: 1620 / 1080, category: "promos", videoUrl: amerrVideo.url, posterUrl: amerrPoster.url },
   { id: "m-viral", title: "Viral Video Ideas", ratio: 1914 / 1080, category: "viral", videoUrl: vViral.url, posterUrl: pViral.url },

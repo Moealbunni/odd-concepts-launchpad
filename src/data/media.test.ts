@@ -26,6 +26,15 @@ describe("Work media organization", () => {
     assert.equal(item?.category, "promos");
     assert.equal(getGroup(item!), "cinematic");
   });
+  test("the second uploaded music video joins the Music Video section in cinematic", () => {
+    const item = mediaItems.find((media) => media.id === "m-musicvideo2");
+    if (!item) throw new Error("Missing m-musicvideo2");
+    assert.equal(item.category, "musicVideo");
+    assert.equal(item.ratio, 1920 / 1080);
+    assert.equal(getGroup(item), "cinematic");
+    const section = getMediaSections("cinematic").find((entry) => entry.category === "musicVideo");
+    assert.deepEqual(section?.items.map((entry) => entry.id), ["m-musicvideo", "m-musicvideo2"]);
+  });
   test("all three music promos are landscape cinematic pieces in their own section", () => {
     for (const id of ["m-musicpromo1", "m-musicpromo2", "m-musicpromo3"]) {
       const item = mediaItems.find((media) => media.id === id);

@@ -19,6 +19,11 @@ describe("AI Outreach Autopilot service", () => {
     assert.ok(item.detail.length > 0, "the Arabic card needs its own detail");
   });
 
+  test("the second music video is titled in both languages", () => {
+    assert.equal(dictionaries.en.media.titles["m-musicvideo2"], "Music Video II");
+    assert.equal(dictionaries.ar.media.titles["m-musicvideo2"], "فيديو موسيقي ثاني");
+  });
+
   test("has full page copy in both languages", () => {
     for (const lang of ["en", "ar"] as const) {
       const page = dictionaries[lang].aiOutreach;
