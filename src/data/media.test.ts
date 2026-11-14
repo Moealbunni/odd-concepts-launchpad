@@ -54,6 +54,17 @@ describe("Work media organization", () => {
       assert.equal(getGroup(item), "reels");
     }
   });
+  test("the two Spock videos are reels: one venue promo, one event artwork", () => {
+    const venue = mediaItems.find((media) => media.id === "m-spockvenue");
+    const artwork = mediaItems.find((media) => media.id === "m-spockartwork");
+    if (!venue || !artwork) throw new Error("Missing Spock entries");
+    assert.equal(venue.category, "venuePromos");
+    assert.equal(artwork.category, "eventArtwork");
+    for (const item of [venue, artwork]) {
+      assert.equal(item.ratio, 720 / 1280);
+      assert.equal(getGroup(item), "reels");
+    }
+  });
   test("the uploaded motion graphics video belongs to its own Reels section", () => {
     const section = getMediaSections("reels").find((entry) => entry.category === "motionGraphics");
     assert.deepEqual(section?.items.map((item) => item.id), ["m-motiongraphics"]);
