@@ -112,6 +112,8 @@ import vSpockVenue from "@/assets/media/spock_venue_promo.mp4.asset.json";
 import pSpockVenue from "@/assets/media/spock_venue_promo.jpg.asset.json";
 import vSpockArtwork from "@/assets/media/spock_event_artwork.mp4.asset.json";
 import pSpockArtwork from "@/assets/media/spock_event_artwork.jpg.asset.json";
+import vSpockArtwork2 from "@/assets/media/spock_event_artwork_2.mp4.asset.json";
+import pSpockArtwork2 from "@/assets/media/spock_event_artwork_2.jpg.asset.json";
 import vNatLebanon from "@/assets/media/national_day_lebanon.mp4.asset.json";
 import pNatLebanon from "@/assets/media/national_day_lebanon.jpg.asset.json";
 import vNatUae from "@/assets/media/national_day_uae.mp4.asset.json";
@@ -189,6 +191,7 @@ export const mediaItems: MediaItem[] = [
   { id: "m-musicpromo3", title: "Music Promo III", ratio: 1920 / 1080, category: "musicPromo", videoUrl: vMusicPromo3.url, posterUrl: pMusicPromo3.url },
   { id: "m-spockvenue", title: "Spock — Venue Promo", ratio: 720 / 1280, category: "venuePromos", videoUrl: vSpockVenue.url, posterUrl: pSpockVenue.url },
   { id: "m-spockartwork", title: "Spock — Event Artwork", ratio: 720 / 1280, category: "eventArtwork", videoUrl: vSpockArtwork.url, posterUrl: pSpockArtwork.url },
+  { id: "m-spockartwork2", title: "Spock — Event Artwork II", ratio: 720 / 1280, category: "eventArtwork", videoUrl: vSpockArtwork2.url, posterUrl: pSpockArtwork2.url },
   { id: "m-natlebanon", title: "Lebanon Independence Day", ratio: 720 / 1280, category: "nationalDay", videoUrl: vNatLebanon.url, posterUrl: pNatLebanon.url },
   { id: "m-natuae", title: "UAE National Day", ratio: 720 / 1280, category: "nationalDay", videoUrl: vNatUae.url, posterUrl: pNatUae.url },
 ];

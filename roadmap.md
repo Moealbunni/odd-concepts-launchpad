@@ -76,3 +76,6 @@
 
 - [x] Add Soul Brunch PC to Our Clients.
 - [x] Verify the client cards in English/Arabic on desktop and phone with no overflow.
+
+- [x] Add the uploaded Spock flyer video as Event Artwork II under Work > Reels.
+- [x] Verify it plays in English/Arabic on desktop and phone with no sideways overflow.
