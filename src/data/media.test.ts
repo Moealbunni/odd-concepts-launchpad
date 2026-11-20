@@ -14,7 +14,7 @@ describe("Work media organization", () => {
   });
   test("matching reel categories stay together in the requested order", () => {
     assert.deepEqual(getMediaSections("reels").map((section) => section.category), [
-      "promos", "venuePromos", "eventArtwork", "viralHooks", "viral", "shoots", "avatar", "videoEdits", "motionGraphics",
+      "promos", "venuePromos", "eventArtwork", "viralHooks", "viral", "shoots", "avatar", "videoEdits", "motionGraphics", "nationalDay",
     ]);
   });
   test("company and venue promos are separate", () => {
@@ -69,6 +69,14 @@ describe("Work media organization", () => {
     const section = getMediaSections("reels").find((entry) => entry.category === "motionGraphics");
     assert.deepEqual(section?.items.map((item) => item.id), ["m-motiongraphics"]);
     assert.equal(section?.items[0]?.ratio, 720 / 1280);
+  });
+  test("both National Day greetings are portrait reels in their own section", () => {
+    const section = getMediaSections("reels").find((entry) => entry.category === "nationalDay");
+    assert.deepEqual(section?.items.map((item) => item.id), ["m-natlebanon", "m-natuae"]);
+    for (const item of section?.items ?? []) {
+      assert.ok(item.ratio < 1);
+      assert.equal(getGroup(item), "reels");
+    }
   });
   test("every production appears exactly once in its format's sections", () => {
     const grouped = ["cinematic", "reels"] as const;

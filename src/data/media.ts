@@ -112,9 +112,13 @@ import vSpockVenue from "@/assets/media/spock_venue_promo.mp4.asset.json";
 import pSpockVenue from "@/assets/media/spock_venue_promo.jpg.asset.json";
 import vSpockArtwork from "@/assets/media/spock_event_artwork.mp4.asset.json";
 import pSpockArtwork from "@/assets/media/spock_event_artwork.jpg.asset.json";
+import vNatLebanon from "@/assets/media/national_day_lebanon.mp4.asset.json";
+import pNatLebanon from "@/assets/media/national_day_lebanon.jpg.asset.json";
+import vNatUae from "@/assets/media/national_day_uae.mp4.asset.json";
+import pNatUae from "@/assets/media/national_day_uae.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
-export type MediaCategory = "ads" | "storytelling" | "promos" | "venuePromos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots" | "musicVideo" | "musicPromo" | "viralHooks" | "motionGraphics";
+export type MediaCategory = "ads" | "storytelling" | "promos" | "venuePromos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots" | "musicVideo" | "musicPromo" | "viralHooks" | "motionGraphics" | "nationalDay";
 
 export type MediaItem = {
   id: string;
@@ -185,6 +189,8 @@ export const mediaItems: MediaItem[] = [
   { id: "m-musicpromo3", title: "Music Promo III", ratio: 1920 / 1080, category: "musicPromo", videoUrl: vMusicPromo3.url, posterUrl: pMusicPromo3.url },
   { id: "m-spockvenue", title: "Spock — Venue Promo", ratio: 720 / 1280, category: "venuePromos", videoUrl: vSpockVenue.url, posterUrl: pSpockVenue.url },
   { id: "m-spockartwork", title: "Spock — Event Artwork", ratio: 720 / 1280, category: "eventArtwork", videoUrl: vSpockArtwork.url, posterUrl: pSpockArtwork.url },
+  { id: "m-natlebanon", title: "Lebanon Independence Day — 7 Management", ratio: 720 / 1280, category: "nationalDay", videoUrl: vNatLebanon.url, posterUrl: pNatLebanon.url },
+  { id: "m-natuae", title: "UAE Union Day Greeting", ratio: 352 / 624, category: "nationalDay", videoUrl: vNatUae.url, posterUrl: pNatUae.url },
 ];
 
 export function getGroup(item: MediaItem): MediaGroup {
@@ -193,7 +199,7 @@ export function getGroup(item: MediaItem): MediaGroup {
 
 export const categoryOrder: Record<MediaGroup, MediaCategory[]> = {
   cinematic: ["ads", "storytelling", "promos", "venuePromos", "viral", "shoots", "musicVideo", "musicPromo"],
-  reels: ["promos", "venuePromos", "eventArtwork", "viralHooks", "viral", "shoots", "avatar", "videoEdits", "motionGraphics"],
+  reels: ["promos", "venuePromos", "eventArtwork", "viralHooks", "viral", "shoots", "avatar", "videoEdits", "motionGraphics", "nationalDay"],
 };
 
 export function getMediaSections(group: MediaGroup) {
