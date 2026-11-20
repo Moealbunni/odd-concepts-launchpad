@@ -171,7 +171,6 @@ export function VideoPlayer({
         <span className="inline-flex w-fit items-center rounded-full border border-border bg-background/70 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
           {tag}
         </span>
-        <p className="text-sm font-medium text-foreground">{title}</p>
       </div>
 
       {/* Center play button */}

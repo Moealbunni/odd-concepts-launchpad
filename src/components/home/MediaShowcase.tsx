@@ -43,9 +43,6 @@ function MediaCard({
           <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
             {groupName}
           </p>
-          <h3 className="mt-1 text-sm font-medium leading-snug text-foreground">
-            {title}
-          </h3>
         </div>
         <div style={{ aspectRatio: boxRatio }} className="w-full">
           <VideoPlayer

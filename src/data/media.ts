@@ -189,8 +189,8 @@ export const mediaItems: MediaItem[] = [
   { id: "m-musicpromo3", title: "Music Promo III", ratio: 1920 / 1080, category: "musicPromo", videoUrl: vMusicPromo3.url, posterUrl: pMusicPromo3.url },
   { id: "m-spockvenue", title: "Spock — Venue Promo", ratio: 720 / 1280, category: "venuePromos", videoUrl: vSpockVenue.url, posterUrl: pSpockVenue.url },
   { id: "m-spockartwork", title: "Spock — Event Artwork", ratio: 720 / 1280, category: "eventArtwork", videoUrl: vSpockArtwork.url, posterUrl: pSpockArtwork.url },
-  { id: "m-natlebanon", title: "Lebanon Independence Day — 7 Management", ratio: 720 / 1280, category: "nationalDay", videoUrl: vNatLebanon.url, posterUrl: pNatLebanon.url },
-  { id: "m-natuae", title: "UAE Union Day Greeting", ratio: 352 / 624, category: "nationalDay", videoUrl: vNatUae.url, posterUrl: pNatUae.url },
+  { id: "m-natlebanon", title: "Lebanon Independence Day", ratio: 720 / 1280, category: "nationalDay", videoUrl: vNatLebanon.url, posterUrl: pNatLebanon.url },
+  { id: "m-natuae", title: "UAE National Day", ratio: 720 / 1280, category: "nationalDay", videoUrl: vNatUae.url, posterUrl: pNatUae.url },
 ];
 
 export function getGroup(item: MediaItem): MediaGroup {
