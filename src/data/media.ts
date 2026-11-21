@@ -118,6 +118,8 @@ import vNatLebanon from "@/assets/media/national_day_lebanon.mp4.asset.json";
 import pNatLebanon from "@/assets/media/national_day_lebanon.jpg.asset.json";
 import vNatUae from "@/assets/media/national_day_uae.mp4.asset.json";
 import pNatUae from "@/assets/media/national_day_uae.jpg.asset.json";
+import vSpotDr from "@/assets/media/spot_dr_ad.mp4.asset.json";
+import pSpotDr from "@/assets/media/spot_dr_ad.jpg.asset.json";
 
 export type MediaGroup = "cinematic" | "reels";
 export type MediaCategory = "ads" | "storytelling" | "promos" | "venuePromos" | "avatar" | "videoEdits" | "eventArtwork" | "viral" | "shoots" | "musicVideo" | "musicPromo" | "viralHooks" | "motionGraphics" | "nationalDay";
@@ -190,6 +192,7 @@ export const mediaItems: MediaItem[] = [
   { id: "m-musicpromo2", title: "Music Promo II", ratio: 1920 / 1080, category: "musicPromo", videoUrl: vMusicPromo2.url, posterUrl: pMusicPromo2.url },
   { id: "m-musicpromo3", title: "Music Promo III", ratio: 1920 / 1080, category: "musicPromo", videoUrl: vMusicPromo3.url, posterUrl: pMusicPromo3.url },
   { id: "m-spockvenue", title: "Spock — Venue Promo", ratio: 720 / 1280, category: "venuePromos", videoUrl: vSpockVenue.url, posterUrl: pSpockVenue.url },
+  { id: "m-spotdr", title: "The Spot — Venue Promo", ratio: 1080 / 1920, category: "venuePromos", videoUrl: vSpotDr.url, posterUrl: pSpotDr.url },
   { id: "m-spockartwork", title: "Spock — Event Artwork", ratio: 720 / 1280, category: "eventArtwork", videoUrl: vSpockArtwork.url, posterUrl: pSpockArtwork.url },
   { id: "m-spockartwork2", title: "Spock — Event Artwork II", ratio: 720 / 1280, category: "eventArtwork", videoUrl: vSpockArtwork2.url, posterUrl: pSpockArtwork2.url },
   { id: "m-natlebanon", title: "Lebanon Independence Day", ratio: 720 / 1280, category: "nationalDay", videoUrl: vNatLebanon.url, posterUrl: pNatLebanon.url },

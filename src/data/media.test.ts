@@ -67,6 +67,15 @@ describe("Work media organization", () => {
       assert.equal(getGroup(item), "reels");
     }
   });
+  test("the Spot DR ad is a portrait reel in Venue Promos", () => {
+    const item = mediaItems.find((media) => media.id === "m-spotdr");
+    if (!item) throw new Error("Missing m-spotdr");
+    assert.equal(item.category, "venuePromos");
+    assert.equal(item.ratio, 1080 / 1920);
+    assert.equal(getGroup(item), "reels");
+    const section = getMediaSections("reels").find((entry) => entry.category === "venuePromos");
+    assert.deepEqual(section?.items.map((entry) => entry.id), ["m-room44reel", "m-spockvenue", "m-spotdr"]);
+  });
   test("the uploaded motion graphics video belongs to its own Reels section", () => {
     const section = getMediaSections("reels").find((entry) => entry.category === "motionGraphics");
     assert.deepEqual(section?.items.map((item) => item.id), ["m-motiongraphics"]);
