@@ -17,6 +17,7 @@ const clients = [
   "Soul Brunch PC",
   "Spock",
   "Woohoo",
+  "Nsteria",
 ];
 
 /** Words never used for a monogram. */
